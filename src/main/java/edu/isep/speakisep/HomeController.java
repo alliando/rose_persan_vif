@@ -1,4 +1,4 @@
-package edu.isep.phonebook;
+package edu.isep.speakisep;
 
 import java.text.DateFormat;
 import java.util.Date;
