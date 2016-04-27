@@ -83,8 +83,8 @@
 				<div class="form-group form">
 					<form action='login' method="post">
 						<div>
-							<label>Numéro ISEP :</label>
-							<input type="text" id="userId" name="userId" placeholder="Numéro ISEP" class="form-control"/>
+							<label>Identifiant ISEP :</label>
+							<input type="text" id="userId" name="userId" placeholder="Identifiant ISEP" class="form-control"/>
 						</div>
 						<br>
 						<div>
