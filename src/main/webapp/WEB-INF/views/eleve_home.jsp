@@ -51,11 +51,22 @@
     <!-- /.container -->
 </nav>
 <!-- Page Content -->
-<div class="container element">
-
-    <button type="button" class="btn btn-primary btn-lg href_button"><p>Liste de parcours<p><br><p>aaa</p></button>
-    <button type="button" class="btn btn-primary btn-lg href_button">Responsable de parcours</button>
-    <button type="button" class="btn btn-primary btn-lg href_button">Témoignages</button>
+<div class="container">
+    <div class="element btn-group btn-group-lg">
+        <button class="btn btn-success href_button" onclick="self.location.href='eleve/mafiche'"><h1>Ma fiche</h1><h5>Mes informations personnelles</h5></button>
+        <button class="btn btn-success href_button" onclick="self.location.href='eleve/parcours'" ><h1>Parcours</h1><h5>Liste, témoignages</h5></button>
+        <button class="btn btn-success href_button" onclick="self.location.href='eleve/international'"><h1>International</h1><h5>Université, cours</h5></button>
+    </div>
+    <hr>
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Speakisep 2016</p>
+            </div>
+        </div>
+        <!-- /.row -->
+    </footer>
 </div>
 </body>
 </html>

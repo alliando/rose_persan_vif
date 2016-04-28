@@ -11,6 +11,9 @@
 }
 
 .element {
-	margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+	margin-top: 25vh; /* poussé de la hauteur de 25 vers le bas*/
 	transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+}
+.btn-group-lg > .btn, .btn-lg {
+	padding: 10px 0px;
 }

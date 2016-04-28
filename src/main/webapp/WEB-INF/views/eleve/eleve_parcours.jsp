@@ -51,12 +51,11 @@
     <!-- /.container -->
 </nav>
 <!-- Page Content -->
-
 <div class="container">
     <div class="element btn-group btn-group-lg">
-        <button class="btn btn-success href_button" onclick="self.location.href='/respo/eleve'"><h1>Elèves</h1><h5>Fiches, infos</h5></button>
-        <button class="btn btn-success href_button" onclick="self.location.href='/respo/mafiche'" ><h1>Ma fiche</h1></button>
-        <button class="btn btn-success href_button" onclick="self.location.href='/eleves/international'"><h1>International</h1><h5>Université, cours</h5></button>
+        <button class="btn btn-success href_button" onclick="self.location.href='eleve/mafiche'"><h1>Liste des parcours</h1><h5>tableau comparatif</h5></button>
+        <button class="btn btn-success href_button" onclick="self.location.href='eleve/parcours'" ><h1>Responsable de arcours</h1><h5>nom, contact</h5></button>
+        <button class="btn btn-success href_button" onclick="self.location.href='eleve/international'"><h1>Témoignages</h1><h5>d'anciens élèves</h5></button>
     </div>
     <hr>
     <!-- Footer -->
@@ -69,6 +68,5 @@
         <!-- /.row -->
     </footer>
 </div>
-
 </body>
 </html>

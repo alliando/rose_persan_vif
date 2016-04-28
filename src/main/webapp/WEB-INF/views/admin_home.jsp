@@ -51,12 +51,13 @@
     <!-- /.container -->
 </nav>
 <!-- Page Content -->
-
 <div class="container">
     <div class="element btn-group btn-group-lg">
-        <button class="btn btn-success href_button" onclick="self.location.href='/respo/eleve'"><h1>Elèves</h1><h5>Fiches, infos</h5></button>
-        <button class="btn btn-success href_button" onclick="self.location.href='/respo/mafiche'" ><h1>Ma fiche</h1></button>
-        <button class="btn btn-success href_button" onclick="self.location.href='/eleves/international'"><h1>International</h1><h5>Université, cours</h5></button>
+        <button class="btn btn-success href_button" onclick="self.location.href='/admin//universite'"><h1>Université</h1><h5>Valider, modifier, supprimer</h5></button>
+        <button class="btn btn-success href_button" onclick="self.location.href='/admin/temoignage'"><h1>Témoignage</h1><h5>Valider, modifier, supprimer</h5></button>
+        <button class="btn btn-success href_button" onclick="self.location.href='/admin/eleve'"><h1>Elèves</h1><h5>Ajouter</h5></button>
+         <button class="btn btn-success href_button" onclick="self.location.href='/admin/parcours'" ><h1>Parcours</h1><h5>Modifier, supprimer</h5></button>
+        <button class="btn btn-success href_button" onclick="self.location.href='/admin/respo'"><h2>Responsable de parcours</h2><h5>Valider, modifier, supprimer</h5></button>
     </div>
     <hr>
     <!-- Footer -->
@@ -69,6 +70,5 @@
         <!-- /.row -->
     </footer>
 </div>
-
 </body>
 </html>
