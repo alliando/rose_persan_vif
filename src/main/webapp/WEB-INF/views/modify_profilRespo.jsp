@@ -44,14 +44,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Elèves</a>
+                        <a href="#">Ma fiche</a>
+                    </li>
+                    <li>
+                        <a href="#">Parcours</a>
                     </li>
                     <li>
                         <a href="#">International</a>
                     </li>
-                    <!--<li>
-                        <a href="#">International</a>
-                    </li>-->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -65,7 +65,7 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Fiche de l'élève
+                <h1 class="page-header">Modifier ma fiche
                     <small></small>
                 </h1>
             </div>
@@ -73,42 +73,35 @@
         <!-- /.row -->
 
    <div class="row">
-        <div class="col-sm-2 col-md-2">
-            <img src="http://thetransformedmale.files.wordpress.com/2011/06/bruce-wayne-armani.jpg" alt="" class="img-rounded img-responsive" />
+   	<form>
+        <div class="col-sm-4 col-md-4">
+        	  <div class="form-group">
+            	<label class="control-label">Choisissez votre photo</label>
+				<input id="inputPhoto" type="file" class="file">
+			  </div>
         </div>
         <div class="col-sm-4 col-md-4">
-            <blockquote>
-                <p>Bruce Wayne</p>
-            </blockquote>
-            <p> <i class="glyphicon glyphicon-info-sign"></i> N° étudiant : 8000
-            	<br/><i class="glyphicon glyphicon-envelope"></i> masterwayne@batman.com
-                <br/> <i class="glyphicon glyphicon-briefcase"></i> 2ème année spécialité Génie Logiciel
-                <br/> <i class="glyphicon glyphicon-globe"></i> 6 rue du général Leclerc 75006 Paris</p>
-
-                <fieldset>
-                	 <legend>Activités extrascolaires</legend>
-                </fieldset>
-               
-              <fieldset>
-                	 <legend>CV</legend>
-              </fieldset>
-              
-              <fieldset>
-                	 <legend>Lettre de motivation</legend>
-              </fieldset>
+              <div class="form-group">
+    			<label for="name"> Nom et prénom :</label>
+    			<input type="text" class="form-control" id="inputName" placeholder="Nom, prénom">
+  			  </div>
+           	 <div class="form-group">
+    			<label for="inputEmail">Adresse mail ISEP :</label>
+    			<input type="email" class="form-control" id="inputEmail" placeholder="Email">
+  			 </div>
+             <div class="form-group">
+    			<label for="inputParcours">Responsable du parcours ...</label>
+    			<input type="text" class="form-control" id="inputParcours" placeholder="Responsable de quel parcours?">
+  			 </div>
+             <div class="form-group">
+    			<label for="inputBureau">Bureau :</label>
+    			<input type="text" class="form-control" id="inputBureau" placeholder="Salle n°">
+  			 </div>
         </div>
         <div class="col-sm-4 col-md-4">
-         		<fieldset>
-                	 <legend>Compétences de stage</legend>
-                </fieldset>
-                
-                <fieldset>
-                	 <legend>Notes</legend>
-                </fieldset>
+         	<button type="submit" class="btn btn-primary btn-lg btn-block active">Sauvegarder ma fiche</button>
         </div>
-        <div class="col-sm-2 col-md-2">
-         <a href="#" class="btn btn-primary btn-lg active" role="button">Contacter l'élève</a>
-        </div>
+       </form>
    </div>
         <!-- /.row -->
 

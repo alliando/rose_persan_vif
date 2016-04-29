@@ -44,14 +44,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Elèves</a>
+                        <a href="#">Ma fiche</a>
+                    </li>
+                    <li>
+                        <a href="#">Parcours</a>
                     </li>
                     <li>
                         <a href="#">International</a>
                     </li>
-                    <!--<li>
-                        <a href="#">International</a>
-                    </li>-->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -91,7 +91,10 @@
                
               <fieldset>
                 	 <legend>CV</legend>
-                </fieldset>
+              </fieldset>
+              <fieldset>
+                	 <legend>Lettre de motivation</legend>
+              </fieldset>
         </div>
         <div class="col-sm-4 col-md-4">
          		<fieldset>
@@ -100,11 +103,7 @@
                 
                 <fieldset>
                 	 <legend>Notes</legend>
-                </fieldset>
-                
-                <fieldset>
-                	 <legend>Lettre de motivation</legend>
-                </fieldset>
+                </fieldset>   
         </div>
         <div class="col-sm-2 col-md-2">
          <a href="#" class="btn btn-primary btn-lg active" role="button">Modifier ma fiche</a>
