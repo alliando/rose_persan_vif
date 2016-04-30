@@ -76,6 +76,7 @@
 	    <option value="Business Intelligence">Business Intelligence</option>
 	    <option value="Numerique et Santé">Numerique et Santé</option>
 	</select>
+	<a id="DepotTemoignage" href="DepotTemoignage.jsp"><input type="button" value="Déposer un Témoignage"></a>
 </span>
 
 <div id="Block" class="temoignage" style="display:none">
