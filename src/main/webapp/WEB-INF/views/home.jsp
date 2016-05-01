@@ -83,15 +83,15 @@
 				<div class="form-group form">
 					<form action='login' method="post">
 						<div>
-							<label>Identifiant ISEP :</label>
-							<input type="text" id="userId" name="userId" placeholder="Identifiant ISEP" class="form-control"/>
+							<label>Numéro ISEP :</label>
+							<input type="text" id="userId" name="userId" placeholder="Numéro ISEP" class="form-control"/>
 						</div>
 						<br>
 						<div>
 							<label>Mot de passe :</label>
 							<input type="password" id="password" name="password" placeholder="Mot de passe" class="form-control"/>
 						</div>
-							<br><button id="loginButton" class="form-control">Se connecter</button>
+							<br><button id="loginButton" class="form-control">Login</button>
 					</form>
 				</div>            
             </div>
