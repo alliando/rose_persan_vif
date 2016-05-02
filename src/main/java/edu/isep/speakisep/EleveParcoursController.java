@@ -17,9 +17,9 @@ public class EleveParcoursController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/eleve/eleve_parcours", method = RequestMethod.GET)
+	@RequestMapping(value = "/eleve_parcours", method = RequestMethod.GET)
 	public String home() {
-		return "eleve/eleve_parcours";
+		return "eleve_parcours";
 	}
 	
 }
