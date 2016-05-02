@@ -85,7 +85,7 @@
                 <br/> <i class="glyphicon glyphicon-info-sign"></i> Bureau L012</p>
         </div>
         <div class="col-sm-4 col-md-4">
-         <a href="#" class="btn btn-primary btn-lg btn-block active" role="button">Modifier ma fiche</a>
+         <a href="/respo_profil_modify" class="btn btn-primary btn-lg btn-block active" role="button">Modifier ma fiche</a>
         </div>
    </div>
         <!-- /.row -->

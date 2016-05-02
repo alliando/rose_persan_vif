@@ -1,17 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link href="resources/css/temoignage.css" rel="stylesheet">
    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Speakisep</title>
-
-    <!-- Bootstrap Core CSS -->
+    <title>Les Responsables</title>
+        <!-- Bootstrap Core CSS -->
     <link href="resources/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -26,8 +25,8 @@
     <![endif]-->
 </head>
 <body>
-
- <!-- Navigation -->
+<a id="deco" href="deconnexion.php"><input type="button" value="Déconnexion"></a>
+<!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -58,79 +57,40 @@
         </div>
         <!-- /.container -->
     </nav>
-
+    
     <!-- Page Content -->
     <div class="container">
-
-        <!-- Page Header -->
+            <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Fiche de l'Ã©lÃ¨ve
+                <h1 class="page-header">Les Responsables de parcours
                     <small></small>
                 </h1>
             </div>
         </div>
         <!-- /.row -->
-
-   <div class="row">
-        <div class="col-sm-2 col-md-2">
-            <img src="http://thetransformedmale.files.wordpress.com/2011/06/bruce-wayne-armani.jpg" alt="" class="img-rounded img-responsive" />
-        </div>
-        <div class="col-sm-4 col-md-4">
-            <blockquote>
-                <p>Bruce Wayne</p>
-            </blockquote>
-            <p> <i class="glyphicon glyphicon-info-sign"></i> NÂ° Ã©tudiant : 8000
-            	<br/><i class="glyphicon glyphicon-envelope"></i> masterwayne@batman.com
-                <br/> <i class="glyphicon glyphicon-briefcase"></i> 2Ã¨me annÃ©e spÃ©cialitÃ© GÃ©nie Logiciel
-                <br/> <i class="glyphicon glyphicon-globe"></i> 6 rue du gÃ©nÃ©ral Leclerc 75006 Paris</p>
-
-                <fieldset>
-                	 <legend>ActivitÃ©s extrascolaires</legend>
-                </fieldset>
-               
-              <fieldset>
-                	 <legend>CV</legend>
-              </fieldset>
-              <fieldset>
-                	 <legend>Lettre de motivation</legend>
-              </fieldset>
-        </div>
-        <div class="col-sm-4 col-md-4">
-         		<fieldset>
-                	 <legend>CompÃ©tences de stage</legend>
-                </fieldset>
-                
-                <fieldset>
-                	 <legend>Notes</legend>
-                </fieldset>   
-        </div>
-        <div class="col-sm-2 col-md-2">
-         <a href="#" class="btn btn-primary btn-lg active" role="button">Modifier ma fiche</a>
-        </div>
-   </div>
-        <!-- /.row -->
-
-        <hr>
         
-                <!-- Footer -->
-      	 <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Speakisep 2016</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer> 
-
-    </div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="resources/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="resources/js/bootstrap.min.js"></script>
+       <table class="table table-bordered">
+       <thead>
+      <tr>
+        <th>Parcours</th>
+        <th>Professeur associé</th>
+      </tr>
+    </thead>
+    	
+        <tr>	<td> Ingénieur Architecte des Systèmes d'Information </td>
+        		<td> Zakia KAZI-AOUL </td> </tr>
+        <tr>	<td> Ingénieur Architecte Réseaux et Services </td>
+        		<td> Yousra CHABCHOUB </td> </tr>
+         <tr>	<td> Ingénieur Logiciel </td>
+        		<td> Sylvain LEFEBVRE </td> </tr>  
+          <tr>	<td> Ingénieur Numérique et Santé </td>
+        		<td> Maria TROCAN </td> </tr>   
+        		
+        </table>
+        
+        <a href="/eleve_profilRespo">Exemple de profil</a>
+        </div>
 
 </body>
 </html>
