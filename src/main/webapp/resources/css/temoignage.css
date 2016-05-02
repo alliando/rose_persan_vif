@@ -1,43 +1,15 @@
-@CHARSET "ISO-8859-1";
-.box {
-	
-}
-#deco{
-	float:right;
-
-}
-#Block{
-
-}
 #DepotTemoignage{
-	Margin-left:250px;
-	font-size: large;
-}
-#bigblock{
-	margin-top: 10px;
-	width: 650px;
-}
-#parcours{
 	float:left;
 }
+#Block{
+	border: 2px solid;
+}
 #etpromo{
-	float:right;
-	display:inline;
-}
-h3{
 	
-	padding-left: 2px;
-	padding-right: 2px;
-	border: 2px solid black;
-
 }
-#info {
-	margin-top: 10px;
-	padding-left: 2px;
-	padding-right: 2px;
-	width: 700px;
-    border: 1px solid black;
-    text-align: justify;
-    overflow: auto;
-    height: 125px;
+#parcours{
+	
+}
+#info{
+	border: 1px solid;
 }
