@@ -5,15 +5,12 @@
 	margin-top:90px;
 }
 .href_button{
-	width:350px;
-	height:120px ;
+	width:365px;
+	height:auto ;
+	min-height:117px ;
 	margin:10px;
 }
 
 .element {
-	margin-top: 25vh; /* poussé de la hauteur de 25 vers le bas*/
-	transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
-}
-.btn-group-lg > .btn, .btn-lg {
-	padding: 10px 0px;
+	margin-top: 15vh; /* poussé de la hauteur de 15 vers le bas*/
 }

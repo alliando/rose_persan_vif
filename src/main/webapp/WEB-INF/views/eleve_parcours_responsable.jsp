@@ -89,7 +89,7 @@
         		
         </table>
         
-        
+        <a href="/eleve_profilRespo">Exemple de profil</a>
         </div>
 
 </body>

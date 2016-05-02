@@ -9,7 +9,13 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
 <html>
 <head>
-    <title>Speakisep</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Accueil élève</title>
     <!-- Bootstrap Core CSS -->
     <link href="resources/css/bootstrap.min.css" rel="stylesheet">
 
@@ -53,9 +59,9 @@
 <!-- Page Content -->
 <div class="container">
     <div class="element btn-group btn-group-lg">
-        <button class="btn btn-success href_button" onclick="self.location.href='eleve_profilEleve'"><h1>Ma fiche</h1><h5>Mes informations personnelles</h5></button>
+        <button class="btn btn-success href_button" onclick="self.location.href='eleve_profil'"><h1>Ma fiche</h1><h5>Mes informations personnelles</h5></button>
         <button class="btn btn-success href_button" onclick="self.location.href='eleve_parcours'" ><h1>Parcours</h1><h5>Liste, témoignages</h5></button>
-        <button class="btn btn-success href_button" onclick="self.location.href='eleve/international'"><h1>International</h1><h5>Université, cours</h5></button>
+        <button class="btn btn-success href_button" onclick="self.location.href='eleve_universite'"><h1>International</h1><h5>Université, cours</h5></button>
     </div>
     <hr>
     <!-- Footer -->

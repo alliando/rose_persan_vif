@@ -9,7 +9,7 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
 <html>
 <head>
-    <title>Speakisep</title>
+    <title>Accueil admin</title>
     <!-- Bootstrap Core CSS -->
     <link href="resources/css/bootstrap.min.css" rel="stylesheet">
 
