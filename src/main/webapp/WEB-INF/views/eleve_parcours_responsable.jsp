@@ -25,7 +25,7 @@
     <![endif]-->
 </head>
 <body>
-<a id="deco" href="deconnexion.php"><input type="button" value="Déconnexion"></a>
+<a id="deco" href="#"><input type="button" value="Déconnexion"></a>
 <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -79,13 +79,13 @@
     </thead>
     	
         <tr>	<td> Ingénieur Architecte des Systèmes d'Information </td>
-        		<td> Zakia KAZI-AOUL </td> </tr>
+        		<td><a href="#"> Zakia KAZI-AOUL</a> </td> </tr>
         <tr>	<td> Ingénieur Architecte Réseaux et Services </td>
-        		<td> Yousra CHABCHOUB </td> </tr>
+        		<td> <a href="#">Yousra CHABCHOUB</a> </td> </tr>
          <tr>	<td> Ingénieur Logiciel </td>
-        		<td> Sylvain LEFEBVRE </td> </tr>  
+        		<td> <a href="#">Sylvain LEFEBVRE</a> </td> </tr>  
           <tr>	<td> Ingénieur Numérique et Santé </td>
-        		<td> Maria TROCAN </td> </tr>   
+        		<td><a href="#"> Maria TROCAN</a> </td> </tr>   
         		
         </table>
         
