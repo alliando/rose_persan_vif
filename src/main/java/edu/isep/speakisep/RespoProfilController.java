@@ -5,11 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class ModifyProfilEleveController {
+public class RespoProfilController {
 	@Autowired
-	@RequestMapping("/modify_profilEleve")
+	@RequestMapping("/respo_profil")
 	
 	public String Profil_respo(){
-		return "modify_profilEleve";
+		return "respo_profil";
 	}
 }

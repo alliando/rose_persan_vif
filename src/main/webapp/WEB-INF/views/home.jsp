@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -83,8 +84,8 @@
 				<div class="form-group form">
 					<form action='login' method="post">
 						<div>
-							<label>Numéro ISEP :</label>
-							<input type="text" id="userId" name="userId" placeholder="Numéro ISEP" class="form-control"/>
+							<label>NumÃ©ro ISEP :</label>
+							<input type="text" id="userId" name="userId" placeholder="NumÃ©ro ISEP" class="form-control"/>
 						</div>
 						<br>
 						<div>
@@ -96,6 +97,7 @@
 				</div>            
             </div>
             <div class="col-md-6 portfolio-item">
+
                 <a href="#">
                     <!-- <img class="img-responsive" src="http://placehold.it/700x400" alt=""> -->
                 </a>

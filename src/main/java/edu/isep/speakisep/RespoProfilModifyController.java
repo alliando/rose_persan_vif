@@ -5,12 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-
-public class EleveTemoignageController {
+public class RespoProfilModifyController {
 	@Autowired
-	@RequestMapping("/eleve_temoignage")
-	
-	public String eleve_temoignage(){
-		return "eleve_temoignage";
+	@RequestMapping("/respo_profil_modify")
+
+	public String Profil_respo(){
+		return "respo_profil_modify";
 	}
 }
