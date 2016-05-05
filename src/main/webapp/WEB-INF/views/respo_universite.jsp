@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html>
+
 <head>
    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +17,7 @@
     <!-- Custom CSS -->
     <link href="resources/css/2-col-portfolio.css" rel="stylesheet">
     <link href="resources/css/main.css" rel="stylesheet">
+    <!--  <link href="resources/css/respo_universite.css" rel="stylesheet">-->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -65,7 +66,7 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Universités
+                <h1 class="page-header">Université
                     <small></small>
                 </h1>
             </div>
@@ -81,6 +82,7 @@
             <blockquote>
 			<h3 id="parcours">École polytechnique de Montréal</h3>
             <button type="button" class="btn btn-link">Liens vers les cours</button>
+            <a href="#" class="btn btn-primary btn-lg active modif" role="button">Modifier le lien</a>
             </blockquote>
         </td>
         </tr>
@@ -89,6 +91,7 @@
             <blockquote>
 			<h3 id="parcours">Université Catholique de Louvain</h3>
             <button type="button" class="btn btn-link">Liens vers les cours</button>
+            <a href="#" class="btn btn-primary btn-lg active modif" role="button">Modifier le lien</a>
             </blockquote>
          </td>
          </tr>
@@ -97,6 +100,7 @@
             <blockquote>
 			<h3 id="parcours">Institut</h3>
             <button type="button" class="btn btn-link">Liens vers les cours</button>
+            <a href="#" class="btn btn-primary btn-lg active modif" role="button">Modifier le lien</a>
             </blockquote>
          </td>
          </tr>
