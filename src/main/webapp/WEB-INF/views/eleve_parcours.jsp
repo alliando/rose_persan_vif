@@ -1,22 +1,12 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Gauth
-  Date: 27/04/2016
-  Time: 13:24
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
 <html>
 <head>
     <title>Parcours</title>
     <!-- Bootstrap Core CSS -->
-    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+    <%@ include file="header.jsp" %>
 
-    <!-- Custom CSS -->
-    <link href="resources/css/2-col-portfolio.css" rel="stylesheet">
-    <link href="resources/css/main.css" rel="stylesheet">
-
+    <%@ include file="footer.jsp" %>
 </head>
 <body>
 <!-- Navigation -->
