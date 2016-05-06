@@ -70,8 +70,8 @@
         </div>
         <!-- /.row -->
 <div class="row">
-   
-		<span class="form-group">
+    	<div id="topin" class="col-sm-12 col-md-12">
+		<span class="form-group col-sm-12 col-md-12">
 			<select class="col-sm-4 col-md-4" name="tsearch">
 			    <option value="Parcours">Parcours</option>
 			    <option value="Génie Logiciel">Génie Logiciel</option>
@@ -81,7 +81,8 @@
 			</select>
 			<a href="#" id="DepotTemoignage" class="pull-right btn btn-primary btn-lg active" role="button" href="DepotTemoignage.jsp">Déposer un Témoignage</a>	
 		</span>
-
+		</div>
+		<div id="allBlock"  class="temoignage col-sm-12 col-md-12">
 		<div id="Block"  class="temoignage col-sm-12 col-md-12" style="display:none">
 		<div id="bigblock"><h3 id="parcours">Génie Logiciel</h3> <h3 id="etpromo">Tintin Haddock, promo 2017</h3>
 		</div>
@@ -99,8 +100,9 @@
 		</div>
 		<p id="info">Iamque lituis cladium concrepantibus internarum non celate ut antea turbidum saeviebat ingenium a veri consideratione detortum et nullo inpositorum vel conpositorum fidem sollemniter inquirente nec discernente a societate noxiorum insontes velut exturbatum e iudiciis fas omne discessit, et causarum legitima silente defensione carnifex rapinarum sequester et obductio capitum et bonorum ubique multatio versabatur per orientales provincias, quas recensere puto nunc oportunum absque Mesopotamia digesta, cum bella Parthica dicerentur, et Aegypto, quam necessario aliud reieci ad tempus.</p>
 		</div>
+		</div>
+		
 
- </div>
       	 <footer>
             <div class="row">
                 <div class="col-lg-12">
