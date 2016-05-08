@@ -1,6 +1,5 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java" %>
-<head><title>Admin Universités</title></head>
-<body>
+<title>Admin Universités</title>
 
 
     <!-- Page Content -->
@@ -62,4 +61,3 @@
     </div>
     <!-- /.container -->
 
-</body>

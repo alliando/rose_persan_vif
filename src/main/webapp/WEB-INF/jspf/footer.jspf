@@ -13,22 +13,6 @@
 </footer>
 
 
-<script >
-    function loadScript() {
-
-        var script = document.createElement('link');
-        script.rel="stylesheet";
-        script.href = "resources/css/temoignage.css";
-        document.head.appendChild(script);
-        console.log('loadScript');
-    }
-
-    function initialize() {
-        console.log('initialize');
-    }
-    window.onload = loadScript;
-
-</script>
 
 <!-- jQuery -->
 <script src="resources/js/jquery.js"></script>

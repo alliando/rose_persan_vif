@@ -1,10 +1,7 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
 
-<head>
 <link href="resources/css/temoignage.css" rel="stylesheet">
     <title>Les Responsables</title>
-</head>
-<body>
     <!-- Page Content -->
     <div class="container">
             <!-- Page Header -->
@@ -21,22 +18,20 @@
        <thead>
       <tr>
         <th>Parcours</th>
-        <th>Professeur associé</th>
+        <th>Professeur associÃ©</th>
       </tr>
     </thead>
     	
-        <tr>	<td> Ingénieur Architecte des Systèmes d'Information </td>
+        <tr>	<td> IngÃ©nieur Architecte des SystÃ¨mes d'Information </td>
         		<td><a href="#"> Zakia KAZI-AOUL</a> </td> </tr>
-        <tr>	<td> Ingénieur Architecte Réseaux et Services </td>
+        <tr>	<td> IngÃ©nieur Architecte RÃ©seaux et Services </td>
         		<td> <a href="#">Yousra CHABCHOUB</a> </td> </tr>
-         <tr>	<td> Ingénieur Logiciel </td>
+         <tr>	<td> IngÃ©nieur Logiciel </td>
         		<td> <a href="#">Sylvain LEFEBVRE</a> </td> </tr>  
-          <tr>	<td> Ingénieur Numérique et Santé </td>
+          <tr>	<td> IngÃ©nieur NumÃ©rique et SantÃ© </td>
         		<td><a href="#"> Maria TROCAN</a> </td> </tr>   
         		
         </table>
         
         <a href="eleve_profilRespo">Exemple de profil</a>
         </div>
-
-</body>

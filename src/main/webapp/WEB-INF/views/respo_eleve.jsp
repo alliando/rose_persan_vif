@@ -1,16 +1,11 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
-
-<head><title>Rechercher des élèves</title>
+<title>Rechercher des élèves</title>
 <link href="resources/css/respo_eleve.css" rel="stylesheet">
-    </head>
-<body>
-<h1>CC</h1>
     <div class="container">
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Rechercher des élèves
-                    <h1>CC</h1>
                 </h1>
             </div>
         </div>
@@ -38,35 +33,18 @@
                 <option>Promo 2018</option>
                 <option>Promo 2017</option>
                 <option>Promo 2016</option>
-                <option>Promo 2017</option>
             </select>
         </div>
         <div class="col-sm-8 col-sm-pull-4 col-md-pull-0 ">
             <table class="table table-condensed table-hover table-bordered" >
                 <thead>
-                <tr class="success">
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
-                </tr>
-                </thead>
-
+                <tr class="success"><th>Firstname  <th>Lastname  <th>Email
                 <tbody>
                 <tr onclick="self.location.href='/respo_profilEleve'">
-                    <td>John</td>
-                    <td>DoeDoeDoeDoeDoeDoeDoe</td>
-                    <td><a href="mailto:#">john@example.com</a></td>
-                </tr>
+                                    <td>John       <td>DoeDoe    <td><a href="mailto:#">john@example.com</a>
                 <tr onclick="self.location.href='/respo_profilEleve'">
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td><a href="mailto:#">john@example.com</a></td>
-                </tr>
-                </tbody>
-
+                                    <td>John       <td>Doe       <td><a href="mailto:#">john@example.com</a>
             </table>
         </div>
     </div>
-
 </div>
-</body>

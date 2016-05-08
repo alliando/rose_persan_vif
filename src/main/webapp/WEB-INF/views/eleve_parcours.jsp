@@ -1,7 +1,5 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
-
-<head><title>Parcours</title></head>
-<body>
+<title>Parcours</title>
 <!-- Page Content -->
 <div class="container">
     <div class="element btn-group btn-group-lg">
@@ -10,4 +8,3 @@
         <button class="btn btn-success href_button" onclick="self.location.href='eleve_parcours_temoignage'"><h1>Témoignages</h1><h5>d'anciens élèves</h5></button>
     </div>
 </div>
-</body>

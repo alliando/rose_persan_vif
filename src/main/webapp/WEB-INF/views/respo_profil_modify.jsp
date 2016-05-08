@@ -1,9 +1,6 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
 
-<head>
     <title>Modifier sa fiche</title>
-</head>
-<body>
 <div class="container">
 
     <!-- Page Header -->
@@ -48,6 +45,4 @@
         </form>
     </div>
     <!-- /.row -->
-
 </div>
-</body>

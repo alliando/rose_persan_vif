@@ -1,9 +1,5 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
-<head>
     <title>Universités</title>
-
-</head>
-<body>
     <!-- Page Content -->
     <div class="container">
 
@@ -55,4 +51,5 @@
     <!-- /.container -->
 
     <!-- JavaScript -->
-</body>
+    <script src="resources/js/universite.js"></script>
+

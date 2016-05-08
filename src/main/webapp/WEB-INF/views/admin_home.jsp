@@ -1,7 +1,5 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
-
-<head><title>Accueil adminé</title></head>
-<body>
+<title>Accueil admin</title>
 <!-- Page Content -->
 <div class="container">
     <div class="element btn-group btn-group-lg">
@@ -12,5 +10,4 @@
         <button class="btn btn-success href_button" onclick="self.location.href='admin_respo'"><h2>Responsable de parcours</h2><h5>Valider, modifier, supprimer</h5></button>
     </div>
 </div>
-</body>
 

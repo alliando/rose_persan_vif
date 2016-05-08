@@ -1,9 +1,6 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
 
-<head>
     <title>Mon profil</title>
-</head>
-<body>
 
     <!-- Page Content -->
     <div class="container">
@@ -58,4 +55,3 @@
         <!-- /.row -->
     </div>
     <!-- /.container -->
-</body>
