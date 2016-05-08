@@ -37,14 +37,18 @@
         </div>
         <div class="col-sm-8 col-sm-pull-4 col-md-pull-0 ">
             <table class="table table-condensed table-hover table-bordered" >
-                <thead>
-                <tr class="success"><th>Firstname  <th>Lastname  <th>Email
-                <tbody>
-                <tr onclick="self.location.href='/respo_profilEleve'">
-                                    <td>John       <td>DoeDoe    <td><a href="mailto:#">john@example.com</a>
-                <tr onclick="self.location.href='/respo_profilEleve'">
-                                    <td>John       <td>Doe       <td><a href="mailto:#">john@example.com</a>
+        <thead>
+        <tr class="success">
+            <th>Firstname  <th>Lastname  <th>Email
+        <tbody>
+            <tr onclick="self.location.href='/respo_profilEleve'">
+            <td>John       <td>DoeDoe    <td><a href="mailto:#">john@example.com</a>
+            <tr onclick="self.location.href='/respo_profilEleve'">
+            <td>John       <td>Doe       <td><a href="mailto:#">john@example.com</a>
+             <tr onclick="self.location.href='/respo_profilEleve'">
+            <td>Vigouroux       <td>Gauthier       <td><a href="mailto:#">gauthier@example.com</a>
             </table>
-        </div>
+    </div>
     </div>
 </div>
+<script src="resources/js/respo_eleve.js" ></script>

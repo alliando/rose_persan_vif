@@ -1,16 +1,18 @@
 window.onload=function()
 {
-    load.script("resources/js/universite.js");
+    load.script("resources/js/respo_eleve.js");
 };
-var $rows = $("tr");
-$("#search").keyup(function() {
+var $rows = $("tbody");
+$("#eleveSearch").keyup(function() {
     var val = $.trim(this.value);
+    console.log(val);
+    console.log($rows);
     if (val === "")
         $rows.show();
         
     else {
         $rows.hide();
-        $rows.has("h3:contains(" + val + ")").show();
+        $rows.has("td:contains(" + val + ")").show();
     }
 });
 
