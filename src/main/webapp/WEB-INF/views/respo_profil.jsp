@@ -1,9 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ include file="header.jsp" %>
+<%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
 
-<head><title>Mon profil</title>
-</head>
+<head><title>Mon profil</title></head>
 <body>
     <div class="container">
 
@@ -30,10 +27,9 @@
                 <br/> <i class="glyphicon glyphicon-info-sign"></i> Bureau L012</p>
         </div>
         <div class="col-sm-4 col-md-4">
-         <a href="/respo_profil_modify" class="btn btn-primary btn-lg btn-block active" role="button">Modifier ma fiche</a>
+         <a href="respo_profil_modify" class="btn btn-primary btn-lg btn-block active" role="button">Modifier ma fiche</a>
         </div>
    </div>
         <!-- /.row -->
     </div>
 </body>
-<%@ include file="footer.jsp" %>

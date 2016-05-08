@@ -20,4 +20,13 @@
     <servlet-name>appServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-</web-app>
+        <jsp-config>
+            <jsp-property-group>
+                <url-pattern>*.jsp</url-pattern>
+                <include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
+                <include-prelude>/WEB-INF/jspf/head.jspf</include-prelude>
+                <include-coda>/WEB-INF/jspf/header.jspf</include-coda>
+                <include-coda>/WEB-INF/jspf/footer.jspf</include-coda>
+            </jsp-property-group>
+        </jsp-config>
+    </web-app>

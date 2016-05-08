@@ -1,12 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ include file="header.jsp" %>
+<%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
 
-<head>
-    <title>Fiche de l'élève</title>
-</head>
+<head><title>Fiche de l'élève</title></head>
 <body>
-
     <!-- Page Content -->
     <div class="container">
 
@@ -64,4 +59,3 @@
     <!-- /.container -->
 
 </body>
-<%@ include file="footer.jsp" %>

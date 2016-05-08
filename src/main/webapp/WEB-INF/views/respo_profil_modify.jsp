@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ include file="header.jsp" %>
+<%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
+
 <head>
     <title>Modifier sa fiche</title>
 </head>
@@ -52,4 +51,3 @@
 
 </div>
 </body>
-<%@ include file="footer.jsp" %>

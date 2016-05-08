@@ -1,18 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-
-<%@ include file="header.jsp" %>
+<%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
 
 <head><title>Rechercher des élèves</title>
 <link href="resources/css/respo_eleve.css" rel="stylesheet">
     </head>
 <body>
+<h1>CC</h1>
     <div class="container">
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Rechercher des élèves
-                    <small></small>
+                    <h1>CC</h1>
                 </h1>
             </div>
         </div>
@@ -72,4 +70,3 @@
 
 </div>
 </body>
-<%@ include file="footer.jsp" %>
