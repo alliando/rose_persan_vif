@@ -1,37 +1,50 @@
 package edu.isep.speakisep;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Handles requests for the application home page.
- */
+import net.ubilife.spring.customerjdbc.Config;
+import net.ubilife.spring.customerjdbc.Etudiant;
+import net.ubilife.spring.customerjdbc.EtudiantRepository;
+
 @Controller
 public class HomeController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	public String home() {
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		
-		String formattedDate = dateFormat.format(date);
+		EtudiantRepository repo = ctx.getBean(EtudiantRepository.class);
+
+		Etudiant c1 = new Etudiant(1,"joe","Jane","c",1,"d","e",111);
+		Etudiant c2 = new Etudiant(2,"ffff","moi","h",2,"i","j",222);
 		
-		model.addAttribute("serverTime", formattedDate );
+		c1=repo.save(c1);
+		c2=repo.save(c2);
+		
+		for (Etudiant t : repo.findAll()){
+			System.out.println(t.getId()+","+t.getNom()+","+t.getIdParcours());
+		}
+				 
+		// update
+		c2.setPrenom("Janet");		
+		repo.update(c2);
+		
+		for(Etudiant t : repo.findAll()) {
+			System.out.println(t.getNom()+", "+t.getPrenom());
+		}
+		 
+		// delete
+		repo.delete(c1);
+		
+		for(Etudiant t : repo.findAll()) {
+			System.out.println(t.getNom()+", "+t.getPrenom());
+		}
+				
+		ctx.close();
 		
 		return "home";
 	}
