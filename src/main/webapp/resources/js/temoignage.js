@@ -1,3 +1,7 @@
+window.onload=function()
+{
+    load.script("resources/js/temoignage.js");
+};
 var $rows = $("div");
 $('div.Block').show();
 $('select[name="tsearch"]').change(function(){
