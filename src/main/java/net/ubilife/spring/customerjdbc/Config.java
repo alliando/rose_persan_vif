@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
@@ -15,8 +16,14 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 public class Config {
 
 	@Bean
-	public DataSource datasource() {
-		return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).addScript("schema.sql").build();
+	public DataSource dataSource() {
+	  
+	  DriverManagerDataSource ds = new DriverManagerDataSource();
+	  ds.setDriverClassName("com.mysql.jdbc.Driver");
+	  ds.setUrl("jdbc:mysql://localhost:8889/speakisep");
+	  ds.setUsername("root");
+	  ds.setPassword("root"); 
+	  return ds;
 	}
 	
 	@Bean
