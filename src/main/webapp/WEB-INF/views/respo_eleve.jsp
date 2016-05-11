@@ -19,7 +19,6 @@
                     <div class="input-group">
                         <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
                         <input type="text" class="form-control" id="eleveSearch" placeholder="Rechercher un élève">
-                        <input type="text" class="form-control" id="eleveSearchc" placeholder="Rechercher un élève">
                     </div>
                 </div>
             </form>
