@@ -4,25 +4,23 @@ window.onload=function()
 };
 var $rows = $("tr").has("td");
 $("#eleveSearch").keyup(function() {
-    var val = $.trim(this.value);
-    if (val === "")
-        $rows.show();
+        var val = $.trim(this.value);
+        var word1="";
+        var word2="";
+        if (val === "")
+            $rows.show();
 
-    else {
-        $rows.hide();
-        $rows.has("td:contains(" + val + ")").show();
-    }
-});
-$("#eleveSearchc").keyup(function() {
-    var val = $.trim(this.value);
-    if (val === "")
-        $rows.show();
+        else if((val).indexOf(" ")==-1){
+            word1=val;
+            $rows.hide();
+            $rows.has("td:contains(" + word1 + ")").show();
+        }
+        else if((val).indexOf(" ")!=-1) {
+            word2=$.trim(val.substring(val.indexOf(" "),val.length));
+            $rows.hide();
+            $("tr:contains("+word1+")").has("td:contains("+word2+")").show();
+        }
 
-    else {
-        $rows.hide();
-        $rows.has("td:contains(" + val + ")").show();
-        //$(".success").show();
     }
-}
 );
 
