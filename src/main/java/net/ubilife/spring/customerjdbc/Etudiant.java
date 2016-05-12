@@ -1,10 +1,6 @@
 package net.ubilife.spring.customerjdbc;
 
 public class Etudiant {
-	public long getIdparcours() {
-		return idparcours;
-	}
-
 	public void setIdparcours(int idparcours) {
 		this.idparcours = idparcours;
 	}
@@ -109,7 +105,7 @@ public class Etudiant {
 		return mdp;
 	}
 	
-	public long getIdParcours(){
+	public long getIdparcours(){
 		return idparcours;
 	}
 	
