@@ -6,12 +6,12 @@ public interface EtudiantRepository {
 
 	Etudiant findOne(long id);
 	
-	Etudiant save(Etudiant cust);
+	Etudiant save(Etudiant etudiant);
 	
 	List<Etudiant> findAll();
 	
-	int update(Etudiant cust);
+	int update(Etudiant etudiant);
 	
-	int delete (Etudiant cust);
+	int delete (Etudiant etudiant);
 	
 }
