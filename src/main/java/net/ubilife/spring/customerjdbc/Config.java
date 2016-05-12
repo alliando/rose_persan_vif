@@ -8,8 +8,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 @Configuration
 @ComponentScan
@@ -20,9 +18,9 @@ public class Config {
 	  
 	  DriverManagerDataSource ds = new DriverManagerDataSource();
 	  ds.setDriverClassName("com.mysql.jdbc.Driver");
-	  ds.setUrl("jdbc:mysql://localhost:8889/speakisep");
+	  ds.setUrl("jdbc:mysql://localhost:3306/speakisep");
 	  ds.setUsername("root");
-	  ds.setPassword("root"); 
+	  ds.setPassword("");
 	  return ds;
 	}
 	

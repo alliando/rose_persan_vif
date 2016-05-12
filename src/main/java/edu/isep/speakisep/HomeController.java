@@ -21,24 +21,21 @@ public class HomeController {
 
 		Etudiant c1 = new Etudiant(1,"joe","Jane","c",1,"d","e",111);
 		Etudiant c2 = new Etudiant(2,"ffff","moi","h",2,"i","j",222);
-		
-		c1=repo.save(c1);
-		c2=repo.save(c2);
-		
+		Etudiant c3 = new Etudiant(6859,6859, "Vigouroux", "Gauthier", "etape", 2018, "Vigouroux@","mdp", 33);
+		c3=repo.save(c3);
+
 		for (Etudiant t : repo.findAll()){
 			System.out.println(t.getId()+","+t.getNom()+","+t.getIdParcours());
 		}
 				 
 		// update
-		c2.setPrenom("Janet");		
-		repo.update(c2);
-		
+
 		for(Etudiant t : repo.findAll()) {
 			System.out.println(t.getNom()+", "+t.getPrenom());
 		}
 		 
 		// delete
-		repo.delete(c1);
+		//repo.delete(c3);
 		
 		for(Etudiant t : repo.findAll()) {
 			System.out.println(t.getNom()+", "+t.getPrenom());
