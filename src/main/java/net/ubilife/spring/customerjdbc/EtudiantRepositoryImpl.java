@@ -22,7 +22,7 @@ public class EtudiantRepositoryImpl implements EtudiantRepository {
 	
 	private static final String SQL_INSERT = "insert into etudiant (NUMELEVE, NOMELEVE, PRENOMELEVE, ETAPEELEVE, PROMOELEVE, MAILELEVE, MDPELEVE, IDPARCOURS) values (?,?,?,?,?,?,?,?)";
 	private static final String SQL_UPDATE = "update etudiant set NUMELEVE=?, NOMELEVE=?, PRENOMELEVE=?, ETAPEELEVE=?, PROMOELEVE=?, MAILELEVE=?, MDPELEVE=?, IDPARCOURS=?";
-	private static final String SQL_FIND_ONE = "select * from customer where IDELEVE = ?";
+	private static final String SQL_FIND_ONE = "select * from etudiant where IDELEVE = ?";
 	private static final String SQL_FIND_ALL = "select * from etudiant order by NOMELEVE";
 	private static final String SQL_DELETE_ONE = "delete from etudiant where IDELEVE=?";
 	
@@ -32,7 +32,7 @@ public class EtudiantRepositoryImpl implements EtudiantRepository {
 	}
 
 	@Override
-	public Etudiant save(final Etudiant cust) {
+	public Etudiant save(final Etudiant etudiant) {
 		
 		KeyHolder holder = new GeneratedKeyHolder();
 		
@@ -42,14 +42,14 @@ public class EtudiantRepositoryImpl implements EtudiantRepository {
 			public PreparedStatement createPreparedStatement(Connection conn) throws SQLException {
 				PreparedStatement ps = conn.prepareStatement(SQL_INSERT, new String[]{"IDELEVE"});
 				
-				ps.setLong(1, cust.getNumero());
-				ps.setString(2, cust.getNom());
-				ps.setString(3, cust.getPrenom());
-				ps.setString(4, cust.getEtape());
-				ps.setLong(5, cust.getPromo());
-				ps.setString(6, cust.getMail());
-				ps.setString(7, cust.getMdp());
-				ps.setLong(8, cust.getIdParcours());
+				ps.setLong(1, etudiant.getNumero());
+				ps.setString(2, etudiant.getNom());
+				ps.setString(3, etudiant.getPrenom());
+				ps.setString(4, etudiant.getEtape());
+				ps.setLong(5, etudiant.getPromo());
+				ps.setString(6, etudiant.getMail());
+				ps.setString(7, etudiant.getMdp());
+				ps.setLong(8, etudiant.getIdparcours());
 			
 				
 				return ps;
@@ -57,8 +57,8 @@ public class EtudiantRepositoryImpl implements EtudiantRepository {
 		}, holder);
 		
 		if(rows == 1) {	// success, so apply ID to the customer object
-			cust.setId((Long)holder.getKey());
-			return cust;
+			etudiant.setId((Long)holder.getKey());
+			return etudiant;
 		}
 		
 		return null;
@@ -71,13 +71,13 @@ public class EtudiantRepositoryImpl implements EtudiantRepository {
 	}
 
 	@Override
-	public int update(Etudiant cust) {
-		return jdbc.update(SQL_UPDATE, cust.getNumero(), cust.getNom(), cust.getPrenom(), cust.getEtape(), cust.getPromo(), cust.getMail(), cust.getMdp(), cust.getIdParcours());
+	public int update(Etudiant etudiant) {
+		return jdbc.update(SQL_UPDATE, etudiant.getNumero(), etudiant.getNom(), etudiant.getPrenom(), etudiant.getEtape(), etudiant.getPromo(), etudiant.getMail(), etudiant.getMdp(), etudiant.getIdparcours());
 	}
 
 	@Override
-	public int delete(Etudiant cust) {
-		return jdbc.update(SQL_DELETE_ONE, cust.getId());
+	public int delete(Etudiant etudiant) {
+		return jdbc.update(SQL_DELETE_ONE, etudiant.getId());
 	}
 
 	private class EtudiantRowMapper implements RowMapper<Etudiant> {
