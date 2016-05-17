@@ -64,6 +64,7 @@ public class Etudiant {
 	
 	public Etudiant(int numero, String nom, String prenom, String etape, int promo, String mail, String mdp, int idparcours){
 		super();
+		this.numero=numero;
 		this.nom=nom;
 		this.prenom=prenom;
 		this.etape=etape;
