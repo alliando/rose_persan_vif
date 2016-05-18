@@ -88,7 +88,7 @@
 		<!-- Projects Row -->
         <div class="row">
             <div class="col-md-6 portfolio-item">
-            	<a href="admin_parcoursEdit.jsp"><button type="button" class="btn btn-default">Ajouter un parcours</button></a> 
+            	<a href="/admin_parcoursEdit"><button type="button" class="btn btn-default">Ajouter un parcours</button></a> 
             </div>
         </div>
         <!-- /.row --> 
@@ -122,19 +122,7 @@
 	            <tbody>
 	    	</table>
         </div>
-        <!-- /.row -->     
-        
-        <hr>
-
-        <!-- Footer -->
-      	 <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Speakisep 2016</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer> 
+        <!-- /.row -->
 
     </div>
     <!-- /.container -->
