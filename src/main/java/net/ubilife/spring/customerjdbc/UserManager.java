@@ -11,7 +11,7 @@ public class UserManager {
 	    public User currentUser;
 		
 		private UserManager() {
-			// TODO Auto-generated constructor stub
+			
 		}
 		
 		private static UserManager initInstance(){
