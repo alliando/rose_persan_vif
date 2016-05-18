@@ -42,11 +42,11 @@
         <tr class="success">
             <th>Firstname  <th>Lastname  <th>Email
         <tbody>
-            <tr  onclick="self.location.href='/respo_profilEleve'">
+            <tr  onclick="self.location.href='respo_profilEleve'">
             <td>John       <td>DoeDoe    <td><a href="mailto:#">john@example.com</a>
-            <tr  onclick="self.location.href='/respo_profilEleve'">
+            <tr  onclick="self.location.href='respo_profilEleve'">
             <td>John       <td>Doe       <td><a href="mailto:#">john@example.com</a>
-             <tr onclick="self.location.href='/respo_profilEleve'">
+             <tr onclick="self.location.href='respo_profilEleve'">
             <td>Vigouroux  <td>Gauthier  <td><a href="mailto:#">gauthier@example.com</a>
             </table>
     </div>

@@ -19,17 +19,17 @@
        <thead>
       <tr>
         <th>Parcours</th>
-        <th>Professeur associÃ©</th>
+        <th>Professeur associé</th>
       </tr>
     </thead>
     	
-        <tr>	<td> IngÃ©nieur Architecte des SystÃ¨mes d'Information </td>
+        <tr>	<td> Ingénieur Architecte des Systèmes d'Information </td>
         		<td><a href="#"> Zakia KAZI-AOUL</a> </td> </tr>
-        <tr>	<td> IngÃ©nieur Architecte RÃ©seaux et Services </td>
+        <tr>	<td> Ingénieur Architecte Réseaux et Services </td>
         		<td> <a href="#">Yousra CHABCHOUB</a> </td> </tr>
-         <tr>	<td> IngÃ©nieur Logiciel </td>
+         <tr>	<td> Ingénieur Logiciel </td>
         		<td> <a href="#">Sylvain LEFEBVRE</a> </td> </tr>  
-          <tr>	<td> IngÃ©nieur NumÃ©rique et SantÃ© </td>
+          <tr>	<td> Ingénieur Numérique et Santé </td>
         		<td><a href="#"> Maria TROCAN</a> </td> </tr>   
         		
         </table>

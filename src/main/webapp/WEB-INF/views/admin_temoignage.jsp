@@ -89,7 +89,7 @@
         <!-- /.row -->
         
         <!-- Projects Row --> 
-        	<p>Cliquez sur une ligne pour afficher la témoignage</p>  	
+        	<p>Cliquez sur une ligne pour afficher le témoignage</p>  	
         	<table class="table">
         		<thead>
         			<tr>
@@ -165,18 +165,6 @@
 	    	</table>
         </div>
         <!-- /.row -->     
-        
-        <hr>
-
-        <!-- Footer -->
-      	 <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Speakisep 2016</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer> 
 
     </div>
     <!-- /.container -->
