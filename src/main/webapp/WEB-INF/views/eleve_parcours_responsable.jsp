@@ -1,8 +1,7 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"  %>
 
-
 <link href="resources/css/temoignage.css" rel="stylesheet">
-    <title>Les Responsables</title>
+    <title>Elève - Les Responsables</title>
     <!-- Page Content -->
     <div class="container">
             <!-- Page Header -->

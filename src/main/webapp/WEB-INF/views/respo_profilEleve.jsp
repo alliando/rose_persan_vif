@@ -1,6 +1,6 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
 
-<title>Fiche de l'élève</title>
+<title>Responsable - Fiche de l'élève</title>
 <!-- Page Content -->
 <div class="container">
 
