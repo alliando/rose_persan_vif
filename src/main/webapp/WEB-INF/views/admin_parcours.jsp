@@ -18,7 +18,7 @@
 		<!-- Projects Row -->
         <div class="row">
             <div class="col-md-6 portfolio-item">
-            	<a href="/admin_parcoursEdit"><button type="button" class="btn btn-default">Ajouter un parcours</button></a> 
+            	<a href="#"><button type="button" class="btn btn-default">Ajouter un parcours</button></a> 
             </div>
         </div>
         <!-- /.row --> 

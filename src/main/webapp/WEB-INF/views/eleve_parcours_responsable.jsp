@@ -23,15 +23,14 @@
     </thead>
     	
         <tr>	<td> Ingénieur Architecte des Systèmes d'Information </td>
-        		<td><a href="#"> Zakia KAZI-AOUL</a> </td> </tr>
+        		<td><a href="eleve_profilRespo"> Zakia KAZI-AOUL</a> </td> </tr>
         <tr>	<td> Ingénieur Architecte Réseaux et Services </td>
-        		<td> <a href="#">Yousra CHABCHOUB</a> </td> </tr>
+        		<td> <a href="eleve_profilRespo">Yousra CHABCHOUB</a> </td> </tr>
          <tr>	<td> Ingénieur Logiciel </td>
-        		<td> <a href="#">Sylvain LEFEBVRE</a> </td> </tr>  
+        		<td> <a href="eleve_profilRespo">Sylvain LEFEBVRE</a> </td> </tr>  
           <tr>	<td> Ingénieur Numérique et Santé </td>
-        		<td><a href="#"> Maria TROCAN</a> </td> </tr>   
+        		<td><a href="eleve_profilRespo"> Maria TROCAN</a> </td> </tr>   
         		
         </table>
         
-        <a href="eleve_profilRespo">Exemple de profil</a>
         </div>

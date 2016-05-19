@@ -28,7 +28,7 @@
                 <br/> <i class="glyphicon glyphicon-info-sign"></i> Bureau L012</p>
         </div>
         <div class="col-sm-4 col-md-4">
-            <a href="#" class="btn btn-primary btn-lg btn-block active" role="button">Contacter le reponsable</a>
+            <a href="mailto:#" class="btn btn-primary btn-lg btn-block active" role="button">Contacter le reponsable</a>
         </div>
     </div>
     <!-- /.row -->
