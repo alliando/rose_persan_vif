@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 
-public class RespoUniversiteController {
+public class EleveInternationalUniversiteController {
 	@Autowired
-	@RequestMapping("/respo_universite")
+	@RequestMapping("/eleve_international_universite")
 	
 	public String Profil_respo(){
-		return "respo_universite";
+		return "eleve_international_universite";
 	}
 }
