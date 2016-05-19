@@ -5,12 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-
-public class EleveUniversiteController {
+public class RespoInternationalModuleValidationController {
 	@Autowired
-	@RequestMapping("/eleve_universite")
-	
-	public String Profil_respo(){
-		return "eleve_universite";
+	@RequestMapping("/respo_validation_module")
+
+	public String Validate_module_respo(){
+		return "respo_validation_module";
 	}
 }
