@@ -5,24 +5,24 @@ public class Temoignage {
 	private long id;
 	private String nomtem;
 	private String descriptem;
-	private int ideleve;
+	private int userId;//eleve
 	
 	public Temoignage(){	
 	}
 	
-	public Temoignage(int id, String nomtem, String descriptem, int ideleve){
+	public Temoignage(int id, String nomtem, String descriptem, int userId){
 		super();
 		this.id=id;
 		this.nomtem=nomtem;
 		this.descriptem=descriptem;
-		this.ideleve=ideleve;
+		this.userId=userId;
 	}
 	
-	public Temoignage(String nomtem, String descriptem, int ideleve){
+	public Temoignage(String nomtem, String descriptem, int userId){
 		super();
 		this.nomtem=nomtem;
 		this.descriptem=descriptem;
-		this.ideleve=ideleve;
+		this.userId=userId;
 	}
 
 	public long getId() {
@@ -50,11 +50,11 @@ public class Temoignage {
 	}
 
 	public int getIdeleve() {
-		return ideleve;
+		return userId;
 	}
 
 	public void setIdeleve(int ideleve) {
-		this.ideleve = ideleve;
+		this.userId = ideleve;
 	}
 
 }

@@ -20,7 +20,7 @@ public class Config {
 	  
 	  DriverManagerDataSource ds = new DriverManagerDataSource();
 	  ds.setDriverClassName("com.mysql.jdbc.Driver");
-	  ds.setUrl("jdbc:mysql://localhost:8080/speakisep");
+	  ds.setUrl("jdbc:mysql://localhost:3306/speakisep");
 	  ds.setUsername("root");
 	  ds.setPassword(""); 
 	  return ds;

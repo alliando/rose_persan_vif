@@ -12,7 +12,7 @@ import java.io.Serializable;
 		public String login;
 		public String password;
 		public String mail;
-		
+
 		public LDAPObject(String login, String password, String nom, String nomFamille, String prenom, String type, String numero, String mail)
 		{
 			this.nom = nom;
@@ -82,6 +82,6 @@ import java.io.Serializable;
 		public void setPassword(String password) {
 			this.password = password;
 		}
-		
+
 		
 	}

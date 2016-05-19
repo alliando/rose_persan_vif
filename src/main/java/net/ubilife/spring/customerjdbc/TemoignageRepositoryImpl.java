@@ -20,8 +20,8 @@ public class TemoignageRepositoryImpl implements TemoignageRepository {
 	@Autowired
 	private JdbcOperations jdbc;
 	
-	private static final String SQL_INSERT = "insert into temoignage (NOMTEM, DESCRIPTEM, IDELEVE) values (?,?,?)";
-	private static final String SQL_UPDATE = "update temoignage set NOMTEM=?, DESCRIPTEM=?, IDELEVE=?";
+	private static final String SQL_INSERT = "insert into temoignage (NOMTEM, DESCRIPTEM, userId) values (?,?,?)";
+	private static final String SQL_UPDATE = "update temoignage set NOMTEM=?, DESCRIPTEM=?, userId=?";
 	private static final String SQL_FIND_ONE = "select * from temoignage where IDTEM= ?";
 	private static final String SQL_FIND_ALL = "select * from temoignage order by NOMTEM";
 	private static final String SQL_DELETE_ONE = "delete from temoignage where IDTEM=?";
@@ -80,7 +80,7 @@ public class TemoignageRepositoryImpl implements TemoignageRepository {
 		@Override
 		public Temoignage mapRow(ResultSet rs, int row) throws SQLException {
 			
-			return new Temoignage(rs.getInt("IDTEM"), rs.getString("NOMTEM"), rs.getString("DESCRIPTEM"), rs.getInt("IDELEVE")); 
+			return new Temoignage(rs.getInt("IDTEM"), rs.getString("NOMTEM"), rs.getString("DESCRIPTEM"), rs.getInt("userId"));
 			
 		}
 		

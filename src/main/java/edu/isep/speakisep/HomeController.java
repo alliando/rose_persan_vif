@@ -1,23 +1,10 @@
 package edu.isep.speakisep;
 
+import net.ubilife.spring.customerjdbc.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import net.ubilife.spring.customerjdbc.Admin;
-import net.ubilife.spring.customerjdbc.AdminRepository;
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.Etudiant;
-import net.ubilife.spring.customerjdbc.EtudiantRepository;
-import net.ubilife.spring.customerjdbc.Parcours;
-import net.ubilife.spring.customerjdbc.ParcoursRepository;
-import net.ubilife.spring.customerjdbc.Respo;
-import net.ubilife.spring.customerjdbc.RespoRepository;
-import net.ubilife.spring.customerjdbc.Temoignage;
-import net.ubilife.spring.customerjdbc.TemoignageRepository;
-import net.ubilife.spring.customerjdbc.Universite;
-import net.ubilife.spring.customerjdbc.UniversiteRepository;
 
 @Controller
 public class HomeController {
@@ -26,9 +13,11 @@ public class HomeController {
 	public String home() {
 		
 		//Pour ajouter des trucs dans la base de données il faut décommenter + pour tester si on est bien connecté à la BDD
-		
-		/*AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
-		
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
+		UserRepository repo=ctx.getBean(UserRepository.class);
+		User u1=new User("gvigouro","mdp","Vigouroux Gauthier","Vigouroux","Gauthier","eleve","6873","@","2");
+		repo.save(u1);
+			/*
 		EtudiantRepository repo = ctx.getBean(EtudiantRepository.class);
 		RespoRepository repo1 = ctx.getBean(RespoRepository.class);
 		ParcoursRepository repo2 = ctx.getBean(ParcoursRepository.class);

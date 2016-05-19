@@ -20,11 +20,11 @@ public class UserRepositoryImpl implements UserRepository {
 	@Autowired
 	private JdbcOperations jdbc;
 	
-	private static final String SQL_INSERT = "insert into user (login, password, nom, nomFamille, prenom, type, numero, mail) values (?,?,?,?,?,?,?,?)";
-	private static final String SQL_UPDATE = "update user set login=?, password=?, nom=?, nomFamille=?, prenom=?, type=?, numero=?, mail=?";
-	private static final String SQL_FIND_ONE = "select * from user where id= ?";
+	private static final String SQL_INSERT = "insert into user (login, password, nom, nomFamille, prenom, type, numero, mail,idParcours) values (?,?,?,?,?,?,?,?,?)";
+	private static final String SQL_UPDATE = "update user set login=?, password=?, nom=?, nomFamille=?, prenom=?, type=?, numero=?, mail=?,idParcours=?";
+	private static final String SQL_FIND_ONE = "select * from user where userId= ?";
 	private static final String SQL_FIND_ALL = "select * from user order by nomFamille";
-	private static final String SQL_DELETE_ONE = "delete from user where id=?";
+	private static final String SQL_DELETE_ONE = "delete from user where userId=?";
 	
 	@Override
 	public User findOne(long id) {
@@ -40,7 +40,7 @@ public class UserRepositoryImpl implements UserRepository {
 			
 			@Override
 			public PreparedStatement createPreparedStatement(Connection conn) throws SQLException {
-				PreparedStatement ps = conn.prepareStatement(SQL_INSERT, new String[]{"id"});
+				PreparedStatement ps = conn.prepareStatement(SQL_INSERT, new String[]{"userId"});
 				
 				ps.setString(1, user.getLogin());
 				ps.setString(2, user.getPassword());
@@ -50,7 +50,8 @@ public class UserRepositoryImpl implements UserRepository {
 				ps.setString(6, user.getType());
 				ps.setString(7, user.getNumber());
 				ps.setString(8, user.getMail());
-			
+				ps.setString(9, user.getIdParcours());
+
 				
 				return ps;
 			}
@@ -85,7 +86,7 @@ public class UserRepositoryImpl implements UserRepository {
 		@Override
 		public User mapRow(ResultSet rs, int row) throws SQLException {
 			
-			return new User(rs.getInt("id"), rs.getString("login"), rs.getString("password"), rs.getString("nom"), rs.getString("nomFamille"), rs.getString("prenom"), rs.getString("type"), rs.getString("numero"), rs.getString("mail")); 
+			return new User(rs.getInt("userId"), rs.getString("login"), rs.getString("password"), rs.getString("nom"), rs.getString("nomFamille"), rs.getString("prenom"), rs.getString("type"), rs.getString("numero"), rs.getString("mail"),rs.getString("idParcours"));
 			
 		}
 		
