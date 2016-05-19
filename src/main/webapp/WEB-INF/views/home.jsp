@@ -29,7 +29,7 @@
 							<label>Mot de passe :</label>
 							<input type="password" id="password" name="password" placeholder="Mot de passe" class="form-control"/>
 						</div>
-							<br><button id="loginButton" class="form-control">Login</button>
+							<br><button id="loginButton" class="form-control">Se connecter</button>
 					</form>
 				</div>            
             </div>
