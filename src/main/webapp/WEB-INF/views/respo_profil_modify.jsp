@@ -1,6 +1,6 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
 
-    <title>Modifier sa fiche</title>
+    <title>Responsable - Modifier sa fiche</title>
 <div class="container">
 
     <!-- Page Header -->
