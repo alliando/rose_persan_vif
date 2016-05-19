@@ -33,25 +33,25 @@
         		<tbody>
         			<tr>
         				
-		                <td>John Wayne</td>
+		                <td><a href="respo_profilEleve">John Wayne</a></td>
 		                <td>Université Lambda</td>
 		                <td><a href="respo_validation_module"><button type="button" class="btn btn-default">Voir ses modules</button></a></td>
 		            </tr>
 		            <tr>
         			
-		                <td>Jean Dupont</td>
-		                	<td>Université Beta</td>
+		                <td><a href="respo_profilEleve">Jean Dupont</a></td>
+		                <td>Université Beta</td>
 		                <td><a href="respo_validation_module"><button type="button" class="btn btn-default">Voir ses modules</button></a></td>
 		            </tr>
 		            <tr>
         				
-		                <td>Martin Martin</td>
+		                <td><a href="respo_profilEleve">Martin Martin</a></td>
 		                <td>Université Gamma</td>
 		                <td><a href="respo_validation_module"><button type="button" class="btn btn-default">Voir ses modules</button></a></td>
 		            </tr>
 		            <tr>
         				
-		                <td>Laure Laure</td>
+		                <td><a href="respo_profilEleve">Laure Laure</a></td>
 		                <td>Université Alpha</td>
 		                <td><a href="respo_validation_module"><button type="button" class="btn btn-default">Voir ses modules</button></a></td>
 		            </tr>
