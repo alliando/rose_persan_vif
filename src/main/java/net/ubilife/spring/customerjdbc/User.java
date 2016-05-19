@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class User implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	private long id;
+	private long userId;
 	private String nom;
 	private String nomFamille;
 	private String prenom;
@@ -14,7 +14,8 @@ public class User implements Serializable{
 	private String login;
 	private String password;
 	private String mail;
-	
+	private String idParcours;
+
 	public User(String login, String password, String nom, String nomFamille, String prenom, String type, String numero, String mail)
 	{
 		super();
@@ -27,11 +28,9 @@ public class User implements Serializable{
 		this.password = password;
 		this.mail = mail;
 	}
-	
-	public User(int id, String login, String password, String nom, String nomFamille, String prenom, String type, String numero, String mail)
+	public User(String login, String password, String nom, String nomFamille, String prenom, String type, String numero, String mail,String idParcours)
 	{
 		super();
-		this.id=id;
 		this.nom = nom;
 		this.nomFamille = nomFamille;
 		this.prenom = prenom;
@@ -40,14 +39,30 @@ public class User implements Serializable{
 		this.login = login;
 		this.password = password;
 		this.mail = mail;
+		this.idParcours = idParcours;
+	}
+	
+	public User(int userId, String login, String password, String nom, String nomFamille, String prenom, String type, String numero, String mail,String idParcours)
+	{
+		super();
+		this.userId=userId;
+		this.nom = nom;
+		this.nomFamille = nomFamille;
+		this.prenom = prenom;
+		this.employeeType = type;
+		this.employeeNumber = numero;
+		this.login = login;
+		this.password = password;
+		this.mail = mail;
+		this.idParcours = idParcours;
 	}
 	
 	public long getId() {
-		return id;
+		return userId;
 	}
 
 	public void setId(long id) {
-		this.id = id;
+		this.userId = id;
 	}
 
 	public User() {
@@ -98,6 +113,9 @@ public class User implements Serializable{
 
 	public String getPrenom() {
 		return prenom;
+	}
+	public String getIdParcours() {
+		return idParcours;
 	}
 
 	public void setPrenom(String prenom) {

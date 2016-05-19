@@ -18,20 +18,17 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 @Configuration
 @ComponentScan
 public class Config {
-	@Bean
-	public DataSource dataSource() {
-	  DriverManagerDataSource ds = new DriverManagerDataSource();
-	  ds.setDriverClassName("com.mysql.jdbc.Driver");
-	  ds.setUrl("jdbc:mysql://localhost:8889/speakisep");
-	  ds.setUsername("root");
-	  ds.setPassword("root"); 
-	  return ds;
-	}
-	
-	@Bean
-	public JdbcOperations jdbcTemplate(DataSource ds) {
-		return new JdbcTemplate(ds);		
-	}
-
-
+@Bean
+public DataSource dataSource() {
+ DriverManagerDataSource ds = new DriverManagerDataSource();
+ ds.setDriverClassName("com.mysql.jdbc.Driver");
+ ds.setUrl("jdbc:mysql://localhost:8889/speakisep");
+ ds.setUsername("root");
+ ds.setPassword("root"); 
+ return ds;
+}
+@Bean
+public JdbcOperations jdbcTemplate(DataSource ds) {
+return new JdbcTemplate(ds);
+}
 }
