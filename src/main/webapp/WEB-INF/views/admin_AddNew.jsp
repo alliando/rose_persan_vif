@@ -18,12 +18,13 @@
 		<!-- Projects Row -->
         <div class="row">
             <div class="col-sm-12 col-md-12 btn btn-default btn-file">
-                <label class="control-label">entrer le excel contenant la liste des nouveaux élèves ici</label>
+                <label class="control-label">Uploader le fichier excel contenant la liste des nouveaux élèves ici</label>
 				<input type="file" name="ADD" accept=".xls,.xlsx" />
             </div>
             <div>
-            <form method="POST" action="AddUser.php">
+            <form method="POST" action='AddUser'>
          	<button type="submit" name="AddUser" class="btn btn-default btn-lg btn-block active">Ajouter la liste</button>
+         	</form>
             </div>
         </div>
         <!-- /.row --> 
