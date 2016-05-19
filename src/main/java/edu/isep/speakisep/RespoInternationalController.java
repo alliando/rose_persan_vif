@@ -5,12 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-
-public class RespoUniversiteController {
+public class RespoInternationalController {
 	@Autowired
-	@RequestMapping("/respo_universite")
-	
-	public String Profil_respo(){
-		return "respo_universite";
+	@RequestMapping("/respo_international")
+
+	public String showInternational() {
+		return "respo_international";
 	}
+
 }
