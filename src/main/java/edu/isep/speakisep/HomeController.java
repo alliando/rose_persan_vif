@@ -13,11 +13,11 @@ public class HomeController {
 	public String home() {
 		
 		//Pour ajouter des trucs dans la base de données il faut décommenter + pour tester si on est bien connecté à la BDD
-		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
+		/*AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		UserRepository repo=ctx.getBean(UserRepository.class);
 		User u1=new User("gvigouro","mdp","Vigouroux Gauthier","Vigouroux","Gauthier","eleve","6873","@","2");
 		repo.save(u1);
-			/*
+			
 		EtudiantRepository repo = ctx.getBean(EtudiantRepository.class);
 		RespoRepository repo1 = ctx.getBean(RespoRepository.class);
 		ParcoursRepository repo2 = ctx.getBean(ParcoursRepository.class);
