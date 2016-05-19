@@ -22,13 +22,15 @@ public class Config {
 public DataSource dataSource() {
  DriverManagerDataSource ds = new DriverManagerDataSource();
  ds.setDriverClassName("com.mysql.jdbc.Driver");
- ds.setUrl("jdbc:mysql://localhost:8889/speakisep");
+ ds.setUrl("jdbc:mysql://localhost:3306/speakisep");
  ds.setUsername("root");
- ds.setPassword("root"); 
+ ds.setPassword(""); 
  return ds;
 }
 @Bean
 public JdbcOperations jdbcTemplate(DataSource ds) {
 return new JdbcTemplate(ds);
 }
+
+
 }
