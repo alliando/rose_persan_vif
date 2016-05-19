@@ -1,6 +1,6 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"  %>
 
-<title>Accueil admin</title>
+<title>Admin - Accueil</title>
 <!-- Page Content -->
 <div class="container">
     <div class="element btn-group btn-group-lg">

@@ -1,6 +1,6 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"  %>
 
-    <title>Témoignage</title>
+    <title>Elève - Témoignage</title>
 <link href="resources/css/temoignage.css" rel="stylesheet">
 
     <div class="container">

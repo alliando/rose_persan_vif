@@ -1,6 +1,6 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"  %>
 
-<title>Rechercher des élèves</title>
+<title>Responsable - Rechercher des élèves</title>
 <link href="resources/css/respo_eleve.css" rel="stylesheet">
     <div class="container">
         <!-- Page Header -->

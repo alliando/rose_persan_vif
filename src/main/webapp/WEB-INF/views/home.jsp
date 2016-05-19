@@ -1,5 +1,5 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
-    <title>Speakisep</title>
+    <title>Accueil</title>
 
     <!-- Page Content -->
     <div class="container">
