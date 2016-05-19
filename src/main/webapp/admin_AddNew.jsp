@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-12 btn btn-default btn-file">
                 <label class="control-label">entrer le excel contenant la liste des nouveaux élèves ici</label>
-				<input type="file" name="ADD" />
+				<input type="file" name="ADD" accept=".xls,.xlsx" />
             </div>
          	<button type="submit" class="btn btn-default btn-lg btn-block active">Ajouter la liste</button>
             
