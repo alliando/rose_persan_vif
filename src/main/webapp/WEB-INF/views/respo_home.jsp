@@ -1,5 +1,5 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
-<title>Accueil responsable </title>
+<title>Responsable - Accueil </title>
     <div class="container">
     <div class="element btn-group btn-group-lg">
         <button class="btn btn-success href_button" onclick="self.location.href='respo_eleve'"><h1>Elèves</h1><h5>Fiches, infos</h5></button>

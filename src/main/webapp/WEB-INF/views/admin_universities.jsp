@@ -1,6 +1,6 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"  %>
 
-<title>Admin Universités</title>
+<title>Admin - Universités</title>
 
 
     <!-- Page Content -->

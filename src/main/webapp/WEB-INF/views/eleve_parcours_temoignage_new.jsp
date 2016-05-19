@@ -1,5 +1,6 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"  %>
-    <title>Speakisep</title>
+
+    <title>Elève - Déposer Témoignage</title>
     <!-- Page Content -->
     <div class="container">
 
