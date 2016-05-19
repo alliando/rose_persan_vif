@@ -35,12 +35,13 @@
                 <option>Promo 2017</option>
                 <option>Promo 2016</option>
             </select>
+            <a href="mailto:#"><div class="glyphicon glyphicon-envelope"> Contacter tous les élèves de mon parcours</div></a>
         </div>
         <div class="col-sm-8 col-sm-pull-4 col-md-pull-0 ">
             <table class="table table-condensed table-hover table-bordered" >
         <thead>
         <tr class="success">
-            <th>Firstname  <th>Lastname  <th>Email
+            <th>Nom  <th>Prénom  <th>Email
         <tbody>
             <tr  onclick="self.location.href='respo_profilEleve'">
             <td>John       <td>DoeDoe    <td><a href="mailto:#">john@example.com</a>
