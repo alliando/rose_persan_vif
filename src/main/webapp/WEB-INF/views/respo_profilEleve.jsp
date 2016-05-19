@@ -49,7 +49,7 @@
             </fieldset>
         </div>
         <div class="col-sm-2 col-md-2">
-            <a href="#" class="btn btn-primary btn-lg active" role="button">Contacter l'élève</a>
+            <a href="mailto:#" class="btn btn-primary btn-lg active" role="button">Contacter l'élève</a>
         </div>
     </div>
     <!-- /.row -->
