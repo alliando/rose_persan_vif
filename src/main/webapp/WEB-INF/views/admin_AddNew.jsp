@@ -21,8 +21,10 @@
                 <label class="control-label">entrer le excel contenant la liste des nouveaux élèves ici</label>
 				<input type="file" name="ADD" accept=".xls,.xlsx" />
             </div>
-         	<button type="submit" class="btn btn-default btn-lg btn-block active">Ajouter la liste</button>
-            
+            <div>
+            <form method="POST" action="AddUser.php">
+         	<button type="submit" name="AddUser" class="btn btn-default btn-lg btn-block active">Ajouter la liste</button>
+            </div>
         </div>
         <!-- /.row --> 
         
