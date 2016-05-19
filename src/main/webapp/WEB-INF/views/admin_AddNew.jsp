@@ -8,7 +8,7 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Ajout d'élèves
+                <h1 class="page-header">Ajout de profil
                     <small></small>
                 </h1>
             </div>
