@@ -24,7 +24,7 @@
             </form>
         </div>
         <div class="col-md-4 col-xs-offset-1 col-sm-push-1 col-md-push-0">
-            <label class="checkbox"><input type="checkbox" value="">Seulement mon parcours</label>
+            <label class="checkbox"><input type="checkbox" value="$(parcours)">Seulement mon parcours</label>
         </div>
     </div>
     <div class="row">

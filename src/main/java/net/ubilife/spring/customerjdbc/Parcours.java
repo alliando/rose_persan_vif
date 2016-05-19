@@ -6,26 +6,23 @@ public class Parcours {
 	private long id;
 	private String nomparcours;
 	private String description;
-	private int idrespo;
 	private int idtemoignage;
 	
 	public Parcours(){	
 	}
 	
-	public Parcours(int id, String nomparcours, String description, int idrespo, int idtemoignage){
+	public Parcours(int id, String nomparcours, String description, int idtemoignage){
 		super();
 		this.id=id;
 		this.nomparcours=nomparcours;
 		this.description=description;
-		this.idrespo=idrespo;
 		this.idtemoignage=idtemoignage;
 	}
 	
-	public Parcours(String nomparcours, String description, int idrespo, int idtemoignage){
+	public Parcours(String nomparcours, String description, int idtemoignage){
 		super();
 		this.nomparcours=nomparcours;
 		this.description=description;
-		this.idrespo=idrespo;
 		this.idtemoignage=idtemoignage;
 	}
 	
@@ -51,14 +48,6 @@ public class Parcours {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public int getIdrespo() {
-		return idrespo;
-	}
-
-	public void setIdrespo(int idrespo) {
-		this.idrespo = idrespo;
 	}
 
 	public int getIdtemoignage() {

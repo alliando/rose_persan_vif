@@ -20,8 +20,8 @@ public class ParcoursRepositoryImpl implements ParcoursRepository {
 	@Autowired
 	private JdbcOperations jdbc;
 	
-	private static final String SQL_INSERT = "insert into parcours (NOMPARCOURS, DESCRIPTION, IDRESPO, IDTEMOIGNAGE) values (?,?,?,?)";
-	private static final String SQL_UPDATE = "update parcours set NOMPARCOURS=?, DESCRIPTION=?, IDRESPO=?, IDTEMOIGNAGE=?";
+	private static final String SQL_INSERT = "insert into parcours (NOMPARCOURS, DESCRIPTION, IDTEMOIGNAGE) values (?,?,?,?)";
+	private static final String SQL_UPDATE = "update parcours set NOMPARCOURS=?, DESCRIPTION=?, IDTEMOIGNAGE=?";
 	private static final String SQL_FIND_ONE = "select * from parcours where IDPARCOURS= ?";
 	private static final String SQL_FIND_ALL = "select * from parcours order by NOMPARCOURS";
 	private static final String SQL_DELETE_ONE = "delete from parcours where IDPARCOURS=?";
@@ -44,8 +44,7 @@ public class ParcoursRepositoryImpl implements ParcoursRepository {
 				
 				ps.setString(1, parcours.getNomparcours());
 				ps.setString(2, parcours.getDescription());
-				ps.setLong(3, parcours.getIdrespo());
-				ps.setLong(4, parcours.getIdtemoignage());
+				ps.setLong(3, parcours.getIdtemoignage());
 			
 				
 				return ps;
@@ -68,7 +67,7 @@ public class ParcoursRepositoryImpl implements ParcoursRepository {
 
 	@Override
 	public int update(Parcours parcours) {
-		return jdbc.update(SQL_UPDATE, parcours.getNomparcours(), parcours.getDescription(), parcours.getIdrespo(), parcours.getIdtemoignage());
+		return jdbc.update(SQL_UPDATE, parcours.getNomparcours(), parcours.getDescription(), parcours.getIdtemoignage());
 	}
 
 	@Override
@@ -81,7 +80,7 @@ public class ParcoursRepositoryImpl implements ParcoursRepository {
 		@Override
 		public Parcours mapRow(ResultSet rs, int row) throws SQLException {
 			
-			return new Parcours(rs.getInt("IDPARCOURS"), rs.getString("NOMPARCOURS"), rs.getString("DESCRIPTION"), rs.getInt("IDRESPO"), rs.getInt("IDTEMOIGNAGE")); 
+			return new Parcours(rs.getInt("IDPARCOURS"), rs.getString("NOMPARCOURS"), rs.getString("DESCRIPTION"),rs.getInt("IDTEMOIGNAGE"));
 			
 		}
 		
