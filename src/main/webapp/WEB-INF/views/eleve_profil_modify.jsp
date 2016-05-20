@@ -1,4 +1,4 @@
-<%@ page session="false" contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"  %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"  %>
 
 <title>Elève - Modifier profil</title>
     <!-- Page Content -->
@@ -23,15 +23,15 @@
 			  </div>
 			  <div class="form-group">
     			<label for="inputName"> Nom et prénom :</label>
-    			<input type="text" class="form-control" id="inputName" placeholder="Nom, prénom">
+    			<input type="text" class="form-control" id="inputName" placeholder="Nom, prénom" value="${user.nom}">
   			  </div>
   			   <div class="form-group">
     			<label for="inputNumero"> Numéro ISEP :</label>
-    			<input type="text" class="form-control" id="inputNumero" placeholder="Numéro ISEP">
+    			<input type="text" class="form-control" id="inputNumero" placeholder="Numéro ISEP" value="${user.numero}">
   			  </div>
   			  <div class="form-group">
     			<label for="inputEmail">Adresse mail ISEP :</label>
-    			<input type="email" class="form-control" id="inputEmail" placeholder="Email">
+    			<input type="email" class="form-control" id="inputEmail" placeholder="Email" value="${user.mail}">
   			 </div>
   			 <div class="form-group">
             	<label class="control-label">CV</label>
