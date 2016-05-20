@@ -1,4 +1,4 @@
-<%@ page session="false" contentType="text/html;charset=UTF-8" language="java"  %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
     <title>Elève - Universités</title>
     <!-- Page Content -->
     <div class="container">
