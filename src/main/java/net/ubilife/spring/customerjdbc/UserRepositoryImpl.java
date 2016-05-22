@@ -20,12 +20,12 @@ public class UserRepositoryImpl implements UserRepository {
 	@Autowired
 	private JdbcOperations jdbc;
 	
-	private static final String SQL_INSERT = "insert into user (login, password, nom, nomFamille, prenom, type, numero, mail,idParcours) values (?,?,?,?,?,?,?,?,?)";
-	private static final String SQL_UPDATE = "update user set login=?, password=?, nom=?, nomFamille=?, prenom=?, type=?, numero=?, mail=?,idParcours=?";
+	private static final String SQL_INSERT = "insert into user (login, password, nom, nomFamille, prenom, type, numero, mail, IDPARCOURS) values (?,?,?,?,?,?,?,?,?)";
+	private static final String SQL_UPDATE = "update user set login=?, password=?, nom=?, nomFamille=?, prenom=?, type=?, numero=?, mail=?, IDPARCOURS=?";
 	private static final String SQL_FIND_ONE = "select * from user where userId= ?";
 	private static final String SQL_FIND_ALL = "select * from user order by nomFamille";
 	private static final String SQL_DELETE_ONE = "delete from user where userId=?";
-	
+
 	@Override
 	public User findOne(long id) {
 		return jdbc.queryForObject(SQL_FIND_ONE, new UserRowMapper(), id);
@@ -50,7 +50,7 @@ public class UserRepositoryImpl implements UserRepository {
 				ps.setString(6, user.getType());
 				ps.setString(7, user.getNumber());
 				ps.setString(8, user.getMail());
-				ps.setString(9, user.getIdParcours());
+				ps.setLong(9, user.getIdParcours());
 
 				
 				return ps;
@@ -73,7 +73,7 @@ public class UserRepositoryImpl implements UserRepository {
 
 	@Override
 	public int update(User user) {
-		return jdbc.update(SQL_UPDATE, user.getLogin(), user.getPassword(), user.getNom(), user.getNomFamille(), user.getPrenom(), user.getType(), user.getNumber(), user.getMail());
+		return jdbc.update(SQL_UPDATE, user.getLogin(), user.getPassword(), user.getNom(), user.getNomFamille(), user.getPrenom(), user.getType(), user.getNumber(), user.getMail(),user.getIdParcours());
 	}
 
 	@Override
@@ -86,7 +86,7 @@ public class UserRepositoryImpl implements UserRepository {
 		@Override
 		public User mapRow(ResultSet rs, int row) throws SQLException {
 			
-			return new User(rs.getInt("userId"), rs.getString("login"), rs.getString("password"), rs.getString("nom"), rs.getString("nomFamille"), rs.getString("prenom"), rs.getString("type"), rs.getString("numero"), rs.getString("mail"),rs.getString("idParcours"));
+			return new User(rs.getInt("userId"), rs.getString("login"), rs.getString("password"), rs.getString("nom"), rs.getString("nomFamille"), rs.getString("prenom"), rs.getString("type"), rs.getString("numero"), rs.getString("mail"),rs.getInt("IDPARCOURS"));
 			
 		}
 		
