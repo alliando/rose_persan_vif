@@ -73,7 +73,7 @@ public class LoginController extends HttpServlet {
 			 //returnVal= "eleve_home";
 			 String type = ldap.getType(); 
 				
-			HttpSession session = request.getSession();	
+			HttpSession session = request.getSession();
 			request.getSession().setAttribute("loggedInUser", session);
 			request.getSession().setAttribute("username", u1.getPrenom());
 			//model.addAttribute("loggedInUser", u1);

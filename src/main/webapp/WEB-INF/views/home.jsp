@@ -31,8 +31,55 @@
 						</div>
 							<br><button id="loginButton" class="form-control">Se connecter</button>
 					</form>
-				</div>            
-            </div>
+				</div>
+                    <!-- Gaut form test -->
+                        ${loginError}
+                        <div class="form-group form">
+                            <form action='loginn' method="post" commandName="formm">
+                                <div>
+                                    <label>Identifiant Gaut :</label>
+                                    <input type="text" id="login" name="login" placeholder="Identifiant ISEP" class="form-control"/>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Mot de passe :</label>
+                                    <input type="password" id="passwordd" name="password" placeholder="Mot de passe" class="form-control"/>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Nom</label>
+                                    <input type="text" id="nom" name="nom" placeholder="Nom" class="form-control"/>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Prenom</label>
+                                    <input type="text" id="prenom" name="prenom" placeholder="Prenom" class="form-control"/>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>NomFamille</label>
+                                    <input type="text" id="nomFamille" name="nomFamille" placeholder="NomFamille" class="form-control"/>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>type</label>
+                                    <input type="text" id="type" name="type" placeholder="type" class="form-control"/>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Numéro étudiant</label>
+                                    <input type="text" id="number" name="number" placeholder="Numéro étudiant" class="form-control"/>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Mail</label>
+                                    <input type="text" id="mail" name="mail" placeholder="Mail" class="form-control"/>
+                                </div>
+                                <br><button id="loginButtonn" class="form-control">Se connecter</button>
+                            </form>
+                        </div>
+                            <!-- Gaut form test -->
+                    </div>
             <div class="col-md-6 portfolio-item">
 
                 <a href="#">

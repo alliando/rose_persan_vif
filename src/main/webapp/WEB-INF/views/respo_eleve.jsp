@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"  %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 
 <title>Responsable - Rechercher des élèves</title>
 <link href="resources/css/respo_eleve.css" rel="stylesheet">
@@ -24,7 +26,7 @@
             </form>
         </div>
         <div class="col-md-4 col-xs-offset-1 col-sm-push-1 col-md-push-0">
-            <label class="checkbox"><input type="checkbox" value="$(parcours)">Seulement mon parcours</label>
+            <label class="checkbox"><input id="checkByParc" type="checkbox" value='${user.getIdParcours()}'>${user.getIdParcours()} Seulement mon parcours</label>
         </div>
     </div>
     <div class="row">
@@ -43,12 +45,12 @@
         <tr class="success">
             <th>Nom  <th>Prénom  <th>Email
         <tbody>
+            <c:forEach var="user" items="${eleves}" >
+            <c:if test="${(user.type).equals('eleve')}">
             <tr  onclick="self.location.href='respo_profilEleve'">
-            <td>John       <td>DoeDoe    <td><a href="mailto:#">john@example.com</a>
-            <tr  onclick="self.location.href='respo_profilEleve'">
-            <td>John       <td>Doe       <td><a href="mailto:#">john@example.com</a>
-             <tr onclick="self.location.href='respo_profilEleve'">
-            <td>Vigouroux  <td>Gauthier  <td><a href="mailto:#">gauthier@example.com</a>
+                <td>${user.getNomFamille()}       <td>${user.getPrenom()}    <td><a href="mailto:#">${user.getMail()}</a> <td class="hide">${user.getIdParcours()}</td>
+                </c:if>
+            </c:forEach>
             </table>
     </div>
     </div>

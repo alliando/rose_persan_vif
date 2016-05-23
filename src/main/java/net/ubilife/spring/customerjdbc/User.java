@@ -14,7 +14,7 @@ public class User implements Serializable{
 	private String login;
 	private String password;
 	private String mail;
-	private String idParcours;
+	private int idParcours;
 
 	public User(String login, String password, String nom, String nomFamille, String prenom, String type, String numero, String mail)
 	{
@@ -28,7 +28,7 @@ public class User implements Serializable{
 		this.password = password;
 		this.mail = mail;
 	}
-	public User(String login, String password, String nom, String nomFamille, String prenom, String type, String numero, String mail,String idParcours)
+	public User(String login, String password, String nom, String nomFamille, String prenom, String type, String numero, String mail,int idParcours)
 	{
 		super();
 		this.nom = nom;
@@ -42,7 +42,7 @@ public class User implements Serializable{
 		this.idParcours = idParcours;
 	}
 	
-	public User(int userId, String login, String password, String nom, String nomFamille, String prenom, String type, String numero, String mail,String idParcours)
+	public User(int userId, String login, String password, String nom, String nomFamille, String prenom, String type, String numero, String mail,int idParcours)
 	{
 		super();
 		this.userId=userId;
@@ -114,8 +114,11 @@ public class User implements Serializable{
 	public String getPrenom() {
 		return prenom;
 	}
-	public String getIdParcours() {
+	public int getIdParcours() {
 		return idParcours;
+	}
+	public void  setIdParcours(int id) {
+		this.idParcours=id;
 	}
 
 	public void setPrenom(String prenom) {
