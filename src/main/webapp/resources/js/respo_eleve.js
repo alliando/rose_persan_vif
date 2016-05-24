@@ -25,7 +25,7 @@ $("#eleveSearch").keyup(function() {
     }
 );
 //Checkbox pour filtrer les étudiants selon le parcours du respo
-$("#checkByParc").click(function(){
+var a=$("#checkByParc").click(function(){
     if (this.checked){
         var parcours=this.value;//On récupère le parcours du respo
         var etudiants =$("tr").has(".hide:not(:contains("+parcours+"))");//Etudiants qui ne font pas partis du parcours

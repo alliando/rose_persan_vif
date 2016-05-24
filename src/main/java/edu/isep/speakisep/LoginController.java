@@ -44,7 +44,8 @@ public class LoginController extends HttpServlet {
 		model.addAttribute("form", form);
 		return "home";
 	}
-	
+
+
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String submitForm(Model model, @RequestParam("userId") String userId, @RequestParam("password") String password, @Validated User form, BindingResult result, HttpServletRequest request) {
 		model.addAttribute("form", form);
@@ -58,12 +59,12 @@ public class LoginController extends HttpServlet {
 		LDAPObject ldap = ISEPAuth( userId , password );
 		 String returnVal = "eleve_home";
 		 
-		 User u1 = new User(ldap.login, ldap.password, ldap.nom, ldap.nomFamille, ldap.prenom, ldap.getType(), ldap.getNumber(), ldap.mail);
+		 User user = new User(ldap.login, ldap.password, ldap.nom, ldap.nomFamille, ldap.prenom, ldap.getType(), ldap.getNumber(), ldap.mail);
 		 AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		 UserRepository repo = ctx.getBean(UserRepository.class);
-		 repo.save(u1);
+		 repo.save(user);
 		 
-		 //model.addAttribute("username", u1.getPrenom());
+		 //model.addAttribute("username", user.getPrenom());
 		 
 		 if(ldap == null) {
 			 returnVal = "form";
@@ -75,36 +76,38 @@ public class LoginController extends HttpServlet {
 				
 			HttpSession session = request.getSession();
 			request.getSession().setAttribute("loggedInUser", session);
-			request.getSession().setAttribute("username", u1.getPrenom());
-			//model.addAttribute("loggedInUser", u1);
+			request.getSession().setAttribute("username", user.getPrenom());
+			 request.getSession().setAttribute("user", user);
+
+			 //model.addAttribute("loggedInUser", user);
 			
 			/*if(session.isNew()){
 				if (type.equals("eleve")){
 					returnVal= "eleve_profil_modify";
-					//model.addAttribute("eleve", u1);
+					//model.addAttribute("eleve", user);
 					request.getSession().setAttribute("eleveLoggedIn", ldap.getType());
 				} else if ( type.equals("admin") ){
 					returnVal= "admin_home";
-					//model.addAttribute("admin", u1);
+					//model.addAttribute("admin", user);
 					request.getSession().setAttribute("adminLoggedIn", ldap.getType());
 				} else if ( type.equals("respo") ){
 					returnVal= "respo_profil_modify";
-					//model.addAttribute("respo", u1);
+					//model.addAttribute("respo", user);
 					request.getSession().setAttribute("respoLoggedIn", ldap.getType());
 				}
 			}
 			else {*/
 				if (type.equals("eleve")){
 					returnVal= "eleve_home";
-					//model.addAttribute("eleve", u1);
+					//model.addAttribute("eleve", user);
 					request.getSession().setAttribute("eleveLoggedIn", type);
 				} else if ( type.equals("admin") ){
 					returnVal= "admin_home";
-					//model.addAttribute("admin", u1);
+					//model.addAttribute("admin", user);
 					request.getSession().setAttribute("adminLoggedIn", type);
 				} else if ( type.equals("respo") ){
 					returnVal= "respo_home";
-					//model.addAttribute("respo", u1);
+					//model.addAttribute("respo", user);
 					request.getSession().setAttribute("respoLoggedIn", type);
 				}
 			}

@@ -82,7 +82,7 @@
            <ul class="nav navbar-nav navbar-right">
 
                 <li>
-                    <a>Bonjour ${user.getPrenom()}</a>
+                    <a>Bonjour ${user.getName()}</a>
                 </li>
                 <li>
                     <a href="logout">Se déconnecter</a>
