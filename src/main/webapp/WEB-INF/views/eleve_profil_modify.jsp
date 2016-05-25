@@ -22,12 +22,12 @@
 				<input id="inputPhoto" type="file" class="file">
 			  </div>
 			  <div class="form-group">
-    			<label for="inputName"> Nom et prénom :</label>
+    			<label for="inputName"> Prénom et Nom :</label>
     			<input type="text" class="form-control" id="inputName" placeholder="Nom, prénom" value="${user.nom}">
   			  </div>
   			   <div class="form-group">
     			<label for="inputNumero"> Numéro ISEP :</label>
-    			<input type="text" class="form-control" id="inputNumero" placeholder="Numéro ISEP" value="${user.numero}">
+    			<input type="text" class="form-control" id="inputNumero" placeholder="Numéro ISEP" value="${user.getNumber()}">
   			  </div>
   			  <div class="form-group">
     			<label for="inputEmail">Adresse mail ISEP :</label>
