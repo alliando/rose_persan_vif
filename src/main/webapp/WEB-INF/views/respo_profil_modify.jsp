@@ -23,16 +23,17 @@
             </div>
             <div class="col-sm-4 col-md-4">
                 <div class="form-group">
-                    <label for="name"> Nom et prénom :</label>
-                    <input type="text" class="form-control" id="inputName" placeholder="Nom, prénom">
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail">Adresse mail ISEP :</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                </div>
-                <div class="form-group">
+
                     <label for="inputParcours">Responsable du parcours ...</label>
-                    <input type="text" class="form-control" id="inputParcours" placeholder="Responsable de quel parcours?">
+
+                    <input type="text" class="form-control" list="inputParcours" placeholder="Responsable de quel parcours?">
+                    <datalist id="inputParcours">
+                        <c:forEach var="parcour" items="${parcours}" >
+                            <option value="${parcour.getNomparcours()}">
+
+                            </c:forEach>
+                    </datalist>
+
                 </div>
                 <div class="form-group">
                     <label for="inputBureau">Bureau :</label>
