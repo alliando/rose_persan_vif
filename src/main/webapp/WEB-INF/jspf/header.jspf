@@ -45,7 +45,7 @@
       <c:if test="${not empty respoLoggedIn}">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="respo_eleve">ElÃ¨ves</a>
+                    <a href="respo_eleve">Eleves</a>
                 </li>
                 <li>
                     <a href="respo_profil">Ma fiche</a>
@@ -54,26 +54,26 @@
                     <a href="respo_international_module">International</a>
                 </li>
                  <li>
-                    <a href="admin_temoignage">TÃ©moignages</a>
+                    <a href="admin_temoignage">Témoignages</a>
                 </li>
            </ul>
      </c:if>
            <c:if test="${not empty adminLoggedIn}">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="admin_universities">Universitï¿½s</a>
+                    <a href="admin_universities">Universités</a>
                 </li>
                 <li>
-                    <a href="admin_temoignage">Tï¿½moignages</a>
+                    <a href="admin_temoignage">Témoignages</a>
                 </li>
                 <li>
-                    <a href="admin_AddNew">Elï¿½ves</a>
+                    <a href="admin_AddNew">Eleves</a>
                 </li>
                  <li>
-                    <a href="#admin_parcours">Parcours</a>
+                    <a href="admin_parcours">Parcours</a>
                 </li>
                 <li>
-                    <a href="#">Responsable de parcours</a>
+                    <a href="admin_respo">Responsable de parcours</a>
                 </li>
            </ul>
      </c:if>
@@ -82,10 +82,10 @@
            <ul class="nav navbar-nav navbar-right">
 
                 <li>
-                    <a>Bonjour ${user.getName()}</a>
+                    <a>Bonjour ${user.getPrenom()}</a>
                 </li>
                 <li>
-                    <a href="logout">Se dÃ©connecter</a>
+                    <a href="logout">Se déconnecter</a>
                 </li >	
             </ul>
        </c:if>
