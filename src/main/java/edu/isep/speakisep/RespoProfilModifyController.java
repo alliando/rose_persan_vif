@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class RespoProfilModifyController {
@@ -22,7 +23,8 @@ public class RespoProfilModifyController {
 		ParcoursRepository repo=ctx.getBean(ParcoursRepository.class);
 		request.setAttribute("parcours", repo.findAll());
 		System.out.println("a  :"+repo.findAll());
-
+		HttpSession session= request.getSession();
+		System.out.println("bblblblbl :"+session. getId());
 		for (Parcours t : repo.findAll()){
 			System.out.println(t.getId()+","+t.getNomparcours()+",");
 		}
