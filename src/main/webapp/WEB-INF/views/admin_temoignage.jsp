@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 
-    <title>Admin - Témoignages</title>
+    <title>Admin - TÃ©moignages</title>
 
     <!-- Page Content -->
     <div class="container">
@@ -8,7 +9,7 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Témoignages
+                <h1 class="page-header">TÃ©moignages
                     <small></small>
                 </h1>
             </div>
@@ -16,12 +17,12 @@
         <!-- /.row -->
         
         <!-- Projects Row --> 
-        	<p>Cliquez sur une ligne pour afficher le témoignage</p>  	
+        	<p>Cliquez sur une ligne pour afficher le tÃ©moignage</p>
         	<table class="table">
         		<thead>
         			<tr>
         				<th>Parcours</th>
-        				<th>Elève</th>
+        				<th>Elï¿½ve</th>
         				<th>Promotion</th>
         				<th>Etat</th>
         				<th>Actions</th>
@@ -29,10 +30,10 @@
         		</thead>
         		<tbody>
         			<tr class="accordion-toggle"  data-toggle="collapse" data-target="#collapse1">
-        				<td>Génie Logiciel</td>
+        				<td>GÃ©nie Logiciel</td>
 		                <td>Tintin Haddock</td>
 		                <td>2017</td>
-		                <td>Validé</td>
+		                <td>ValidÃ©</td>
 		            	<td><a href="#" class="glyphicon glyphicon-ok"></a><a href="#" class="glyphicon glyphicon-remove" style="margin-left:30px"></a></td>
 		            </tr>
 		            <tr id="collapse1" class="collapse out">
@@ -44,10 +45,10 @@
 	            		</td>
             		</tr>
 		            <tr class="accordion-toggle"  data-toggle="collapse" data-target="#collapse2">
-        				<td>Systèmes Embarqués</td>
+        				<td>SystÃ¨mes EmbarquÃ©s</td>
 		                <td>Johny John</td>
 		                <td>2015</td>
-		                <td>Validé</td>
+		                <td>Validï¿½</td>
 		                <td><a href="#" class="glyphicon glyphicon-ok"></a><a href="#" class="glyphicon glyphicon-remove" style="margin-left:30px"></a></td>
 		            </tr>
 		            <tr id="collapse2" class="collapse out">
@@ -59,10 +60,10 @@
 	            		</td>
             		</tr>
 		            <tr class="accordion-toggle"  data-toggle="collapse" data-target="#collapse3">
-        				<td>Génie Logiciel</td>
+        				<td>Gï¿½nie Logiciel</td>
 		                <td>Franky Vincent</td>
 		                <td>2017</td>
-		                <td>Validé</td>
+		                <td>Validï¿½</td>
 		                <td><a href="#" class="glyphicon glyphicon-ok"></a><a href="#" class="glyphicon glyphicon-remove" style="margin-left:30px"></a></td>
 		            </tr>
 		            <tr id="collapse3" class="collapse out">
@@ -77,7 +78,7 @@
         				<td>Business Intelligence</td>
 		                <td>Marvin Gaye</td>
 		                <td>2017</td>
-		                <td>Non Validé</td>
+		                <td>Non Validï¿½</td>
 		                <td><a href="#" class="glyphicon glyphicon-ok"></a><a href="#" class="glyphicon glyphicon-remove" style="margin-left:30px"></a></td>
 		            </tr>
 		            <tr id="collapse4" class="collapse out">

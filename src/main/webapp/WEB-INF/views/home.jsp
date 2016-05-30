@@ -1,5 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
-    <title>Accueil</title>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+
+<title>Accueil</title>
 
     <!-- Page Content -->
     <div class="container">

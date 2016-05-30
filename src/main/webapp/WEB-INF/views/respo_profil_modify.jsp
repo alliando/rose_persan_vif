@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 
     <title>Responsable - Modifier sa fiche</title>
 <div class="container">
@@ -14,7 +14,7 @@
     <!-- /.row -->
 
     <div class="row">
-        <form>
+        <form name="form_modifierProfil" action="form_modifierProfil" method="GET">
             <div class="col-sm-4 col-md-4">
                 <div class="form-group">
                     <label class="control-label">Choisissez votre photo</label>
@@ -26,7 +26,7 @@
 
                     <label for="inputParcours">Responsable du parcours ...</label>
 
-                    <input type="text" class="form-control" list="inputParcours" placeholder="Responsable de quel parcours?">
+                    <input type="text" class="form-control" name="inputParcours" list="inputParcours" placeholder="Responsable de quel parcours?">
                     <datalist id="inputParcours">
                         <c:forEach var="parcour" items="${parcours}" >
                             <option value="${parcour.getNomparcours()}">
@@ -36,8 +36,8 @@
 
                 </div>
                 <div class="form-group">
-                    <label for="inputBureau">Bureau :</label>
-                    <input type="text" class="form-control" id="inputBureau" placeholder="Salle n°">
+                    <label for="numSalle">Bureau :</label>
+                    <input accept-charset="UTF-8" type="text" class="form-control" name="numSalle" id="numSalle" placeholder="Salle n°">
                 </div>
             </div>
             <div class="col-sm-4 col-md-4">
