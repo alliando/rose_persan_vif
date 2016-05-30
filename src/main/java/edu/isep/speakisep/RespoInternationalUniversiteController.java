@@ -1,16 +1,28 @@
 package edu.isep.speakisep;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import net.ubilife.spring.customerjdbc.Config;
+import net.ubilife.spring.customerjdbc.Universite;
+import net.ubilife.spring.customerjdbc.UniversiteRepository;
 
 @Controller
 
 public class RespoInternationalUniversiteController {
-	@Autowired
 	@RequestMapping("/respo_international_universite")
 	
-	public String Profil_respo(){
+	public String RespoInternationalUniversite(HttpServletRequest request){
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
+		UniversiteRepository repo=ctx.getBean(UniversiteRepository.class);
+		request.setAttribute("universites", repo.findAll());
+		System.out.println("a  :"+repo.findAll());
+		for (Universite t : repo.findAll()){
+			System.out.println(t.getNomuniv()+","+t.getLienuniv()+",");
+		}
 		return "respo_international_universite";
 	}
 }
