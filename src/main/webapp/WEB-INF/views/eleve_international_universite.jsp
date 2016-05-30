@@ -1,5 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
-    <title>Elève - Universités</title>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+
+<title>Elève - Universités</title>
     <!-- Page Content -->
     <div class="container">
 
@@ -17,7 +18,13 @@
     <input type="text" class="form-control" id="search">
         <div id="unilist" class="col-sm-12 col-md-12">
         <table class="table table-striped">
-        <tr>
+
+        <c:forEach var="universite" items="${universites}" >
+            <tr>
+                <td><blockquote><h3 id="parcours">${universite.getNomuniv()}</h3><a href="${universite.getLienuniv()}">Lien vers les cours</a></blockquote></td>
+             </tr>   
+            </c:forEach>
+       <!--  <tr>
         <td>
             <blockquote>
 			<h3 id="parcours">École polytechnique de Montréal</h3>
@@ -41,7 +48,7 @@
             </blockquote>
          </td>
          </tr>
-         
+         --> 
         </table>
         </div>
         </div>

@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 
     <title>Admin - Responsables</title>
 
@@ -41,17 +42,17 @@
 		            </tr>
 		            <tr>
 		                <td>Mr. Logi</td>
-		                <td>Génie Logiciel</td>
+		                <td>Gï¿½nie Logiciel</td>
 		                <td><a href="#" class="glyphicon glyphicon-edit"></a><a href="#" class="glyphicon glyphicon-remove" style="margin-left:30px"></a></td>
 		            </tr>
 		            <tr>
 		            	<td>Mr. Sysem</td>
-		                <td>Systèmes embarqués</td>
+		                <td>Systï¿½mes embarquï¿½s</td>
 		                <td><a href="#" class="glyphicon glyphicon-edit"></a><a href="#" class="glyphicon glyphicon-remove" style="margin-left:30px"></a></td>
 		            </tr>
 		            <tr>
 		            	<td>Mr. Medic</td>
-		                <td>Numérique et Santé</td>
+		                <td>Numï¿½rique et Santï¿½</td>
 		                <td><a href="#" class="glyphicon glyphicon-edit"></a><a href="#" class="glyphicon glyphicon-remove" style="margin-left:30px"></a></td>
 		            </tr>
 	            <tbody>

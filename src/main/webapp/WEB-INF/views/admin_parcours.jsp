@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 
     <title>Admin - Parcours</title>
 
@@ -34,11 +35,11 @@
         		</thead>
         		<tbody>
         			<tr>
-		                <td><a href="#">Génie Logiciel</a></td>
+		                <td><a href="#">Gï¿½nie Logiciel</a></td>
 		                <td><a href="#" class="glyphicon glyphicon-edit"></a><a href="#" class="glyphicon glyphicon-remove" style="margin-left:30px"></a></td>
 		            </tr>
 		            <tr>
-		                <td><a href="#">Systèmes Embarqués</a></td>
+		                <td><a href="#">Systï¿½mes Embarquï¿½s</a></td>
 		                <td><a href="#" class="glyphicon glyphicon-edit"></a><a href="#" class="glyphicon glyphicon-remove" style="margin-left:30px"></a></td>
 		            </tr>
 		            <tr>
@@ -46,7 +47,7 @@
 		                <td><a href="#" class="glyphicon glyphicon-edit"></a><a href="#" class="glyphicon glyphicon-remove" style="margin-left:30px"></a></td>
 		            </tr>
 		            <tr>
-		                <td><a href="#">Numérique et Santé</a></td>
+		                <td><a href="#">Numï¿½rique et Santï¿½</a></td>
 		                <td><a href="#" class="glyphicon glyphicon-edit"></a><a href="#" class="glyphicon glyphicon-remove" style="margin-left:30px"></a></td>
 		            </tr>
 	            <tbody>

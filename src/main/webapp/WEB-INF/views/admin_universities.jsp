@@ -35,7 +35,12 @@
        				</tr>
         		</thead>
         		<tbody>
-        			<tr>
+        		<c:forEach var="universite" items="${universites}" >
+            <tr>
+                <td>${universite.getNomuniv()}</td> <td><a href="${universite.getLienuniv()}">Lien vers les cours</a></td>&nbsp;&nbsp;&nbsp;&nbsp;<td><a href="admin_university_edit" class="btn btn-default active modif" role="button">Modifier l'université</a></td>
+             </tr>   
+            </c:forEach>
+        			<!-- <tr>
         				<td>Université Lambda</td>
 		                <td><a href="#">Site de l'université</a></td>
 		                <td><a href="#"><button type="button" class="btn btn-default">Modifier l'université</button></a></td>
@@ -54,7 +59,7 @@
         				<td>Université Alpha</td>
 		                <td><a href="#">Site de l'université</a></td>
 		                <td><a href="#"><button type="button" class="btn btn-default">Modifier l'université</button></a></td>
-		            </tr>
+		            </tr>-->
 	            <tbody>
 	    	</table>
         </div>

@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 
     <title>Admin - Ajout profil</title>
 
@@ -18,7 +19,7 @@
 		<!-- Projects Row -->
         <div class="row">
             <div class="col-sm-12 col-md-12 btn btn-default btn-file">
-                <label class="control-label">Uploader le fichier excel contenant la liste des nouveaux élèves ici</label>
+                <label class="control-label">Uploader le fichier excel contenant la liste des nouveaux ï¿½lï¿½ves ici</label>
 				<input type="file" name="ADD" accept=".xls,.xlsx" />
             </div>
             <div>

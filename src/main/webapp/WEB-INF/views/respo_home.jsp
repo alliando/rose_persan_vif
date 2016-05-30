@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+
 <title>Responsable - Accueil </title>
     <div class="container">
     <div class="element btn-group btn-group-lg">
