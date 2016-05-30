@@ -50,7 +50,6 @@ public class LoginnController extends HttpServlet {
 		UserRepository repo = ctx.getBean(UserRepository.class);
 		request.getSession().setAttribute("loggedInUser", session);
 		request.getSession().setAttribute("username", user.getPrenom());
-		request.getSession().setAttribute("user", user);
 
 		System.out.println("repoFind : " +user.getId());
 		System.out.println("repolog : " +user.getLogin());
@@ -60,9 +59,13 @@ public class LoginnController extends HttpServlet {
 			if(t.getLogin().equals(user.getLogin())){
 			user=t;
 				register=1;
+				System.out.println("t : "+t.getMail());
+				System.out.println("t : "+user.getMail());
 				break;
 			}
 		}
+		request.getSession().setAttribute("user", user);
+
 		System.out.println(register);
 		if (register!=1){repo.save(user);}
 		repo.findOne(user.getId());
@@ -73,7 +76,6 @@ public class LoginnController extends HttpServlet {
 		System.out.println("username : " +session.getId());
 		session.getAttribute("numero");
 		String returnVal = "eleve_home";
-
 
 		//model.addAttribute("username", u1.getPrenom());
 

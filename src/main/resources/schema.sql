@@ -24,10 +24,17 @@ CREATE TABLE IF NOT EXISTS `universite` (
 );
 CREATE TABLE IF NOT EXISTS `fiche` (
   `IDFICHE` int(20) NOT NULL AUTO_INCREMENT,
-  `NOMUNIV` varchar(255) NOT NULL,
-  `DESCRIPUNIV` varchar(255) NOT NULL,
+  `NUMSALLE` varchar(255) NOT NULL,
+  `PHOTO` varchar(255) NOT NULL,
+  `CV` varchar(255) NOT NULL,
+  `LMOTIV` varchar(255) NOT NULL,
+  `ADRESSE` varchar(255) NOT NULL,
+  `ACTEXTRA` varchar(255) NOT NULL,
+  `COMPETENCES` varchar(255) NOT NULL,
+  `NOTES` varchar(255) NOT NULL,
+  `APPRENTI` varchar(255) NOT NULL,
   `userId` varchar(255) NOT NULL,
-  PRIMARY KEY (`IDUNIV`)
+  PRIMARY KEY (`IDFICHE`)
 );
 CREATE TABLE IF NOT EXISTS
   `user` (
