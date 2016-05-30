@@ -24,11 +24,10 @@ public class RespoProfilModifyController {
 		request.setAttribute("parcours", repo.findAll());
 		System.out.println("a  :"+repo.findAll());
 		HttpSession session= request.getSession();
-		System.out.println("bblblblbl :"+session. getId());
+		System.out.println("bblblblbl :"+session.getId());
 		for (Parcours t : repo.findAll()){
 			System.out.println(t.getId()+","+t.getNomparcours()+",");
 		}
-
 		return "respo_profil_modify";
 	}
 }
