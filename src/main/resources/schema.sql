@@ -7,11 +7,12 @@ CREATE TABLE IF NOT EXISTS `parcours` (
   PRIMARY KEY (`IDPARCOURS`)
 );
 
-CREATE TABLE IF NOT EXISTS `temoignage` (
+CREATE TABLE `temoignage` (
   `IDTEM` int(20) NOT NULL AUTO_INCREMENT,
   `NOMTEM` varchar(255) NOT NULL,
   `DESCRIPTEM` varchar(255) NOT NULL,
   `userId` int(20) NOT NULL,
+  `NOMPARCOURS` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`IDTEM`)
 );
 

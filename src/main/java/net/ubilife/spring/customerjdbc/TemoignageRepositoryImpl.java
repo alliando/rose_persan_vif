@@ -45,6 +45,7 @@ public class TemoignageRepositoryImpl implements TemoignageRepository {
 				ps.setString(1, temoignage.getNomtem());
 				ps.setString(2, temoignage.getDescriptem());
 				ps.setLong(3, temoignage.getIdeleve());
+				ps.setString(4, temoignage.getNomparcours());
 			
 				
 				return ps;
@@ -67,7 +68,7 @@ public class TemoignageRepositoryImpl implements TemoignageRepository {
 
 	@Override
 	public int update(Temoignage temoignage) {
-		return jdbc.update(SQL_UPDATE, temoignage.getNomtem(), temoignage.getDescriptem(), temoignage.getIdeleve());
+		return jdbc.update(SQL_UPDATE, temoignage.getNomtem(), temoignage.getDescriptem(), temoignage.getIdeleve(),temoignage.getNomparcours());
 	}
 
 	@Override
@@ -80,7 +81,7 @@ public class TemoignageRepositoryImpl implements TemoignageRepository {
 		@Override
 		public Temoignage mapRow(ResultSet rs, int row) throws SQLException {
 			
-			return new Temoignage(rs.getInt("IDTEM"), rs.getString("NOMTEM"), rs.getString("DESCRIPTEM"), rs.getInt("userId"));
+			return new Temoignage(rs.getInt("IDTEM"), rs.getString("NOMTEM"), rs.getString("DESCRIPTEM"), rs.getInt("userId"), rs.getString("NOMPARCOURS"));
 			
 		}
 		
