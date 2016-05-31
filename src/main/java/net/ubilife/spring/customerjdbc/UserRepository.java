@@ -15,5 +15,7 @@ public interface UserRepository {
 	int updateOne(User user);
 
 	int delete (User user);
+
+	User findParcours(long id);
 	
 }
