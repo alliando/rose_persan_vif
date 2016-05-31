@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 
-    <title>Responsable - Modifier sa fiche</title>
+<title>Responsable - Modifier sa fiche</title>
+
 <div class="container">
 
     <!-- Page Header -->
@@ -14,7 +15,7 @@
     <!-- /.row -->
 
     <div class="row">
-        <form name="form_modifierProfil" action="form_modifierProfil" method="GET">
+        <form action="form_modifierProfil" method="POST">
             <div class="col-sm-4 col-md-4">
                 <div class="form-group">
                     <label class="control-label">Choisissez votre photo</label>
@@ -24,13 +25,12 @@
             <div class="col-sm-4 col-md-4">
                 <div class="form-group">
 
-                    <label for="inputParcours">Responsable du parcours ...</label>
+                    <label for="nomParcours">Responsable du parcours ...</label>
 
-                    <input type="text" class="form-control" name="inputParcours" list="inputParcours" placeholder="Responsable de quel parcours?">
-                    <datalist id="inputParcours">
-                        <c:forEach var="parcour" items="${parcours}" >
-                            <option value="${parcour.getNomparcours()}">
-
+                    <input type="text" class="form-control" name="nomParcours" list="nomParcours" placeholder="Responsable de quel parcours?">
+                    <datalist id="nomParcours">
+                        <c:forEach var="parcours" items="${Allparcours}" >
+                        <option value="${parcours.getNomparcours()}">
                             </c:forEach>
                     </datalist>
 
@@ -47,3 +47,4 @@
     </div>
     <!-- /.row -->
 </div>
+<script src="resources/js/respo_modifierProfil.js" ></script>

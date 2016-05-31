@@ -18,11 +18,11 @@
         </div>
         <div class="col-sm-4 col-md-4">
             <blockquote>
-                <p>Bruce Wayne</p>
+                <p> ${(user.nom)}</p>
             </blockquote>
             <p> <i class="glyphicon glyphicon-envelope"></i> ${(user.mail)}
                 <br/> <i class="glyphicon glyphicon-briefcase"></i> Responsable du parcours "${parcours.getNomparcours()}"
-                <br/> <i class="glyphicon glyphicon-info-sign"></i> Bureau L012</p>
+                <br/> <i class="glyphicon glyphicon-info-sign"></i> Bureau ${fiche.getNumsalle()}</p>
         </div>
         <div class="col-sm-4 col-md-4">
          <a href="respo_profil_modify" class="btn btn-primary btn-lg btn-block active" role="button">Modifier ma fiche</a>

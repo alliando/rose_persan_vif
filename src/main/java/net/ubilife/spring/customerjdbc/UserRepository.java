@@ -11,7 +11,11 @@ public interface UserRepository {
 	List<User> findAll();
 	
 	int update(User user);
-	
+
+	int updateOne(User user);
+
 	int delete (User user);
+
+	User findParcours(long id);
 	
 }

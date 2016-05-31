@@ -2,6 +2,53 @@ package net.ubilife.spring.customerjdbc;
 
 public class Fiche {	
 
+
+	private long id;
+	private String numsalle;
+	private String photo;
+	private String CV;
+	private String lettremotiv;
+	private String adresse;
+	private String actextra;
+	private String competences;
+	private String notes;
+	private String apprenti;
+	private long userId;
+	
+	public Fiche(){	
+	}
+	
+	public Fiche(int id, String numsalle,String photo, String CV, String lettremotiv, String adresse, String actextra, String competences, String notes, String apprenti, long userId){
+		super();
+		this.id=id;
+		this.numsalle=numsalle;
+		this.photo=photo;
+		this.CV=CV;
+		this.lettremotiv=lettremotiv;
+		this.adresse=adresse;
+		this.actextra=actextra;
+		this.competences=competences;
+		this.notes=notes;
+		this.apprenti=apprenti;
+		this.userId=userId;
+		
+	}
+
+	public Fiche( String numsalle,String photo, String CV, String lettremotiv, String adresse, String actextra, String competences, String notes, String apprenti, long userId){
+		super();
+		this.numsalle=numsalle;
+		this.photo=photo;
+		this.CV=CV;
+		this.lettremotiv=lettremotiv;
+		this.adresse=adresse;
+		this.actextra=actextra;
+		this.competences=competences;
+		this.notes=notes;
+		this.apprenti=apprenti;
+		this.userId=userId;
+
+	}
+	
 	public long getId() {
 		return id;
 	}
@@ -74,14 +121,14 @@ public class Fiche {
 		this.notes = notes;
 	}
 
-	public int getUserId() {
+	public long getUserId() {
 		return userId;
 	}
 
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	
+
 	public String getApprenti() {
 		return apprenti;
 	}
@@ -90,49 +137,5 @@ public class Fiche {
 		this.apprenti = apprenti;
 	}
 
-	private long id;
-	private String numsalle;
-	private String photo;
-	private String CV;
-	private String lettremotiv;
-	private String adresse;
-	private String actextra;
-	private String competences;
-	private String notes;
-	private String apprenti;
-	private int userId;
-	
-	public Fiche(){	
-	}
-	
-	public Fiche(int id, String numsalle,String photo, String CV, String lettremotiv, String adresse, String actextra, String competences, String notes, String apprenti, int userId){
-		super();
-		this.id=id;
-		this.numsalle=numsalle;
-		this.photo=photo;
-		this.CV=CV;
-		this.lettremotiv=lettremotiv;
-		this.adresse=adresse;
-		this.actextra=actextra;
-		this.competences=competences;
-		this.notes=notes;
-		this.apprenti=apprenti;
-		this.userId=userId;
-		
-	}
-	
-	public Fiche(String numsalle,String photo, String CV, String lettremotiv, String adresse, String actextra, String competences, String notes, String apprenti, int userId){
-		super();
-		this.numsalle=numsalle;
-		this.photo=photo;
-		this.CV=CV;
-		this.lettremotiv=lettremotiv;
-		this.adresse=adresse;
-		this.actextra=actextra;
-		this.competences=competences;
-		this.notes=notes;
-		this.apprenti=apprenti;
-		this.userId=userId;
-	}
 
 }

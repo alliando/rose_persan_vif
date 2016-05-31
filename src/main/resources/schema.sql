@@ -7,11 +7,12 @@ CREATE TABLE IF NOT EXISTS `parcours` (
   PRIMARY KEY (`IDPARCOURS`)
 );
 
-CREATE TABLE IF NOT EXISTS `temoignage` (
+CREATE TABLE `temoignage` (
   `IDTEM` int(20) NOT NULL AUTO_INCREMENT,
   `NOMTEM` varchar(255) NOT NULL,
   `DESCRIPTEM` varchar(255) NOT NULL,
   `userId` int(20) NOT NULL,
+  `NOMPARCOURS` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`IDTEM`)
 );
 
@@ -24,16 +25,16 @@ CREATE TABLE IF NOT EXISTS `universite` (
 );
 CREATE TABLE IF NOT EXISTS `fiche` (
   `IDFICHE` int(20) NOT NULL AUTO_INCREMENT,
-  `NUMSALLE` varchar(255) NOT NULL,
-  `PHOTO` varchar(255) NOT NULL,
-  `CV` varchar(255) NOT NULL,
-  `LMOTIV` varchar(255) NOT NULL,
-  `ADRESSE` varchar(255) NOT NULL,
-  `ACTEXTRA` varchar(255) NOT NULL,
-  `COMPETENCES` varchar(255) NOT NULL,
-  `NOTES` varchar(255) NOT NULL,
-  `APPRENTI` varchar(255) NOT NULL,
-  `userId` varchar(255) NOT NULL,
+  `NUMSALLE` varchar(255) NOT NULL DEFAULT '',
+  `PHOTO` varchar(255) NOT NULL DEFAULT '',
+  `CV` varchar(255) NOT NULL DEFAULT '',
+  `LMOTIV` varchar(255) NOT NULL DEFAULT '',
+  `ADRESSE` varchar(255) NOT NULL DEFAULT '',
+  `ACTEXTRA` varchar(255) NOT NULL DEFAULT '',
+  `COMPETENCES` varchar(255) NOT NULL DEFAULT '',
+  `NOTES` varchar(255) NOT NULL DEFAULT '',
+  `APPRENTI` varchar(255) NOT NULL DEFAULT '',
+  `userId` int(20) NOT NULL,
   PRIMARY KEY (`IDFICHE`)
 );
 CREATE TABLE IF NOT EXISTS

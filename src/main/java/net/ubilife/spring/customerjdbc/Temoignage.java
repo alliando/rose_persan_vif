@@ -6,23 +6,42 @@ public class Temoignage {
 	private String nomtem;
 	private String descriptem;
 	private int userId;//eleve
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public String getNomparcours() {
+		return nomparcours;
+	}
+
+	public void setNomparcours(String nomparcours) {
+		this.nomparcours = nomparcours;
+	}
+
+	private String nomparcours;
 	
 	public Temoignage(){	
 	}
 	
-	public Temoignage(int id, String nomtem, String descriptem, int userId){
+	public Temoignage(int id, String nomtem, String descriptem, int userId, String nomparcours){
 		super();
 		this.id=id;
 		this.nomtem=nomtem;
 		this.descriptem=descriptem;
 		this.userId=userId;
+		this.nomparcours=nomparcours;
 	}
 	
-	public Temoignage(String nomtem, String descriptem, int userId){
+	public Temoignage(String nomtem, String descriptem, int userId, String nomparcours){
 		super();
 		this.nomtem=nomtem;
 		this.descriptem=descriptem;
 		this.userId=userId;
+		this.nomparcours=nomparcours;
 	}
 
 	public long getId() {
