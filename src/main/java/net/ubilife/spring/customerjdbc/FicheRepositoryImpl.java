@@ -21,14 +21,20 @@ public class FicheRepositoryImpl implements FicheRepository {
 	private JdbcOperations jdbc;
 	
 	private static final String SQL_INSERT = "insert into fiche (NUMSALLE, PHOTO, CV, LMOTIV, ADRESSE, ACTEXTRA, COMPETENCES, NOTES, APPRENTI, userId ) values (?,?,?,?,?,?,?,?,?,?)";
-	private static final String SQL_UPDATE = "update fiche set NUMSALLE=?, PHOTO=?, CV=?, LMOTIV=?, ADRESSE=?, ACTEXTRA=?, COMPETENCESV=?, NOTES=?, APPRENTI=?, userId=?";
+	private static final String SQL_UPDATE = "update fiche set NUMSALLE=?, PHOTO=?, CV=?, LMOTIV=?, ADRESSE=?, ACTEXTRA=?, COMPETENCES=?, NOTES=?, APPRENTI=?, userId=?";
+	private static final String SQL_UPDATE_ONE = "update fiche set NUMSALLE=?, PHOTO=?, CV=?, LMOTIV=?, ADRESSE=?, ACTEXTRA=?, COMPETENCES=?, NOTES=?, APPRENTI=?, userId=? WHERE IDFICHE=?";
 	private static final String SQL_FIND_ONE = "select * from fiche where IDFICHE= ?";
+	private static final String SQL_FIND_ONE_BY_USERID = "select * from fiche where userId= ?";
 	private static final String SQL_FIND_ALL = "select * from fiche order by userId";
 	private static final String SQL_DELETE_ONE = "delete from fiche where IDFICHE=?";
 	
 	@Override
 	public Fiche findOne(long id) {
 		return jdbc.queryForObject(SQL_FIND_ONE, new FicheRowMapper(), id);
+	}
+
+	public Fiche findOne(User user) {
+		return jdbc.queryForObject(SQL_FIND_ONE_BY_USERID, new FicheRowMapper(), user.getId());
 	}
 
 	@Override
@@ -75,6 +81,11 @@ public class FicheRepositoryImpl implements FicheRepository {
 	@Override
 	public int update(Fiche fiche) {
 		return jdbc.update(SQL_UPDATE, fiche.getNumsalle(), fiche.getPhoto(), fiche.getCV(), fiche.getLettremotiv(), fiche.getAdresse(), fiche.getActextra(), fiche.getCompetences(), fiche.getNotes(), fiche.getApprenti(), fiche.getUserId());
+	}
+
+	@Override
+	public int updateOne(Fiche fiche) {
+		return jdbc.update(SQL_UPDATE_ONE, fiche.getNumsalle(), fiche.getPhoto(), fiche.getCV(), fiche.getLettremotiv(), fiche.getAdresse(), fiche.getActextra(), fiche.getCompetences(), fiche.getNotes(), fiche.getApprenti(), fiche.getUserId(),fiche.getId());
 	}
 
 	@Override

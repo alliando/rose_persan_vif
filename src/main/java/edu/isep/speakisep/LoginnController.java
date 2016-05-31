@@ -1,9 +1,6 @@
 package edu.isep.speakisep;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.User;
-import net.ubilife.spring.customerjdbc.UserManager;
-import net.ubilife.spring.customerjdbc.UserRepository;
+import net.ubilife.spring.customerjdbc.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -53,25 +50,25 @@ public class LoginnController extends HttpServlet {
 
 		System.out.println("repoFind : " +user.getId());
 		System.out.println("repolog : " +user.getLogin());
-
+//regarde si l'utilisateur est déjà inscrit dans la DB speakIsep
 		int register=0;
 		for (User t : repo.findAll()){
 			if(t.getLogin().equals(user.getLogin())){
 			user=t;
 				register=1;
-				System.out.println("t : "+t.getMail());
-				System.out.println("t : "+user.getMail());
 				break;
 			}
 		}
 		request.getSession().setAttribute("user", user);
 
 		System.out.println(register);
-		if (register!=1){repo.save(user);}
+		//Si l'utilisateur n'est pas inscrit, on l'enregistre lui+sa fiche
+		if (register!=1){repo.save(user);
+			FicheRepository repost=ctx.getBean(FicheRepository.class);
+			Fiche fiche=new Fiche("","", "","", "", "", "", "","",user.getId());
+			repost.save(fiche);
+		}
 		repo.findOne(user.getId());
-		System.out.println("login : " +user.getLogin());
-		System.out.println("repoFind : " +user.getId());
-		System.out.println("repoFind : " +repo.findOne(user.getId()));
 		session= request.getSession();
 		System.out.println("username : " +session.getId());
 		session.getAttribute("numero");
