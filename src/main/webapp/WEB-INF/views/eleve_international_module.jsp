@@ -16,9 +16,14 @@
         <!-- /.row -->
 
    		<div class="row">
+   		<div class="form-group">
+		    	<label for="inputUniv">Nom de l'université : </label>
+		    	<input type="text" class="form-control" id="inputUniv" placeholder="Université">
+		  	</div>
+		  	<label for="textareaUniv">Choix des cours : </label>
     		<textarea style="height:120px" class="form-control" id="Commentaire" placeholder="Indiquer ici vos cours, leurs descriptions et le nombre de crédits correspondants"></TEXTAREA>
    		  	<div class="form-group">
-		    	<label for="inputUnivWeb">Inserer ici le lien vers les cours proposés par l'université </label>
+		    	<label for="inputUnivWeb">Insérer ici le lien vers le catalogue de cours</label>
 		    	<input type="text" class="form-control" id="inputUnivWeb" placeholder="Lien">
 		  	</div>
 		  	<button type="submit" class="btn btn-default btn-lg btn-block active">Envoyer</button>

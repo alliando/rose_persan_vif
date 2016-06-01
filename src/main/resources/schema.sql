@@ -13,6 +13,7 @@ CREATE TABLE `temoignage` (
   `DESCRIPTEM` varchar(255) NOT NULL,
   `userId` int(20) NOT NULL,
   `NOMPARCOURS` varchar(255) NOT NULL DEFAULT '',
+  `STATUT` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`IDTEM`)
 );
 
@@ -37,6 +38,19 @@ CREATE TABLE IF NOT EXISTS `fiche` (
   `userId` int(20) NOT NULL,
   PRIMARY KEY (`IDFICHE`)
 );
+
+CREATE TABLE `module` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `NOMUNIV` varchar(255) NOT NULL DEFAULT '',
+  `DESCRIPTION` varchar(255) NOT NULL DEFAULT '',
+  `LIEN` varchar(255) NOT NULL DEFAULT '',
+  `STATUT` varchar(255) NOT NULL DEFAULT '',
+  `COMMENTAIRE` varchar(255) NOT NULL DEFAULT '',
+  `userId` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 CREATE TABLE IF NOT EXISTS
   `user` (
   userId int(11) unsigned NOT NULL AUTO_INCREMENT,
