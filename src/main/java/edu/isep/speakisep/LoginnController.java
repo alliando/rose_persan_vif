@@ -42,7 +42,7 @@ public class LoginnController extends HttpServlet {
 							 HttpServletRequest request) {
 		HttpSession session= request.getSession();
 		//System.out.println( "login : " + userId + " password : " + password );
-		User user = new User(login, password, nom, nomFamille, prenom, type, number, mail,5);
+		User user = new User(login, password, nom, nomFamille, prenom, type, number, mail,0);
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		UserRepository repo = ctx.getBean(UserRepository.class);
 		request.getSession().setAttribute("loggedInUser", session);
