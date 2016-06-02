@@ -42,9 +42,11 @@ public class LoginnController extends HttpServlet {
 							 HttpServletRequest request) {
 		HttpSession session= request.getSession();
 		//System.out.println( "login : " + userId + " password : " + password );
-		User user = new User(login, password, nom, nomFamille, prenom, type, number, mail,5);
+		User user = new User(login, password, nom, nomFamille, prenom, type, number, mail,0);
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		UserRepository repo = ctx.getBean(UserRepository.class);
+		FicheRepository repoF=ctx.getBean(FicheRepository.class);
+
 		request.getSession().setAttribute("loggedInUser", session);
 		request.getSession().setAttribute("username", user.getPrenom());
 
@@ -64,10 +66,12 @@ public class LoginnController extends HttpServlet {
 		System.out.println(register);
 		//Si l'utilisateur n'est pas inscrit, on l'enregistre lui+sa fiche
 		if (register!=1){repo.save(user);
-			FicheRepository repost=ctx.getBean(FicheRepository.class);
 			Fiche fiche=new Fiche("","", "","", "", "", "", "","",user.getId());
-			repost.save(fiche);
+			repoF.save(fiche);
+
 		}
+		session.setAttribute("fiche",repoF.findOne(user));
+
 		repo.findOne(user.getId());
 		session= request.getSession();
 		System.out.println("username : " +session.getId());

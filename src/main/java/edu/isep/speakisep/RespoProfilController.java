@@ -22,7 +22,10 @@ public class RespoProfilController {
 		ParcoursRepository repo=ctx.getBean(ParcoursRepository.class);
 		FicheRepository repoF=ctx.getBean(FicheRepository.class);
 		User user=(User)session.getAttribute("user");
-		session.setAttribute("parcours",repo.findOne(user.getIdParcours()));
+		System.out.print ("YOYOYO : "+user.getIdParcours());
+		if ((user.getIdParcours())!=0){
+			session.setAttribute("parcours",repo.findOne(user.getIdParcours()));
+		}
 		session.setAttribute("Allparcours", repo.findAll());
 		session.setAttribute("fiche",repoF.findOne(user));
 		return "respo_profil";
