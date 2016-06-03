@@ -20,15 +20,16 @@
         </div>
         <div class="col-sm-4 col-md-4">
             <blockquote>
-                <p>Bruce Wayne</p>
+                <p>${eleve.nom}</p>
             </blockquote>
-            <p> <i class="glyphicon glyphicon-info-sign"></i> N° étudiant : 8000
-                <br/><i class="glyphicon glyphicon-envelope"></i> masterwayne@batman.com
+            <p> <i class="glyphicon glyphicon-info-sign"></i> N° étudiant : ${eleve.getNumber()}
+                <br/><i class="glyphicon glyphicon-envelope"></i> ${eleve.getMail()}
                 <br/> <i class="glyphicon glyphicon-briefcase"></i> 2ème année spécialité Génie Logiciel
-                <br/> <i class="glyphicon glyphicon-globe"></i> 6 rue du général Leclerc 75006 Paris</p>
-
+                <br/> <i class="glyphicon glyphicon-globe"></i> ${eleveFiche.getAdresse()}</p>
+            <br/>
             <fieldset>
                 <legend>Activités extrascolaires</legend>
+                <p>${eleveFiche.getActextra()}</p>
             </fieldset>
 
             <fieldset>
@@ -49,7 +50,7 @@
             </fieldset>
         </div>
         <div class="col-sm-2 col-md-2">
-            <a href="mailto:#" class="btn btn-primary btn-lg active" role="button">Contacter l'élève</a>
+            <a href="mailto:${eleve.getMail()}" class="btn btn-primary btn-lg active" role="button">Contacter l'élève</a>
         </div>
     </div>
     <!-- /.row -->
