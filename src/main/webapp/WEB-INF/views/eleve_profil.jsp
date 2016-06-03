@@ -21,15 +21,16 @@
         </div>
         <div class="col-sm-4 col-md-4">
             <blockquote>
-                <p>Bruce Wayne</p>
+                <p>${user.getNom()}</p>
             </blockquote>
-            <p> <i class="glyphicon glyphicon-info-sign"></i> N° étudiant : 8000
-            	<br/><i class="glyphicon glyphicon-envelope"></i> masterwayne@batman.com
-                <br/> <i class="glyphicon glyphicon-briefcase"></i> 2ème année spécialité Génie Logiciel
-                <br/> <i class="glyphicon glyphicon-globe"></i> 6 rue du général Leclerc 75006 Paris</p>
-
+            <p> <i class="glyphicon glyphicon-info-sign"></i> N° étudiant : ${user.getNumber()}
+            	<br/><i class="glyphicon glyphicon-envelope"></i> ${user.getMail()}
+                <br/> <i class="glyphicon glyphicon-briefcase"></i> ${fiche.getApprenti()}
+                <br/> <i class="glyphicon glyphicon-globe"></i> ${fiche.getAdresse()}</p>
+<br/>
                 <fieldset>
                 	 <legend>Activités extrascolaires</legend>
+                    <p>${fiche.getActextra()}</p>
                 </fieldset>
                
               <fieldset>

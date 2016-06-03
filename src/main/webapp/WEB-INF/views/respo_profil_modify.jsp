@@ -26,13 +26,15 @@
                 <div class="form-group">
 
                     <label for="nomParcours">Responsable du parcours ...</label>
-
-                    <input type="text" class="form-control" name="nomParcours" list="nomParcours" placeholder="Responsable de quel parcours?">
-                    <datalist id="nomParcours">
+                    <select class="form-control" name="nomParcours" id="nomParcours">
                         <c:forEach var="parcours" items="${Allparcours}" >
-                        <option value="${parcours.getNomparcours()}">
-                            </c:forEach>
-                    </datalist>
+                        <option
+                        <c:if test="${parcours.getId().equals(user.getIdParcours())}">
+                                selected="selected"</c:if>
+                                value="${parcours.getNomparcours()}">
+                                ${parcours.getNomparcours()}
+                                    </c:forEach>
+                    </select>
 
                 </div>
                 <div class="form-group">

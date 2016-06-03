@@ -50,9 +50,7 @@ public class RespoProfilModifyController {
 
 	@RequestMapping("/respo_profil_modify")
 
-	public String Profil_respo(
-	){
-
+	public String Profil_respo(){
 		return "respo_profil_modify";
 	}
 }

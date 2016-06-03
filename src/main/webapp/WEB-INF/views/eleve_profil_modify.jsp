@@ -15,7 +15,7 @@
         <!-- /.row -->
 
    <div class="row">
-   	<form>
+   	<form action="eleve_modifierProfil" method="POST">
         <div class="col-sm-4 col-md-4">
         	  <div class="form-group">
             	<label class="control-label">Choisissez votre photo</label>
@@ -40,31 +40,31 @@
 			  </div>
 			   <div class="form-group">
             	<label class="control-label">Lettres de motivation</label>
-				<input id="inputLettreMotiv" type="file" class="file" multiple class="file-loading">
+				<input id="lmotiv" type="file" name="lmotiv" class="file" multiple class="file-loading">
 			  </div>
         </div>
         <div class="col-sm-4 col-md-4">
              <div class="form-group">
-    			<label for="inputCursus">Cursus actuel :</label>
-    			<input type="text" class="form-control" id="inputCursus" placeholder="Année, spécialité ...">
+    			<label for="apprenti">Cursus actuel :</label>
+    			<input type="text" name="apprenti" class="form-control" id="apprenti" placeholder="Année, spécialité ...">
   			 </div>
              <div class="form-group">
-    			<label for="inputAdresse">Adresse :</label>
-    			<input type="text" class="form-control" id="inputAdresse" placeholder="Adresse postale">
+    			<label for="adresse">Adresse :</label>
+    			<input type="text" class="form-control" name="adresse" id="adresse" placeholder="Adresse postale">
   			 </div>
   			 <div class="form-group">
-  			 	<label for="inputActivites">Activités extrascolaires :</label>
-  			 	<textarea class="form-control" placeholder="Activités extrascolaires" rows="3"></textarea>
+  			 	<label for="actextra">Activités extrascolaires :</label>
+  			 	<textarea class="form-control" id="actextra" name="actextra" placeholder="Activités extrascolaires" rows="3"></textarea>
   			 </div>
   			 <div class="form-group">
-  			 	<label for="inputCompetences">Compétences de stage :</label>
-  			 	<textarea class="form-control" placeholder="Compétences de stage" rows="4"></textarea>
+  			 	<label for="competences">Compétences de stage :</label>
+  			 	<textarea class="form-control" id="competences" name="competences" placeholder="Compétences de stage" rows="4"></textarea>
   			 </div>
         </div>
         <div class="col-sm-4 col-md-4">
         	 <div class="form-group">
-  			 	<label for="inputCompetences">Notes :</label>
-  			 	<textarea class="form-control" placeholder="Notes" rows="6"></textarea>
+  			 	<label for="notes">Notes :</label>
+  			 	<textarea class="form-control" id="notes" name="notes" placeholder="Notes" rows="6"></textarea>
   			 </div>
          	<button type="submit" class="btn btn-primary btn-lg btn-block active">Sauvegarder ma fiche</button>
         </div>

@@ -70,6 +70,10 @@ public class ParcoursRepositoryImpl implements ParcoursRepository {
 	}
 
 	@Override
+	public List<Parcours> findAllBySql(String sql) {
+		return jdbc.query(sql,new ParcoursRowMapper());
+	}
+	@Override
 	public int update(Parcours parcours) {
 		return jdbc.update(SQL_UPDATE, parcours.getNomparcours(), parcours.getDescription(), parcours.getIdtemoignage());
 	}

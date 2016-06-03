@@ -25,7 +25,9 @@ public class UserRepositoryImpl implements UserRepository {
 	private static final String SQL_UPDATE_ONE = "update user set login=?, password=?, nom=?, nomFamille=?, prenom=?, type=?, numero=?, mail=?, IDPARCOURS=? where userId=?";
 	private static final String SQL_FIND_ONE = "select * from user where userId= ?";
 	private static final String SQL_FIND_PARCOURS = "select * from user where IDPARCOURS= ?";
+	private static final String SQL_FIND_QUERY = "select * from user where ?=?";
 	private static final String SQL_FIND_ALL = "select * from user order by nomFamille";
+	//private static final String SQL_FIND_ALL_DATA = "select * from user order by nomFamille where IDPARCOURS=?";
 	private static final String SQL_DELETE_ONE = "delete from user where userId=?";
 
 	@Override
@@ -33,10 +35,7 @@ public class UserRepositoryImpl implements UserRepository {
 		return jdbc.queryForObject(SQL_FIND_ONE, new UserRowMapper(), id);
 	}
 	
-	@Override
-	public User findParcours(long id) {
-		return jdbc.queryForObject(SQL_FIND_PARCOURS, new UserRowMapper(), id);
-	}
+
 
 	@Override
 	public User save(final User user) {
@@ -57,9 +56,7 @@ public class UserRepositoryImpl implements UserRepository {
 				ps.setString(6, user.getType());
 				ps.setString(7, user.getNumber());
 				ps.setString(8, user.getMail());
-				ps.setLong(9, user.getIdParcours());
-
-				
+				ps.setLong(	 9, user.getIdParcours());
 				return ps;
 			}
 		}, holder);
@@ -76,6 +73,18 @@ public class UserRepositoryImpl implements UserRepository {
 	@Override
 	public List<User> findAll() {
 		return jdbc.query(SQL_FIND_ALL, new UserRowMapper());
+	}
+	@Override
+	public List<User> findParcours(long id) {
+		return jdbc.query(SQL_FIND_PARCOURS, new UserRowMapper(), id);
+	}
+	@Override
+	public List<User> findAllBySql(String sql) {
+		return jdbc.query(sql, new UserRowMapper());
+	}
+	@Override
+	public List<User> findAll(long id) {
+		return jdbc.query(SQL_FIND_PARCOURS, new UserRowMapper(),id);
 	}
 
 	@Override
