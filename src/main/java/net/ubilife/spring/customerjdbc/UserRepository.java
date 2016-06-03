@@ -9,13 +9,15 @@ public interface UserRepository {
 	User save(User user);
 	
 	List<User> findAll();
-	
+	List<User> findAll(long id);
+	List<User> findAllBySql(String sql);
+
 	int update(User user);
 
 	int updateOne(User user);
 
 	int delete (User user);
 
-	User findParcours(long id);
+	List<User> findParcours(long id);
 	
 }

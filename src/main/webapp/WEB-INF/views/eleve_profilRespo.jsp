@@ -21,14 +21,14 @@
         </div>
         <div class="col-sm-4 col-md-4">
             <blockquote>
-                <p>Bruce Wayne</p>
+                <p>${respo.getNom()}</p>
             </blockquote>
-            <p> <i class="glyphicon glyphicon-envelope"></i> masterwayne@batman.com
-                <br/> <i class="glyphicon glyphicon-briefcase"></i> Responsable du parcours "Génie logiciel"
-                <br/> <i class="glyphicon glyphicon-info-sign"></i> Bureau L012</p>
+            <p> <i class="glyphicon glyphicon-envelope"></i> ${respo.getMail()}
+                <br/> <i class="glyphicon glyphicon-briefcase"></i> Responsable du parcours "${respoParcours.getNomparcours()}"
+                <br/> <i class="glyphicon glyphicon-info-sign"></i> Bureau ${respoFiche.getNumsalle()}</p>
         </div>
         <div class="col-sm-4 col-md-4">
-            <a href="mailto:#" class="btn btn-primary btn-lg btn-block active" role="button">Contacter le reponsable</a>
+            <a href="mailto:${respo.getMail()}?subject=GL?" class="btn btn-primary btn-lg btn-block active" role="button">Contacter le reponsable</a>
         </div>
     </div>
     <!-- /.row -->

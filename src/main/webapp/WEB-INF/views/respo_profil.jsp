@@ -18,9 +18,9 @@
         </div>
         <div class="col-sm-4 col-md-4">
             <blockquote>
-                <p> ${(user.nom)}</p>
+                <p> ${user.getNom()}</p>
             </blockquote>
-            <p> <i class="glyphicon glyphicon-envelope"></i> ${(user.mail)}
+            <p> <i class="glyphicon glyphicon-envelope"></i> ${user.getMail()}
                 <br/> <i class="glyphicon glyphicon-briefcase"></i> Responsable du parcours "${parcours.getNomparcours()}"
                 <br/> <i class="glyphicon glyphicon-info-sign"></i> Bureau ${fiche.getNumsalle()}</p>
         </div>
