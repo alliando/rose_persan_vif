@@ -18,12 +18,14 @@ public class EleveParcoursResponsableController {
 
 	@RequestMapping("/eleve_parcours_responsable")
 	public String eleve_parcours_responsable(HttpServletRequest request){
-
+		//Récupération des repository
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
-		ParcoursRepository repo = ctx.getBean(ParcoursRepository.class);
-		UserRepository repoU = ctx.getBean(UserRepository.class);
-		request.setAttribute("parcoursFound", repo.findAllBySql(SQL_INNER));
-		request.setAttribute("respoFound", repoU.findAllBySql(SQL_INNER));
+		ParcoursRepository repoParcours = ctx.getBean(ParcoursRepository.class);
+		UserRepository repoUser = ctx.getBean(UserRepository.class);
+
+		//Données envoyées à la view
+		request.setAttribute("parcoursFound", repoParcours.findAllBySql(SQL_INNER));
+		request.setAttribute("respoFound", repoUser.findAllBySql(SQL_INNER));
 
 		return "eleve_parcours_responsable";
 	}

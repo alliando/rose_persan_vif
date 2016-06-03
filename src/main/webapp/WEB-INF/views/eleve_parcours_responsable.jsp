@@ -20,8 +20,6 @@
 	<!-- /.row -->
 
 	<table class="table table-bordered">
-
-
 		<thead>
 
 		<tr>
@@ -30,10 +28,8 @@
 		<c:forEach var="parc" items="${parcoursFound}">
 		<c:forEach var="respo" items="${respoFound}">
 		<c:if test="${(parc.getId()).equals(respo.getIdParcours())}">
-
 		<tr>
 			<td>${parc.getNomparcours()}		<td><a  onclick="self.location.href='eleve_profilRespo?id=${respo.getId()}'">${respo.getNom()}</a>
-
 			</c:if>
 			</c:forEach>
 			</c:forEach>

@@ -17,12 +17,16 @@ public class RespoProfilController {
 	
 	public String Profil_respo(	HttpServletRequest request
 	){
-		HttpSession session= request.getSession();
+		//Récupération des repository
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		ParcoursRepository repo=ctx.getBean(ParcoursRepository.class);
 		FicheRepository repoF=ctx.getBean(FicheRepository.class);
+
+		//Récupération des données de l'utilisateur
+		HttpSession session= request.getSession();
 		User user=(User)session.getAttribute("user");
-		System.out.print ("YOYOYO : "+user.getIdParcours());
+
+		//Données envoyées à la view
 		if ((user.getIdParcours())!=0){
 			session.setAttribute("parcours",repo.findOne(user.getIdParcours()));
 		}
