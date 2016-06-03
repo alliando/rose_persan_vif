@@ -9,7 +9,7 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Ajout de profil
+                <h1 class="page-header">Ajout d'élèves
                     <small></small>
                 </h1>
             </div>
@@ -18,15 +18,27 @@
 
 		<!-- Projects Row -->
         <div class="row">
+        <span class="form-group col-sm-12 col-md-12">   
+        <select class="col-sm-4 col-md-4" name="tsearch">
+			    <option value="Parcours">Choisir un parcours</option>
+			    <c:forEach var="parcours" items="${parcours}" >
+            		<option value="${parcours.getNomparcours()}">${parcours.getNomparcours()}</option>
+            	</c:forEach>
+			</select>
+			</span>
+			<span class="form-group col-sm-12 col-md-12">
             <div class="col-sm-12 col-md-12 btn btn-default btn-file">
-                <label class="control-label">Uploader le fichier excel contenant la liste des nouveaux �l�ves ici</label>
+                <label class="control-label">Uploader le fichier excel contenant la liste des nouveaux élèves ici</label>
 				<input type="file" name="ADD" accept=".xls,.xlsx" />
             </div>
+            </span>
+            <span class="form-group col-sm-12 col-md-12">
             <div>
             <form method="POST" action='AddUser'>
          	<button type="submit" name="AddUser" class="btn btn-default btn-lg btn-block active">Ajouter la liste</button>
          	</form>
             </div>
+            <span class="form-group col-sm-12 col-md-12">
         </div>
         <!-- /.row --> 
         
