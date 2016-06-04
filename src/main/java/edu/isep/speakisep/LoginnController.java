@@ -30,16 +30,16 @@ public class LoginnController extends HttpServlet {
 
 	@RequestMapping(value = "/loginn", method = RequestMethod.POST)
 	public String submitForm(Model model,
-							 @RequestParam("login") String login,
-							 @RequestParam("password") String password,
-							 @RequestParam("nom") String nom,
-							 @RequestParam("nomFamille") String nomFamille,
-							 @RequestParam("prenom") String prenom,
-							 @RequestParam("type") String type,
-							 @RequestParam("number") String number,
-							 @RequestParam("mail") String mail,
+			@RequestParam("login") String login,
+			@RequestParam("password") String password,
+			@RequestParam("nom") String nom,
+			@RequestParam("nomFamille") String nomFamille,
+			@RequestParam("prenom") String prenom,
+			@RequestParam("type") String type,
+			@RequestParam("number") String number,
+			@RequestParam("mail") String mail,
 
-							 HttpServletRequest request) {
+			HttpServletRequest request) {
 		HttpSession session= request.getSession();
 		//System.out.println( "login : " + userId + " password : " + password );
 		User user = new User(login, password, nom, nomFamille, prenom, type, number, mail,0);
@@ -52,11 +52,11 @@ public class LoginnController extends HttpServlet {
 
 		System.out.println("repoFind : " +user.getId());
 		System.out.println("repolog : " +user.getLogin());
-//regarde si l'utilisateur est déjà inscrit dans la DB speakIsep
+		//regarde si l'utilisateur est déjà inscrit dans la DB speakIsep
 		int register=0;
 		for (User t : repo.findAll()){
 			if(t.getLogin().equals(user.getLogin())){
-			user=t;
+				user=t;
 				register=1;
 				break;
 			}
@@ -66,8 +66,8 @@ public class LoginnController extends HttpServlet {
 		System.out.println(register);
 		//Si l'utilisateur n'est pas inscrit, on l'enregistre lui+sa fiche
 		if (register!=1){repo.save(user);
-			Fiche fiche=new Fiche("","", "","", "", "", "", "","",user.getId());
-			repoF.save(fiche);
+		Fiche fiche=new Fiche("","", "","", "", "", "", "","",user.getId());
+		repoF.save(fiche);
 
 		}
 		session.setAttribute("fiche",repoF.findOne(user));
