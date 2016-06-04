@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class RespoTemoignageController {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(RespoTemoignageController.class);
-	
+
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -21,5 +21,5 @@ public class RespoTemoignageController {
 	public String home() {
 		return "respo_temoignage";
 	}
-	
+
 }

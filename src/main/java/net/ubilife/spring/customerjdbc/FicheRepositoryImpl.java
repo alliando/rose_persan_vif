@@ -19,7 +19,7 @@ public class FicheRepositoryImpl implements FicheRepository {
 
 	@Autowired
 	private JdbcOperations jdbc;
-	
+
 	private static final String SQL_INSERT = "insert into fiche (NUMSALLE, PHOTO, CV, LMOTIV, ADRESSE, ACTEXTRA, COMPETENCES, NOTES, APPRENTI, userId ) values (?,?,?,?,?,?,?,?,?,?)";
 	private static final String SQL_UPDATE = "update fiche set NUMSALLE=?, PHOTO=?, CV=?, LMOTIV=?, ADRESSE=?, ACTEXTRA=?, COMPETENCES=?, NOTES=?, APPRENTI=?, userId=?";
 	private static final String SQL_UPDATE_ONE = "update fiche set NUMSALLE=?, PHOTO=?, CV=?, LMOTIV=?, ADRESSE=?, ACTEXTRA=?, COMPETENCES=?, NOTES=?, APPRENTI=?, userId=? WHERE IDFICHE=?";
@@ -27,7 +27,7 @@ public class FicheRepositoryImpl implements FicheRepository {
 	private static final String SQL_FIND_ONE_BY_USERID = "select * from fiche where userId= ?";
 	private static final String SQL_FIND_ALL = "select * from fiche order by userId";
 	private static final String SQL_DELETE_ONE = "delete from fiche where IDFICHE=?";
-	
+
 	@Override
 	public Fiche findOne(long id) {
 		return jdbc.queryForObject(SQL_FIND_ONE, new FicheRowMapper(), id);
@@ -39,15 +39,15 @@ public class FicheRepositoryImpl implements FicheRepository {
 
 	@Override
 	public Fiche save(final Fiche fiche) {
-		
+
 		KeyHolder holder = new GeneratedKeyHolder();
-		
+
 		int rows = jdbc.update(new PreparedStatementCreator() {
-			
+
 			@Override
 			public PreparedStatement createPreparedStatement(Connection conn) throws SQLException {
 				PreparedStatement ps = conn.prepareStatement(SQL_INSERT, new String[]{"IDFICHE"});
-				
+
 				ps.setString(1, fiche.getNumsalle());
 				ps.setString(2, fiche.getPhoto());
 				ps.setString(3, fiche.getCV());
@@ -58,19 +58,19 @@ public class FicheRepositoryImpl implements FicheRepository {
 				ps.setString(8, fiche.getNotes());
 				ps.setString(9, fiche.getApprenti());
 				ps.setLong(10, fiche.getUserId());
-			
-				
+
+
 				return ps;
 			}
 		}, holder);
-		
+
 		if(rows == 1) {	// success, so apply ID to the customer object
 			fiche.setId((Long)holder.getKey());
 			return fiche;
 		}
-		
+
 		return null;
-		
+
 	}
 
 	@Override
@@ -97,10 +97,10 @@ public class FicheRepositoryImpl implements FicheRepository {
 
 		@Override
 		public Fiche mapRow(ResultSet rs, int row) throws SQLException {
-			
+
 			return new Fiche(rs.getInt("IDFICHE"), rs.getString("NUMSALLE"), rs.getString("PHOTO"),rs.getString("CV"), rs.getString("LMOTIV"), rs.getString("ADRESSE"), rs.getString("ACTEXTRA"), rs.getString("COMPETENCES"), rs.getString("NOTES"), rs.getString("APPRENTI"), rs.getInt("userId"));
-			
+
 		}
-		
+
 	}
 }

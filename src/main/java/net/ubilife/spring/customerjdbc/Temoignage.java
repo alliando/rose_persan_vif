@@ -6,6 +6,17 @@ public class Temoignage {
 	private String nomtem;
 	private String descriptem;
 	private int userId;//eleve
+	private String nomparcours;
+	private String statut;
+
+	public String getStatut() {
+		return statut;
+	}
+
+	public void setStatut(String statut) {
+		this.statut = statut;
+	}
+
 	public int getUserId() {
 		return userId;
 	}
@@ -22,26 +33,26 @@ public class Temoignage {
 		this.nomparcours = nomparcours;
 	}
 
-	private String nomparcours;
-	
 	public Temoignage(){	
 	}
-	
-	public Temoignage(int id, String nomtem, String descriptem, int userId, String nomparcours){
+
+	public Temoignage(int id, String nomtem, String descriptem, int userId, String nomparcours, String statut){
 		super();
 		this.id=id;
 		this.nomtem=nomtem;
 		this.descriptem=descriptem;
 		this.userId=userId;
 		this.nomparcours=nomparcours;
+		this.statut=statut;
 	}
-	
-	public Temoignage(String nomtem, String descriptem, int userId, String nomparcours){
+
+	public Temoignage(String nomtem, String descriptem, int userId, String nomparcours, String statut){
 		super();
 		this.nomtem=nomtem;
 		this.descriptem=descriptem;
 		this.userId=userId;
 		this.nomparcours=nomparcours;
+		this.statut=statut;
 	}
 
 	public long getId() {
@@ -68,12 +79,9 @@ public class Temoignage {
 		this.descriptem = descriptem;
 	}
 
-	public int getIdeleve() {
-		return userId;
-	}
-
-	public void setIdeleve(int ideleve) {
-		this.userId = ideleve;
+	public String toString()
+	{
+		return "id = " + id + " nomTem = " + nomtem + " descriptem = " + descriptem + " userId = " + userId + " nomParcours = " + nomparcours +" statut = " + statut;
 	}
 
 }

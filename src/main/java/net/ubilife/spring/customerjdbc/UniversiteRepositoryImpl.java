@@ -19,13 +19,13 @@ public class UniversiteRepositoryImpl implements UniversiteRepository {
 
 	@Autowired
 	private JdbcOperations jdbc;
-	
+
 	private static final String SQL_INSERT = "insert into universite (NOMUNIV, DESCRIPUNIV, LIENUNIV) values (?,?,?)";
 	private static final String SQL_UPDATE = "update universite set NOMUNIV=?, DESCRIPUNIV=?, LIENUNIV=?";
 	private static final String SQL_FIND_ONE = "select * from universite where IDUNIV= ?";
 	private static final String SQL_FIND_ALL = "select * from universite order by NOMUNIV";
 	private static final String SQL_DELETE_ONE = "delete from universite where IDUNIV=?";
-	
+
 	@Override
 	public Universite findOne(long id) {
 		return jdbc.queryForObject(SQL_FIND_ONE, new UniversiteRowMapper(), id);
@@ -33,31 +33,31 @@ public class UniversiteRepositoryImpl implements UniversiteRepository {
 
 	@Override
 	public Universite save(final Universite universite) {
-		
+
 		KeyHolder holder = new GeneratedKeyHolder();
-		
+
 		int rows = jdbc.update(new PreparedStatementCreator() {
-			
+
 			@Override
 			public PreparedStatement createPreparedStatement(Connection conn) throws SQLException {
 				PreparedStatement ps = conn.prepareStatement(SQL_INSERT, new String[]{"IDUNIV"});
-				
+
 				ps.setString(1, universite.getNomuniv());
 				ps.setString(2, universite.getDescripuniv());
 				ps.setString(3, universite.getLienuniv());
-			
-				
+
+
 				return ps;
 			}
 		}, holder);
-		
+
 		if(rows == 1) {	// success, so apply ID to the customer object
 			universite.setId((Long)holder.getKey());
 			return universite;
 		}
-		
+
 		return null;
-		
+
 	}
 
 	@Override
@@ -79,10 +79,10 @@ public class UniversiteRepositoryImpl implements UniversiteRepository {
 
 		@Override
 		public Universite mapRow(ResultSet rs, int row) throws SQLException {
-			
+
 			return new Universite(rs.getInt("IDUNIV"), rs.getString("NOMUNIV"), rs.getString("DESCRIPUNIV"), rs.getString("LIENUNIV")); 
-			
+
 		}
-		
+
 	}
 }

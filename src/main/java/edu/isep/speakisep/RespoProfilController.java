@@ -14,9 +14,9 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class RespoProfilController {
 	@RequestMapping("/respo_profil")
-	
+
 	public String Profil_respo(	HttpServletRequest request
-	){
+			){
 		//Récupération des repository
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		ParcoursRepository repo=ctx.getBean(ParcoursRepository.class);
