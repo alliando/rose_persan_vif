@@ -19,46 +19,52 @@ public class TemoignageRepositoryImpl implements TemoignageRepository {
 
 	@Autowired
 	private JdbcOperations jdbc;
-	
-	private static final String SQL_INSERT = "insert into temoignage (NOMTEM, DESCRIPTEM, userId) values (?,?,?)";
-	private static final String SQL_UPDATE = "update temoignage set NOMTEM=?, DESCRIPTEM=?, userId=?";
+
+	private static final String SQL_INSERT = "insert into temoignage (NOMTEM, DESCRIPTEM, userId, NOMPARCOURS, STATUT) values (?,?,?,?,?)";
+	private static final String SQL_UPDATE = "update temoignage set NOMTEM=?, DESCRIPTEM=?, userId=?, NOMPARCOURS=?, STATUT=?";
 	private static final String SQL_FIND_ONE = "select * from temoignage where IDTEM= ?";
 	private static final String SQL_FIND_ALL = "select * from temoignage order by NOMTEM";
 	private static final String SQL_DELETE_ONE = "delete from temoignage where IDTEM=?";
-	
+
 	@Override
 	public Temoignage findOne(long id) {
 		return jdbc.queryForObject(SQL_FIND_ONE, new TemoignageRowMapper(), id);
 	}
 
 	@Override
+	public List<Temoignage> findAllBySql(String sql) {
+		return jdbc.query(sql, new TemoignageRowMapper());
+	}
+
+	@Override
 	public Temoignage save(final Temoignage temoignage) {
-		
+
 		KeyHolder holder = new GeneratedKeyHolder();
-		
+
 		int rows = jdbc.update(new PreparedStatementCreator() {
-			
+
 			@Override
 			public PreparedStatement createPreparedStatement(Connection conn) throws SQLException {
 				PreparedStatement ps = conn.prepareStatement(SQL_INSERT, new String[]{"IDTEM"});
-				
+
 				ps.setString(1, temoignage.getNomtem());
 				ps.setString(2, temoignage.getDescriptem());
-				ps.setLong(3, temoignage.getIdeleve());
+				ps.setLong(3, temoignage.getUserId());
 				ps.setString(4, temoignage.getNomparcours());
-			
-				
+				ps.setString(5, temoignage.getStatut());
+
+
 				return ps;
 			}
 		}, holder);
-		
+
 		if(rows == 1) {	// success, so apply ID to the customer object
-			temoignage.setId((Long)holder.getKey());
+			temoignage.setId((Integer)holder.getKey());
 			return temoignage;
 		}
-		
+
 		return null;
-		
+
 	}
 
 	@Override
@@ -68,7 +74,7 @@ public class TemoignageRepositoryImpl implements TemoignageRepository {
 
 	@Override
 	public int update(Temoignage temoignage) {
-		return jdbc.update(SQL_UPDATE, temoignage.getNomtem(), temoignage.getDescriptem(), temoignage.getIdeleve(),temoignage.getNomparcours());
+		return jdbc.update(SQL_UPDATE, temoignage.getNomtem(), temoignage.getDescriptem(), temoignage.getUserId(),temoignage.getNomparcours(), temoignage.getStatut());
 	}
 
 	@Override
@@ -80,10 +86,10 @@ public class TemoignageRepositoryImpl implements TemoignageRepository {
 
 		@Override
 		public Temoignage mapRow(ResultSet rs, int row) throws SQLException {
-			
-			return new Temoignage(rs.getInt("IDTEM"), rs.getString("NOMTEM"), rs.getString("DESCRIPTEM"), rs.getInt("userId"), rs.getString("NOMPARCOURS"));
-			
+
+			return new Temoignage(rs.getInt("IDTEM"), rs.getString("NOMTEM"), rs.getString("DESCRIPTEM"), rs.getInt("userId"), rs.getString("NOMPARCOURS"), rs.getString("STATUT"));
+
 		}
-		
+
 	}
 }

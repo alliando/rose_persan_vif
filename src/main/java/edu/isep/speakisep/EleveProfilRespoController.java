@@ -13,7 +13,7 @@ public class EleveProfilRespoController {
 
 	@RequestMapping("/eleve_profilRespo")
 	public String Profil_respo(HttpServletRequest request,
-							   @RequestParam(value="id", required=false) long id){
+			@RequestParam(value="id", required=false) long id){
 		//Récupération des repository
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		UserRepository repoUser= ctx.getBean(UserRepository.class);

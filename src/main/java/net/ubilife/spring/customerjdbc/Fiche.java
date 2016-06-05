@@ -2,7 +2,6 @@ package net.ubilife.spring.customerjdbc;
 
 public class Fiche {	
 
-
 	private long id;
 	private String numsalle;
 	private String photo;
@@ -14,10 +13,10 @@ public class Fiche {
 	private String notes;
 	private String apprenti;
 	private long userId;
-	
+
 	public Fiche(){	
 	}
-	
+
 	public Fiche(int id, String numsalle,String photo, String CV, String lettremotiv, String adresse, String actextra, String competences, String notes, String apprenti, long userId){
 		super();
 		this.id=id;
@@ -31,7 +30,7 @@ public class Fiche {
 		this.notes=notes;
 		this.apprenti=apprenti;
 		this.userId=userId;
-		
+
 	}
 
 	public Fiche( String numsalle,String photo, String CV, String lettremotiv, String adresse, String actextra, String competences, String notes, String apprenti, long userId){
@@ -48,7 +47,7 @@ public class Fiche {
 		this.userId=userId;
 
 	}
-	
+
 	public long getId() {
 		return id;
 	}

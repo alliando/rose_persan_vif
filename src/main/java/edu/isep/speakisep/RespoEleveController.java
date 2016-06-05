@@ -14,7 +14,7 @@ public class RespoEleveController {
 	@RequestMapping("/respo_eleve")
 	public String Respo_eleves(
 			HttpServletRequest request
-	){
+			){
 		HttpSession session= request.getSession();
 		User user =(User)session.getAttribute("user");
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
