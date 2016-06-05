@@ -32,36 +32,22 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				<c:forEach var="module" items="${moduleFound}">
+					<c:forEach var="eleve" items="${eleveFound}">
+						<c:if test="${module.getUserId().equals(eleve.getId())}">
+							<tr>
+								<td><a
+									onclick="self.location.href='respo_eleve_profil?id=${eleve.getId()}'">${eleve.getNom()}</a>
+								</td>
+								<td>${module.getNomuniv()}</td>
+								<td><a href="respo_validation_module?id=${eleve.getId()}"><button
+											type="button" class="btn btn-default">Voir ses
+											modules</button></a></td>
+							</tr>
+						</c:if>
+					</c:forEach>
+				</c:forEach>
 
-					<td><a href="respo_profilEleve">John Wayne</a></td>
-					<td>Université Lambda</td>
-					<td><a href="respo_validation_module"><button
-								type="button" class="btn btn-default">Voir ses modules</button></a></td>
-				</tr>
-				<tr>
-
-					<td><a href="respo_profilEleve">Jean Dupont</a></td>
-					<td>Université Beta</td>
-					<td><a href="respo_validation_module"><button
-								type="button" class="btn btn-default">Voir ses modules</button></a></td>
-				</tr>
-				<tr>
-
-					<td><a href="respo_profilEleve">Martin Martin</a></td>
-					<td>Université Gamma</td>
-					<td><a href="respo_validation_module"><button
-								type="button" class="btn btn-default">Voir ses modules</button></a></td>
-				</tr>
-				<tr>
-
-					<td><a href="respo_profilEleve">Laure Laure</a></td>
-					<td>Université Alpha</td>
-					<td><a href="respo_validation_module"><button
-								type="button" class="btn btn-default">Voir ses modules</button></a></td>
-				</tr>
-			</tbody>
-			<tbody>
 			</tbody>
 		</table>
 	</div>

@@ -20,8 +20,8 @@ public class ModuleRepositoryImpl implements ModuleRepository {
 	@Autowired
 	private JdbcOperations jdbc;
 
-	private static final String SQL_INSERT = "insert into module (NOMUNIV, DESCRIPTION, LIEN, STATUT, COMMENTAIRE, userId) values (?,?,?,?,?,?)";
-	private static final String SQL_UPDATE = "update temoignage set NOMUNIV=?, DESCRIPTION=?, LIEN=?, STATUT=?, COMMENTAIRE=?, userId=?";
+	private static final String SQL_INSERT = "insert into module (NOMUNIV, DESCRIPTION, LIEN, STATUT, COMMENTAIRE, userId, IDPARCOURS) values (?,?,?,?,?,?,?)";
+	private static final String SQL_UPDATE = "update temoignage set NOMUNIV=?, DESCRIPTION=?, LIEN=?, STATUT=?, COMMENTAIRE=?, userId=?, IDPARCOURS=?";
 	private static final String SQL_FIND_ONE = "select * from module where id= ?";
 	private static final String SQL_FIND_ALL = "select * from module order by id";
 	private static final String SQL_DELETE_ONE = "delete from module where id=?";
@@ -53,6 +53,7 @@ public class ModuleRepositoryImpl implements ModuleRepository {
 				ps.setString(4, module.getStatut());
 				ps.setString(5, module.getCommentaire());
 				ps.setInt(6, module.getUserId());
+				ps.setLong(7, module.getIdparcours());
 
 				return ps;
 			}
@@ -74,7 +75,7 @@ public class ModuleRepositoryImpl implements ModuleRepository {
 
 	@Override
 	public int update(Module module) {
-		return jdbc.update(SQL_UPDATE, module.getNomuniv(), module.getDescription(), module.getLien(),module.getStatut(), module.getCommentaire(), module.getUserId());
+		return jdbc.update(SQL_UPDATE, module.getNomuniv(), module.getDescription(), module.getLien(),module.getStatut(), module.getCommentaire(), module.getUserId(), module.getIdparcours());
 	}
 
 	@Override
@@ -87,7 +88,7 @@ public class ModuleRepositoryImpl implements ModuleRepository {
 		@Override
 		public Module mapRow(ResultSet rs, int row) throws SQLException {
 
-			return new Module(rs.getInt("id"), rs.getString("NOMUNIV"), rs.getString("DESCRIPTION"), rs.getString("LIEN"), rs.getString("STATUT"), rs.getString("COMMENTAIRE"), rs.getInt("userId"));
+			return new Module(rs.getInt("id"), rs.getString("NOMUNIV"), rs.getString("DESCRIPTION"), rs.getString("LIEN"), rs.getString("STATUT"), rs.getString("COMMENTAIRE"), rs.getInt("userId"), rs.getLong("IDPARCOURS"));
 
 		}
 

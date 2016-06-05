@@ -1,6 +1,14 @@
 package edu.isep.speakisep;
 
+import java.awt.Desktop;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URLEncoder;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -16,23 +24,29 @@ import net.ubilife.spring.customerjdbc.Module;
 import net.ubilife.spring.customerjdbc.ModuleRepository;
 import net.ubilife.spring.customerjdbc.UniversiteRepository;
 import net.ubilife.spring.customerjdbc.User;
+import net.ubilife.spring.customerjdbc.UserRepository;
 
 @Controller
 
 public class EleveInternationalModuleController {
+
 	@RequestMapping(value = "/eleve_ajoutmodules", method = RequestMethod.POST)
 	public String form(HttpServletRequest request,
 			@RequestParam("universite") String universite,
 			@RequestParam("description") String description,
-			@RequestParam("lien") String lien)
+			@RequestParam("lien") String lien) throws IOException, URISyntaxException
 	{
 		HttpSession session= request.getSession();
 		User user =(User)session.getAttribute("user");
-		
+
 		//Récupération des données
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		ModuleRepository repoM = ctx.getBean(ModuleRepository.class);
-		
+		UserRepository repoU = ctx.getBean(UserRepository.class);
+
+		request.setAttribute("parcours", repoU.findOneParcours(user.getIdParcours()));
+		request.setAttribute("respo", (repoU.findOneParcours(user.getIdParcours())).getMail());
+
 		//Conversion en UTF-8
 		try {
 			universite = new String(universite.getBytes("iso-8859-1"), "utf8");
@@ -43,14 +57,43 @@ public class EleveInternationalModuleController {
 		}
 
 		if(!universite.equals("") && !description.equals("") && !lien.equals("")){
-			Module module = new Module(universite,description,lien,"en attente",null,user.getId());
+			Module module = new Module(universite,description,lien,"en attente",null,user.getId(), user.getIdParcours());
 			repoM.save(module);
+			String mailrespo = repoU.findOneParcours(user.getIdParcours()).getMail();
+			mailto(Arrays.asList(mailrespo), "Speakisep - Nouveaux modules à valider!",
+					"De nouveaux modules d'élèves sont à valider. Connectez-vous vite sur la plateforme Speakisep.");
 		}
 		else{
-			
+
 		}
 
 		return "redirect:eleve_international";
+	}
+
+	public static void mailto(List<String> recipients, String subject,
+			String body) throws IOException, URISyntaxException {
+		String uriStr = String.format("mailto:%s?subject=%s&body=%s",
+				join(",", recipients), // use semicolon ";" for Outlook!
+				urlEncode(subject),
+				urlEncode(body));
+		Desktop.getDesktop().browse(new URI(uriStr));
+	}
+
+	private static final String urlEncode(String str) {
+		try {
+			return URLEncoder.encode(str, "UTF-8").replace("+", "%20");
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public static final String join(String sep, Iterable<?> objs) {
+		StringBuilder sb = new StringBuilder();
+		for(Object obj : objs) {
+			if (sb.length() > 0) sb.append(sep);
+			sb.append(obj);
+		}
+		return sb.toString();
 	}
 
 	@RequestMapping("/eleve_international_module")

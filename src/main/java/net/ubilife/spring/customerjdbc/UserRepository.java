@@ -20,4 +20,6 @@ public interface UserRepository {
 
 	List<User> findParcours(long id);
 
+	User findOneParcours(long id);
+
 }

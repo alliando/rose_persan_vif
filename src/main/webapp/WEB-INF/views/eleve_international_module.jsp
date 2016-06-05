@@ -34,7 +34,7 @@
 		<label for="description">Choix des cours : </label>
 		<textarea style="height: 120px" class="form-control" id="description"  name="description"
 			placeholder="Indiquer ici vos cours, leurs descriptions et le nombre de crédits correspondants"
-			cols="" rows=""></TEXTAREA>
+			cols="" rows=""></textarea>
 		</div>
 		<div class="form-group">
 			<label for="lien">Insérer ici le lien vers le

@@ -9,6 +9,7 @@ public class Module {
 	private String lien;
 	private String statut;
 	private String commentaire;
+	private long idparcours;
 
 	public String getStatut() {
 		return statut;
@@ -57,11 +58,19 @@ public class Module {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+	
+	public long getIdparcours() {
+		return idparcours;
+	}
+
+	public void setIdparcours(long idparcours) {
+		this.idparcours = idparcours;
+	}
 
 	public Module(){	
 	}
 
-	public Module(int id, String nomuniv, String description, String lien, String statut, String commentaire, int userId){
+	public Module(int id, String nomuniv, String description, String lien, String statut, String commentaire, int userId, long idparcours){
 		super();
 		this.id=id;
 		this.nomuniv=nomuniv;
@@ -70,9 +79,10 @@ public class Module {
 		this.statut=statut;
 		this.commentaire=commentaire;
 		this.userId=userId;
+		this.idparcours=idparcours;
 	}
 
-	public Module(String nomuniv, String description, String lien, String statut, String commentaire, int userId){
+	public Module(String nomuniv, String description, String lien, String statut, String commentaire, int userId, long idparcours){
 		super();
 		this.nomuniv=nomuniv;
 		this.description=description;
@@ -80,6 +90,7 @@ public class Module {
 		this.statut=statut;
 		this.commentaire=commentaire;
 		this.userId=userId;
+		this.idparcours=idparcours;
 	}
 
 	public long getId() {
