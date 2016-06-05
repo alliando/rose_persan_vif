@@ -25,10 +25,12 @@ public class Parcours {
 		this.description=description;
 		this.idtemoignage=idtemoignage;
 	}
+	
 	public String toString()
 	{
 		return "nomparcours = " + nomparcours + " description = " + description + " idtemoignage = " + idtemoignage ;
 	}
+	
 	public long getId() {
 		return id;
 	}
