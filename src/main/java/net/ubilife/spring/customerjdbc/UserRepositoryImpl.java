@@ -68,7 +68,7 @@ public class UserRepositoryImpl implements UserRepository {
 		}, holder);
 
 		if(rows == 1) {	// success, so apply ID to the customer object
-			user.setId((Integer)holder.getKey());
+			user.setId((Long)holder.getKey());
 			return user;
 		}
 

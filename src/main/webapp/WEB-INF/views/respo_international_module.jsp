@@ -44,6 +44,7 @@
 											type="button" class="btn btn-default">Voir ses
 											modules</button></a></td>
 							</tr>
+
 						</c:if>
 					</c:forEach>
 				</c:forEach>

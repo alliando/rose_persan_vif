@@ -6,7 +6,10 @@ import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URLEncoder;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -46,6 +49,7 @@ public class EleveInternationalModuleController {
 
 		request.setAttribute("parcours", repoU.findOneParcours(user.getIdParcours()));
 		request.setAttribute("respo", (repoU.findOneParcours(user.getIdParcours())).getMail());
+		
 
 		//Conversion en UTF-8
 		try {
@@ -59,9 +63,10 @@ public class EleveInternationalModuleController {
 		if(!universite.equals("") && !description.equals("") && !lien.equals("")){
 			Module module = new Module(universite,description,lien,"en attente",null,user.getId(), user.getIdParcours());
 			repoM.save(module);
-			String mailrespo = repoU.findOneParcours(user.getIdParcours()).getMail();
+
+			/*String mailrespo = repoU.findOneParcours(user.getIdParcours()).getMail();
 			mailto(Arrays.asList(mailrespo), "Speakisep - Nouveaux modules à valider!",
-					"De nouveaux modules d'élèves sont à valider. Connectez-vous vite sur la plateforme Speakisep.");
+					"De nouveaux modules d'élèves sont à valider. Connectez-vous vite sur la plateforme Speakisep.");*/
 		}
 		else{
 
@@ -102,9 +107,37 @@ public class EleveInternationalModuleController {
 
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		UniversiteRepository repoUniv = ctx.getBean(UniversiteRepository.class);
+		ModuleRepository repoM = ctx.getBean(ModuleRepository.class);
+		
+		HttpSession session= request.getSession();
+		User user =(User)session.getAttribute("user");
 
 		//Données envoyées à la view
 		request.setAttribute("universite", repoUniv.findAll());
+		
+		
+		int register=0;
+		for (Module t : repoM.findAll()){
+			if(t.getUserId() == (user.getId())){
+				register=1;
+				request.setAttribute("ModuleDone", register);
+				break;
+			}
+			else{
+				register=0;
+			}
+		}
+		if (register==1){
+			Module module= repoM.findOne(user.getId());
+			request.setAttribute("module", module);
+		}
+		
+		Date actuelle = new Date();
+		 DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		 String dat = dateFormat.format(actuelle);
+		 request.setAttribute("date", dat);
+		//System.out.println("b  :"+dat);
+
 		return "eleve_international_module";
 	}
 }

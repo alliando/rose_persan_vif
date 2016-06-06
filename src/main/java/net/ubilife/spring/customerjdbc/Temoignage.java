@@ -5,7 +5,7 @@ public class Temoignage {
 	private long id;
 	private String nomtem;
 	private String descriptem;
-	private int userId;//eleve
+	private long userId;//eleve
 	private String nomparcours;
 	private String statut;
 
@@ -17,11 +17,11 @@ public class Temoignage {
 		this.statut = statut;
 	}
 
-	public int getUserId() {
+	public long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(long userId) {
 		this.userId = userId;
 	}
 
