@@ -66,11 +66,13 @@ public class LoginnController extends HttpServlet {
 		System.out.println(register);
 		//Si l'utilisateur n'est pas inscrit, on l'enregistre lui+sa fiche
 		if (register!=1){repo.save(user);
-			Fiche fiche=new Fiche("","", "","", "", "", "", "","",user.getId());
+			Fiche fiche=new Fiche("","", "","", "", "", "","", "","",user.getId());
 			repoF.save(fiche);
 
 		}
 		session.setAttribute("fiche",repoF.findOne(user));
+		ReadCVS obj = new ReadCVS();
+		obj.run();
 
 		repo.findOne(user.getId());
 		session= request.getSession();
