@@ -17,22 +17,33 @@
 	<!-- /.row -->
 
 	<div class="row">
-		<div class="form-group">
-			<label for="inputUniv">Nom de l'université : </label> <input
-				type="text" class="form-control" id="inputUniv"
-				placeholder="Université">
+	<form action='eleve_ajoutmodules' method="POST">
+	<div class="form-group form">
+		<label for="universite">Choisissez votre université d'accueil : </label>
+		<br>
+		<select
+				class="col-sm-4 col-md-4" name="universite" id="universite">
+					<option value="universite">Nom de l'université</option>
+					<c:forEach var="universite" items="${universite}">
+						<option value="${universite.getNomuniv()}">${universite.getNomuniv()}</option>
+					</c:forEach>
+			</select>
 		</div>
-		<label for="textareaUniv">Choix des cours : </label>
-		<textarea style="height: 120px" class="form-control" id="Commentaire"
+			<br>
+		<div class="form-group">
+		<label for="description">Choix des cours : </label>
+		<textarea style="height: 120px" class="form-control" id="description"  name="description"
 			placeholder="Indiquer ici vos cours, leurs descriptions et le nombre de crédits correspondants"
 			cols="" rows=""></TEXTAREA>
+		</div>
 		<div class="form-group">
-			<label for="inputUnivWeb">Insérer ici le lien vers le
+			<label for="lien">Insérer ici le lien vers le
 				catalogue de cours</label> <input type="text" class="form-control"
-				id="inputUnivWeb" placeholder="Lien">
+				id="lien" name="lien" placeholder="Lien">
 		</div>
 		<button type="submit" class="btn btn-default btn-lg btn-block active">Envoyer</button>
 
+	</form>
 	</div>
 
 	<!-- /.row -->
