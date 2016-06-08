@@ -69,10 +69,10 @@ public class EleveProfilModifyController {
 
 		return "redirect:eleve_profil";
 	}
+	
 	@RequestMapping("/eleve_profil_modify")
 
-	public String Profil_respo(
-			){
+	public String Profil_respo(){
 
 		return "eleve_profil_modify";
 	}
