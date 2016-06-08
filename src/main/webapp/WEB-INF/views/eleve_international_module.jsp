@@ -51,7 +51,6 @@
 		<c:when test="${ModuleDone==1}">
 			<table class="table table-bordered">
 				<thead>
-
 					<tr>
 						<th>Mon choix de cours</th>
 						<th>Etat</th>
