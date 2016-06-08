@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface ModuleRepository {
 
-	Module findOne(int id);
+	Module findOne(long id);
 
 	Module save(Module module);
 
@@ -15,5 +15,9 @@ public interface ModuleRepository {
 	int delete (Module module);
 
 	List<Module> findAllBySql(String sql);
+
+	int updateOne(Module module);
+
+	Module findOneId(long id);
 
 }

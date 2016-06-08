@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class User implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	private int userId;
+	private long userId;
 	private String nom;
 	private String nomFamille;
 	private String prenom;
@@ -57,11 +57,11 @@ public class User implements Serializable{
 		this.idParcours = idParcours;
 	}
 
-	public int getId() {
+	public long getId() {
 		return userId;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.userId = id;
 	}
 
