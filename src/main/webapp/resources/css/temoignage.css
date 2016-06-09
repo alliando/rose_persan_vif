@@ -2,24 +2,27 @@
 	float:left;
 	
 }
-#Block{
+.Block{
 	border: 2px solid;
 	margin-top:5px;
-}
-#etpromo{
 	
 }
-#parcours{
-	
+.etpromo{
+
+	}
+.parcours{
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #286090;
 }
-#info{
-	border: 1px solid;
+.info{
+		border-top: 2px solid;
+		
 }
-#allBlock{
+.allBlock{
 	margin-top:45px;
 }
 
-#infotem{
-		border: 2px solid;
-		padding-left:2px;
+.infotem{
+
 }
