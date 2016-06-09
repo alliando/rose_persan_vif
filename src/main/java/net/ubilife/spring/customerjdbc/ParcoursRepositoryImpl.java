@@ -31,9 +31,11 @@ public class ParcoursRepositoryImpl implements ParcoursRepository {
 	public Parcours findOne(long id) {
 		return jdbc.queryForObject(SQL_FIND_ONE, new ParcoursRowMapper(), id);
 	}
+	@Override
 	public Parcours findOne(String NOMPARCOURS) {
 		return jdbc.queryForObject(SQL_FIND_NAME, new ParcoursRowMapper(), NOMPARCOURS);
 	}
+
 
 	@Override
 	public Parcours save(final Parcours parcours) {
