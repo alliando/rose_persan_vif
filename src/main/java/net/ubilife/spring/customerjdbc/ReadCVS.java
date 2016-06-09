@@ -3,13 +3,7 @@ package net.ubilife.spring.customerjdbc;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.StringTokenizer;
 
-/**
- * Created by Frost_000 on 04/06/2016.
- */
 public class ReadCVS {
    private String numero;
    private  String nom;
@@ -21,10 +15,11 @@ public class ReadCVS {
 
     public void run(User user) {
 
-        String csvFile = "/Users/Frost_000/code/isep/speakIsep/rose_persan_vif/src/main/java/Parcours_Ingenieur_Architecte_des_Systemes_d_Informationn.csv";
+        String csvFile = "Parcours_Ingenieur_Architecte_des_Systemes_d_Informationn.csv";
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ";";
+        Class myClass=getClass();
 
 //Récupération des repository
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
@@ -32,7 +27,8 @@ public class ReadCVS {
         FicheRepository repoF=ctx.getBean(FicheRepository.class);
 
         try {
-            br = new BufferedReader(new FileReader(csvFile));
+            ClassLoader loader=myClass.getClassLoader();
+            br = new BufferedReader(new FileReader(loader.getResource(csvFile).getPath()));
             String nomParcours=br.readLine().split(";")[1];
                 nomParcours=nomParcours.split("Promo")[0];
             int register=0;
@@ -42,16 +38,12 @@ public class ReadCVS {
                     break;
                 }
             }
-
             //Si le parcours n'est pas inscrit, on l'enregistre
-
             if (register!=1){
-
-                Parcours parcours=new Parcours(nomParcours,"",2);
+                Parcours parcours=new Parcours(nomParcours,"");
                 repoP.save(parcours);
             }
             br.readLine();
-            Map<String, String[]> map = new HashMap<String, String[]>();
             while (((line = br.readLine()) != null)) {
                 String[] data = line.split(cvsSplitBy);
                 String[] b;
@@ -64,7 +56,6 @@ public class ReadCVS {
                     apprentissage=data[5].trim();
                         if(numero.equals(user.getNumber())) {
                             Fiche fiche = repoF.findOne(user);
-                            System.out.println(fiche.getUserId());
                             fiche.setApprenti(apprentissage);
                             fiche.setStatut(statut);
                             fiche.setEtape(etape);
