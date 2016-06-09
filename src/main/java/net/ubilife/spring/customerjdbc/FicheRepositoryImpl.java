@@ -20,9 +20,9 @@ public class FicheRepositoryImpl implements FicheRepository {
 	@Autowired
 	private JdbcOperations jdbc;
 	
-	private static final String SQL_INSERT = "insert into fiche (NUMSALLE, PHOTO, CV, LMOTIV, ADRESSE, ACTEXTRA, COMPETENCES, NOTES,CURSUS, APPRENTI,ETAPE,PROMOTION,STATUT, userId ) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private static final String SQL_INSERT = "insert into fiche (NUMSALLE, PHOTO, CV, LMOTIV, ADRESSE, ACTEXTRA, COMPETENCES, NOTES,CURSUS, APPRENTI,ETAPE,PROMOTION,STATUT, userId ) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	private static final String SQL_UPDATE = "update fiche set NUMSALLE=?, PHOTO=?, CV=?, LMOTIV=?, ADRESSE=?, ACTEXTRA=?, COMPETENCES=?, NOTES=?, APPRENTI=?, userId=?,ETAPE=?,PROMOTION=?,STATUT=?,";
-	private static final String SQL_UPDATE_ONE = "update fiche set NUMSALLE=?, PHOTO=?, CV=?, LMOTIV=?, ADRESSE=?, ACTEXTRA=?, COMPETENCES=?, NOTES=?, APPRENTI=?,ETAPE=?,PROMOTION=?,STATUT=?, userId=? WHERE IDFICHE=?";
+	private static final String SQL_UPDATE_ONE = "update fiche set NUMSALLE=?, PHOTO=?, CV=?, LMOTIV=?, ADRESSE=?, ACTEXTRA=?, COMPETENCES=?, NOTES=?,CURSUS=?, APPRENTI=?,ETAPE=?,PROMOTION=?,STATUT=?, userId=? WHERE IDFICHE=?";
 	private static final String SQL_FIND_ONE = "select * from fiche where IDFICHE= ?";
 	private static final String SQL_FIND_ONE_BY_USERID = "select * from fiche where userId= ?";
 	private static final String SQL_FIND_ALL = "select * from fiche order by userId";
@@ -58,10 +58,10 @@ public class FicheRepositoryImpl implements FicheRepository {
 				ps.setString(8, fiche.getNotes());
 				ps.setString(9, fiche.getCursus());
 				ps.setString(10, fiche.getApprenti());
-				ps.setString(12, fiche.getEtape());
-				ps.setString(13, fiche.getPromotion());
-				ps.setString(14, fiche.getStatut());
-				ps.setLong(15, fiche.getUserId());
+				ps.setString(11, fiche.getEtape());
+				ps.setString(12, fiche.getPromotion());
+				ps.setString(13, fiche.getStatut());
+				ps.setLong(14, fiche.getUserId());
 			
 				
 				return ps;

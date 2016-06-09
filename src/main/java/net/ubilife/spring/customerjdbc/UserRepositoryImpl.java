@@ -35,7 +35,8 @@ public class UserRepositoryImpl implements UserRepository {
 	public User findOne(long id) {
 		return jdbc.queryForObject(SQL_FIND_ONE, new UserRowMapper(), id);
 	}
-	
+
+
 	@Override
 	public User findOneParcours(long id) {
 		return jdbc.queryForObject(SQL_FIND_PARCOURS_RESPO, new UserRowMapper(), id);
