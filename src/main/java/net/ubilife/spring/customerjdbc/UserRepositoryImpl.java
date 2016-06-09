@@ -25,6 +25,7 @@ public class UserRepositoryImpl implements UserRepository {
 	private static final String SQL_UPDATE_ONE = "update user set login=?, password=?, nom=?, nomFamille=?, prenom=?, type=?, numero=?, mail=?, IDPARCOURS=? where userId=?";
 	private static final String SQL_FIND_ONE = "select * from user where userId= ?";
 	private static final String SQL_FIND_PARCOURS = "select * from user where IDPARCOURS= ?";
+	private static final String SQL_FIND_NUMERO = "select * from user where numero= ?";
 	private static final String SQL_FIND_QUERY = "select * from user where ?=?";
 	private static final String SQL_FIND_ALL = "select * from user order by nomFamille";
 	//private static final String SQL_FIND_ALL_DATA = "select * from user order by nomFamille where IDPARCOURS=?";
@@ -34,7 +35,10 @@ public class UserRepositoryImpl implements UserRepository {
 	public User findOne(long id) {
 		return jdbc.queryForObject(SQL_FIND_ONE, new UserRowMapper(), id);
 	}
-	
+	public User findOne(String numero) {
+		return jdbc.queryForObject(SQL_FIND_NUMERO, new UserRowMapper(), numero);
+	}
+
 
 
 	@Override

@@ -13,12 +13,15 @@ public class Fiche {
 	private String competences;
 	private String notes;
 	private String apprenti;
+	private String etape;
+	private String promotion;
+	private String statut;
 	private long userId;
 	
 	public Fiche(){	
 	}
 	
-	public Fiche(int id, String numsalle,String photo, String CV, String lettremotiv, String adresse, String actextra, String competences, String notes, String apprenti, long userId){
+	public Fiche(int id, String numsalle,String photo, String CV, String lettremotiv, String adresse, String actextra, String competences, String notes, String apprenti,String etape,String promotion,String statut, long userId){
 		super();
 		this.id=id;
 		this.numsalle=numsalle;
@@ -30,11 +33,14 @@ public class Fiche {
 		this.competences=competences;
 		this.notes=notes;
 		this.apprenti=apprenti;
+		this.etape=etape;
+		this.promotion=promotion;
+		this.statut=statut;
 		this.userId=userId;
 		
 	}
 
-	public Fiche( String numsalle,String photo, String CV, String lettremotiv, String adresse, String actextra, String competences, String notes, String apprenti, long userId){
+	public Fiche( String numsalle,String photo, String CV, String lettremotiv, String adresse, String actextra, String competences, String notes, String apprenti,String etape,String promotion,String statut, long userId){
 		super();
 		this.numsalle=numsalle;
 		this.photo=photo;
@@ -45,6 +51,9 @@ public class Fiche {
 		this.competences=competences;
 		this.notes=notes;
 		this.apprenti=apprenti;
+		this.etape=etape;
+		this.promotion=promotion;
+		this.statut=statut;
 		this.userId=userId;
 
 	}
@@ -136,6 +145,31 @@ public class Fiche {
 	public void setApprenti(String apprenti) {
 		this.apprenti = apprenti;
 	}
+
+	public String getEtape() {
+		return etape;
+	}
+
+	public void setEtape(String etape) {
+		this.etape = etape;
+	}
+
+	public void setPromotion(String promotion) {
+		this.promotion = promotion;
+	}
+	public String getPromotion() {
+		return promotion;
+	}
+
+	public void setStatut(String statut) {
+		this.statut = statut;
+	}
+
+
+	public String getStatut() {
+		return statut;
+	}
+
 
 
 }

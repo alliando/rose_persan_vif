@@ -5,7 +5,8 @@ import java.util.List;
 public interface UserRepository {
 
 	User findOne(long id);
-	
+	User findOne(String numero);
+
 	User save(User user);
 	
 	List<User> findAll();

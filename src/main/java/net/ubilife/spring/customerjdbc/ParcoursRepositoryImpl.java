@@ -20,7 +20,7 @@ public class ParcoursRepositoryImpl implements ParcoursRepository {
 	@Autowired
 	private JdbcOperations jdbc;
 	
-	private static final String SQL_INSERT = "insert into parcours (NOMPARCOURS, DESCRIPTION, IDTEMOIGNAGE) values (?,?,?,?)";
+	private static final String SQL_INSERT = "insert into parcours (NOMPARCOURS, DESCRIPTION, IDTEMOIGNAGE) values (?,?,?)";
 	private static final String SQL_UPDATE = "update parcours set NOMPARCOURS=?, DESCRIPTION=?, IDTEMOIGNAGE=?";
 	private static final String SQL_FIND_NAME = "select * from parcours where NOMPARCOURS= ?";
 	private static final String SQL_FIND_ONE = "select * from parcours where IDPARCOURS= ?";

@@ -28,16 +28,16 @@ public class LoginnController extends HttpServlet {
 		return "home";
 	}
 
-	@RequestMapping(value = "/loginn", method = RequestMethod.POST)
-	public String submitForm(Model model,
-							 @RequestParam("login") String login,
-							 @RequestParam("password") String password,
-							 @RequestParam("nom") String nom,
-							 @RequestParam("nomFamille") String nomFamille,
-							 @RequestParam("prenom") String prenom,
-							 @RequestParam("type") String type,
-							 @RequestParam("number") String number,
-							 @RequestParam("mail") String mail,
+                             @RequestMapping(value = "/loginn", method = RequestMethod.POST)
+                             public String submitForm(Model model,
+                             @RequestParam("login") String login,
+                             @RequestParam("password") String password,
+                             @RequestParam("nom") String nom,
+                             @RequestParam("nomFamille") String nomFamille,
+                             @RequestParam("prenom") String prenom,
+                             @RequestParam("type") String type,
+                             @RequestParam("number") String number,
+                             @RequestParam("mail") String mail,
 
 							 HttpServletRequest request) {
 		HttpSession session= request.getSession();
@@ -66,12 +66,14 @@ public class LoginnController extends HttpServlet {
 		System.out.println(register);
 		//Si l'utilisateur n'est pas inscrit, on l'enregistre lui+sa fiche
 		if (register!=1){repo.save(user);
-			Fiche fiche=new Fiche("","", "","", "", "", "", "","",user.getId());
+			Fiche fiche=new Fiche("","", "","", "", "", "", "","","","","",user.getId());
 			repoF.save(fiche);
 
 		}
 		session.setAttribute("fiche",repoF.findOne(user));
 
+        ReadCVS obj = new ReadCVS();
+        obj.run(user);
 		repo.findOne(user.getId());
 		session= request.getSession();
 		System.out.println("username : " +session.getId());
