@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <link href="resources/css/temoignage.css" rel="stylesheet">
 <title>Elève - Les Responsables</title>
@@ -18,26 +19,18 @@
 	<table class="table table-bordered">
 		<thead>
 
-			<tr>
-				<th>Parcours</th>
-				<th>Professeur associé</th>
-			</tr>
-		</thead>
+		<tr>
+			<th>Parcours 					<th>Professeur associé
 		<tbody>
-			<c:forEach var="parc" items="${parcoursFound}">
-				<c:forEach var="respo" items="${respoFound}">
-					<c:if test="${parc.getId().equals(respo.getIdParcours())}">
-						<tr>
-							<td>${parc.getNomparcours()}</td>
-							<td><a
-								onclick="self.location.href='eleve_profilRespo?id=${respo.getId()}'">${respo.getNom()}</a>
-							</td>
-						</tr>
-					</c:if>
-				</c:forEach>
+		<c:forEach var="parc" items="${parcoursFound}">
+		<c:forEach var="respo" items="${respoFound}">
+		<c:if test="${(parc.getId()).equals(respo.getIdParcours())}">
+		<tr>
+			<td>${parc.getNomparcours()}		<td><a  onclick="self.location.href='eleve_profilRespo?id=${respo.getId()}'">${respo.getNom()}</a>
+			</c:if>
+			</c:forEach>
 			</c:forEach>
 
-		</tbody>
 	</table>
 
 </div>
