@@ -5,10 +5,11 @@ import java.util.List;
 public interface UserRepository {
 
 	User findOne(long id);
+
 	User findOne(String numero);
 
 	User save(User user);
-	
+
 	List<User> findAll();
 	List<User> findAll(long id);
 	List<User> findAllBySql(String sql);
@@ -20,5 +21,7 @@ public interface UserRepository {
 	int delete (User user);
 
 	List<User> findParcours(long id);
-	
+
+	User findOneParcours(long id);
+
 }

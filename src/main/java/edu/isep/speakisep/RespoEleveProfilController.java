@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 public class RespoEleveProfilController {
 	@RequestMapping(value="/respo_eleve_profil" )
 	public String Profil_respo(HttpServletRequest request,
-							   @RequestParam(value="id", required=false) long id){
+			@RequestParam(value="id", required=false) long id){
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		UserRepository repoUser= ctx.getBean(UserRepository.class);
 		FicheRepository repoFiche= ctx.getBean(FicheRepository.class);

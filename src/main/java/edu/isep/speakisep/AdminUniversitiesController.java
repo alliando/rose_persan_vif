@@ -18,9 +18,9 @@ import net.ubilife.spring.customerjdbc.UniversiteRepository;
  */
 @Controller
 public class AdminUniversitiesController {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(AdminUniversitiesController.class);
-	
+
 	@RequestMapping(value = "/admin_universities", method = RequestMethod.GET)
 	public String home(HttpServletRequest request) {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
@@ -32,6 +32,6 @@ public class AdminUniversitiesController {
 		}
 		return "admin_universities";
 	}
-	
-	
+
+
 }

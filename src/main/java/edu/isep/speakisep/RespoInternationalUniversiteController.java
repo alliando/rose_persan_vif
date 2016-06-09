@@ -14,7 +14,7 @@ import net.ubilife.spring.customerjdbc.UniversiteRepository;
 
 public class RespoInternationalUniversiteController {
 	@RequestMapping("/respo_international_universite")
-	
+
 	public String RespoInternationalUniversite(HttpServletRequest request){
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		UniversiteRepository repo=ctx.getBean(UniversiteRepository.class);

@@ -19,13 +19,13 @@ public class UserRepositoryImpl implements UserRepository {
 
 	@Autowired
 	private JdbcOperations jdbc;
-	
+
 	private static final String SQL_INSERT = "insert into user (login, password, nom, nomFamille, prenom, type, numero, mail, IDPARCOURS) values (?,?,?,?,?,?,?,?,?)";
 	private static final String SQL_UPDATE = "update user set login=?, password=?, nom=?, nomFamille=?, prenom=?, type=?, numero=?, mail=?, IDPARCOURS=?";
 	private static final String SQL_UPDATE_ONE = "update user set login=?, password=?, nom=?, nomFamille=?, prenom=?, type=?, numero=?, mail=?, IDPARCOURS=? where userId=?";
 	private static final String SQL_FIND_ONE = "select * from user where userId= ?";
 	private static final String SQL_FIND_PARCOURS = "select * from user where IDPARCOURS= ?";
-	private static final String SQL_FIND_NUMERO = "select * from user where numero= ?";
+	private static final String SQL_FIND_PARCOURS_RESPO = "select * from user where type='respo' AND IDPARCOURS= ?";
 	private static final String SQL_FIND_QUERY = "select * from user where ?=?";
 	private static final String SQL_FIND_ALL = "select * from user order by nomFamille";
 	//private static final String SQL_FIND_ALL_DATA = "select * from user order by nomFamille where IDPARCOURS=?";
@@ -35,23 +35,25 @@ public class UserRepositoryImpl implements UserRepository {
 	public User findOne(long id) {
 		return jdbc.queryForObject(SQL_FIND_ONE, new UserRowMapper(), id);
 	}
-	public User findOne(String numero) {
-		return jdbc.queryForObject(SQL_FIND_NUMERO, new UserRowMapper(), numero);
+	
+	@Override
+	public User findOneParcours(long id) {
+		return jdbc.queryForObject(SQL_FIND_PARCOURS_RESPO, new UserRowMapper(), id);
 	}
 
 
 
 	@Override
 	public User save(final User user) {
-		
+
 		KeyHolder holder = new GeneratedKeyHolder();
-		
+
 		int rows = jdbc.update(new PreparedStatementCreator() {
-			
+
 			@Override
 			public PreparedStatement createPreparedStatement(Connection conn) throws SQLException {
 				PreparedStatement ps = conn.prepareStatement(SQL_INSERT, new String[]{"userId"});
-				
+
 				ps.setString(1, user.getLogin());
 				ps.setString(2, user.getPassword());
 				ps.setString(3, user.getNom());
@@ -64,14 +66,14 @@ public class UserRepositoryImpl implements UserRepository {
 				return ps;
 			}
 		}, holder);
-		
+
 		if(rows == 1) {	// success, so apply ID to the customer object
 			user.setId((Long)holder.getKey());
 			return user;
 		}
-		
+
 		return null;
-		
+
 	}
 
 	@Override
@@ -109,10 +111,10 @@ public class UserRepositoryImpl implements UserRepository {
 
 		@Override
 		public User mapRow(ResultSet rs, int row) throws SQLException {
-			
+
 			return new User(rs.getInt("userId"), rs.getString("login"), rs.getString("password"), rs.getString("nom"), rs.getString("nomFamille"), rs.getString("prenom"), rs.getString("type"), rs.getString("numero"), rs.getString("mail"),rs.getInt("IDPARCOURS"));
-			
+
 		}
-		
+
 	}
 }

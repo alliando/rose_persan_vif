@@ -16,17 +16,17 @@ import java.util.Locale;
  */
 @Controller
 public class RespoHomeController {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(RespoHomeController.class);
-	
+
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/respo", method = RequestMethod.GET)
 	public String home() {
 
-		
+
 		return "respo_home";
 	}
-	
+
 }

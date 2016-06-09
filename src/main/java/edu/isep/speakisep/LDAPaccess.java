@@ -13,7 +13,7 @@ public class LDAPaccess implements Serializable
 
 	public LDAPObject LDAPget(String user, String mdp) throws Exception
 	{
-//		System.out.println(user + " " + mdp);
+		//		System.out.println(user + " " + mdp);
 		// Initial context implementation
 		String INITCTX = "com.sun.jndi.ldap.LdapCtxFactory";
 		String MY_HOST = "ldap://ldap.isep.fr:389";
@@ -64,7 +64,7 @@ public class LDAPaccess implements Serializable
 				SearchResult sr = (SearchResult) results.next();
 
 				String dn = sr.getName();
-//				System.out.println("Distinguished Name is " + dn);
+				//				System.out.println("Distinguished Name is " + dn);
 
 				Attribute cn = sr.getAttributes().get("cn");
 				nom = (String) cn.get();
@@ -85,8 +85,8 @@ public class LDAPaccess implements Serializable
 				}
 				Attribute em = sr.getAttributes().get("mail");			
 				mail = (String) em.get();				
-//				System.out.println("nom=" + nom + " login=" + login+ " type=" + type + " numero=" + employeeNumber + " mail=" + mail);
-				
+				//				System.out.println("nom=" + nom + " login=" + login+ " type=" + type + " numero=" + employeeNumber + " mail=" + mail);
+
 				ctx.close();
 			}
 		} catch (Exception e)

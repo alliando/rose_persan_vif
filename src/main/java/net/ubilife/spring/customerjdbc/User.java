@@ -41,7 +41,7 @@ public class User implements Serializable{
 		this.mail = mail;
 		this.idParcours = idParcours;
 	}
-	
+
 	public User(int userId, String login, String password, String nom, String nomFamille, String prenom, String type, String numero, String mail,long idParcours)
 	{
 		super();
@@ -56,7 +56,7 @@ public class User implements Serializable{
 		this.mail = mail;
 		this.idParcours = idParcours;
 	}
-	
+
 	public long getId() {
 		return userId;
 	}
@@ -100,8 +100,8 @@ public class User implements Serializable{
 	}
 	public String toString()
 	{
-		return "login = " + login + " nom = " + nom + " type = " + employeeType + " id = " + employeeNumber;
- 	}
+		return "userId = " + userId + " login = " + login + " nom = " + nom + " type = " + employeeType + " id = " + employeeNumber +" idParcours = " + idParcours;
+	}
 
 	public String getNomFamille() {
 		return nomFamille;

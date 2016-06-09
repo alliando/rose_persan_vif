@@ -3,14 +3,24 @@ package net.ubilife.spring.customerjdbc;
 public class Temoignage {
 
 	private long id;
-	private String nomtem;
 	private String descriptem;
-	private int userId;//eleve
-	public int getUserId() {
+	private long userId;//eleve
+	private String nomparcours;
+	private String statut;
+
+	public String getStatut() {
+		return statut;
+	}
+
+	public void setStatut(String statut) {
+		this.statut = statut;
+	}
+
+	public long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(long userId) {
 		this.userId = userId;
 	}
 
@@ -22,26 +32,24 @@ public class Temoignage {
 		this.nomparcours = nomparcours;
 	}
 
-	private String nomparcours;
-	
 	public Temoignage(){	
 	}
-	
-	public Temoignage(int id, String nomtem, String descriptem, int userId, String nomparcours){
+
+	public Temoignage(int id, String descriptem, long userId, String nomparcours, String statut){
 		super();
 		this.id=id;
-		this.nomtem=nomtem;
 		this.descriptem=descriptem;
 		this.userId=userId;
 		this.nomparcours=nomparcours;
+		this.statut=statut;
 	}
-	
-	public Temoignage(String nomtem, String descriptem, int userId, String nomparcours){
+
+	public Temoignage(String descriptem, long userId, String nomparcours, String statut){
 		super();
-		this.nomtem=nomtem;
 		this.descriptem=descriptem;
 		this.userId=userId;
 		this.nomparcours=nomparcours;
+		this.statut=statut;
 	}
 
 	public long getId() {
@@ -52,14 +60,6 @@ public class Temoignage {
 		this.id = id;
 	}
 
-	public String getNomtem() {
-		return nomtem;
-	}
-
-	public void setNomtem(String nomtem) {
-		this.nomtem = nomtem;
-	}
-
 	public String getDescriptem() {
 		return descriptem;
 	}
@@ -68,12 +68,9 @@ public class Temoignage {
 		this.descriptem = descriptem;
 	}
 
-	public int getIdeleve() {
-		return userId;
-	}
-
-	public void setIdeleve(int ideleve) {
-		this.userId = ideleve;
+	public String toString()
+	{
+		return "id = " + id + " descriptem = " + descriptem + " userId = " + userId + " nomparcours = " + nomparcours +" statut = " + statut;
 	}
 
 }

@@ -1,45 +1,62 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"
+	pageEncoding="UTF-8"%>
 
-    <title>Admin - Ajout profil</title>
+<title>Admin - Ajout profil</title>
 
-    <!-- Page Content -->
-    <div class="container">
+<!-- Page Content -->
+<div class="container">
 
-        <!-- Page Header -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Ajout de profil
-                    <small></small>
-                </h1>
-            </div>
-        </div>
-        <!-- /.row -->
+	<!-- Page Header -->
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">
+				Ajout d'élèves <small></small>
+			</h1>
+		</div>
+	</div>
+	<!-- /.row -->
 
-		<!-- Projects Row -->
-        <div class="row">
-            <div class="col-sm-12 col-md-12 btn btn-default btn-file">
-                <label class="control-label">Uploader le fichier excel contenant la liste des nouveaux �l�ves ici</label>
-				<input type="file" name="ADD" accept=".xls,.xlsx" />
-            </div>
-            <div>
-            <form method="POST" action='AddUser'>
-         	<button type="submit" name="AddUser" class="btn btn-default btn-lg btn-block active">Ajouter la liste</button>
-         	</form>
-            </div>
-        </div>
-        <!-- /.row --> 
-        
+	<!-- Projects Row -->
+	<div class="row">
+		<form method="POST" action='form_AddNew'>
+			<span class="form-group col-sm-12 col-md-12"> <select
+				class="col-sm-4 col-md-4" name="tsearch">
+					<option value="Parcours">Choisir un parcours</option>
+					<c:forEach var="parcours" items="${parcours}">
+						<option value="${parcours.getNomparcours()}">${parcours.getNomparcours()}</option>
+					</c:forEach>
+			</select>
+			</span> <span class="form-group col-sm-12 col-md-12">
+				<div class="col-sm-12 col-md-12 btn btn-default btn-file">
+					<label class="control-label">Uploader le fichier excel
+						contenant la liste des nouveaux élèves ici</label> <input type="file"
+						name="ADD" accept=".xls,.xlsx" />
+				</div>
+			</span> <span class="form-group col-sm-12 col-md-12">
+				<div>
 
-    </div>
-    <!-- /.container -->
+					<button type="submit" name="AddUser"
+						class="btn btn-default btn-lg btn-block active">Ajouter
+						la liste</button>
+				</div>
+			</span>
+		</form>
+	</div>
+	<span class="form-group col-sm-12 col-md-12"> </span>
+</div>
+<!-- /.row -->
 
-    <!-- jQuery -->
-    <script src="resources/js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="resources/js/bootstrap.min.js"></script>
+<div></div>
+<!-- /.container -->
 
-</body>
+<!-- jQuery -->
+<script src="resources/js/jquery.js" type="text/javascript"></script>
 
-</html>
+<!-- Bootstrap Core JavaScript -->
+<script src="resources/js/bootstrap.min.js" type="text/javascript"></script>
+
+<body></body>
+
+<html></html>
