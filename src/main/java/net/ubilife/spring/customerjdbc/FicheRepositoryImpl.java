@@ -20,7 +20,7 @@ public class FicheRepositoryImpl implements FicheRepository {
 	@Autowired
 	private JdbcOperations jdbc;
 	
-	private static final String SQL_INSERT = "insert into fiche (NUMSALLE, PHOTO, CV, LMOTIV, ADRESSE, ACTEXTRA, COMPETENCES, NOTES, APPRENTI,ETAPE,PROMOTION,STATUT, userId ) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private static final String SQL_INSERT = "insert into fiche (NUMSALLE, PHOTO, CV, LMOTIV, ADRESSE, ACTEXTRA, COMPETENCES, NOTES,CURSUS, APPRENTI,ETAPE,PROMOTION,STATUT, userId ) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	private static final String SQL_UPDATE = "update fiche set NUMSALLE=?, PHOTO=?, CV=?, LMOTIV=?, ADRESSE=?, ACTEXTRA=?, COMPETENCES=?, NOTES=?, APPRENTI=?, userId=?,ETAPE=?,PROMOTION=?,STATUT=?,";
 	private static final String SQL_UPDATE_ONE = "update fiche set NUMSALLE=?, PHOTO=?, CV=?, LMOTIV=?, ADRESSE=?, ACTEXTRA=?, COMPETENCES=?, NOTES=?, APPRENTI=?,ETAPE=?,PROMOTION=?,STATUT=?, userId=? WHERE IDFICHE=?";
 	private static final String SQL_FIND_ONE = "select * from fiche where IDFICHE= ?";
@@ -56,11 +56,12 @@ public class FicheRepositoryImpl implements FicheRepository {
 				ps.setString(6, fiche.getActextra());
 				ps.setString(7, fiche.getCompetences());
 				ps.setString(8, fiche.getNotes());
-				ps.setString(9, fiche.getApprenti());
-				ps.setString(10, fiche.getEtape());
-				ps.setString(11, fiche.getPromotion());
-				ps.setString(12, fiche.getStatut());
-				ps.setLong(13, fiche.getUserId());
+				ps.setString(9, fiche.getCursus());
+				ps.setString(10, fiche.getApprenti());
+				ps.setString(12, fiche.getEtape());
+				ps.setString(13, fiche.getPromotion());
+				ps.setString(14, fiche.getStatut());
+				ps.setLong(15, fiche.getUserId());
 			
 				
 				return ps;
@@ -83,12 +84,12 @@ public class FicheRepositoryImpl implements FicheRepository {
 
 	@Override
 	public int update(Fiche fiche) {
-		return jdbc.update(SQL_UPDATE, fiche.getNumsalle(), fiche.getPhoto(), fiche.getCV(), fiche.getLettremotiv(), fiche.getAdresse(), fiche.getActextra(), fiche.getCompetences(), fiche.getNotes(), fiche.getApprenti(), fiche.getUserId());
+		return jdbc.update(SQL_UPDATE, fiche.getNumsalle(), fiche.getPhoto(), fiche.getCV(), fiche.getLettremotiv(), fiche.getAdresse(), fiche.getActextra(), fiche.getCompetences(), fiche.getNotes(),fiche.getCursus(), fiche.getApprenti(), fiche.getUserId());
 	}
 
 	@Override
 	public int updateOne(Fiche fiche) {
-		return jdbc.update(SQL_UPDATE_ONE, fiche.getNumsalle(), fiche.getPhoto(), fiche.getCV(), fiche.getLettremotiv(), fiche.getAdresse(), fiche.getActextra(), fiche.getCompetences(), fiche.getNotes(), fiche.getApprenti(), fiche.getEtape(),fiche.getPromotion(),fiche.getStatut(),fiche.getUserId(),fiche.getId());
+		return jdbc.update(SQL_UPDATE_ONE, fiche.getNumsalle(), fiche.getPhoto(), fiche.getCV(), fiche.getLettremotiv(), fiche.getAdresse(), fiche.getActextra(), fiche.getCompetences(), fiche.getNotes(),  fiche.getCursus(),fiche.getApprenti(), fiche.getEtape(),fiche.getPromotion(),fiche.getStatut(),fiche.getUserId(),fiche.getId());
 	}
 
 	@Override
@@ -101,7 +102,7 @@ public class FicheRepositoryImpl implements FicheRepository {
 		@Override
 		public Fiche mapRow(ResultSet rs, int row) throws SQLException {
 			
-			return new Fiche(rs.getInt("IDFICHE"), rs.getString("NUMSALLE"), rs.getString("PHOTO"),rs.getString("CV"), rs.getString("LMOTIV"), rs.getString("ADRESSE"), rs.getString("ACTEXTRA"), rs.getString("COMPETENCES"), rs.getString("NOTES"), rs.getString("APPRENTI"),rs.getString("ETAPE"), rs.getString("PROMOTION"),rs.getString("STATUT"),  rs.getInt("userId"));
+			return new Fiche(rs.getInt("IDFICHE"), rs.getString("NUMSALLE"), rs.getString("PHOTO"),rs.getString("CV"), rs.getString("LMOTIV"), rs.getString("ADRESSE"), rs.getString("ACTEXTRA"), rs.getString("COMPETENCES"), rs.getString("NOTES"),rs.getString("CURSUS"), rs.getString("APPRENTI"),rs.getString("ETAPE"), rs.getString("PROMOTION"),rs.getString("STATUT"),  rs.getInt("userId"));
 			
 		}
 		

@@ -28,16 +28,16 @@ public class LoginnController extends HttpServlet {
 		return "home";
 	}
 
-                             @RequestMapping(value = "/loginn", method = RequestMethod.POST)
-                             public String submitForm(Model model,
-                             @RequestParam("login") String login,
-                             @RequestParam("password") String password,
-                             @RequestParam("nom") String nom,
-                             @RequestParam("nomFamille") String nomFamille,
-                             @RequestParam("prenom") String prenom,
-                             @RequestParam("type") String type,
-                             @RequestParam("number") String number,
-                             @RequestParam("mail") String mail,
+	@RequestMapping(value = "/loginn", method = RequestMethod.POST)
+	public String submitForm(Model model,
+							 @RequestParam("login") String login,
+							 @RequestParam("password") String password,
+							 @RequestParam("nom") String nom,
+							 @RequestParam("nomFamille") String nomFamille,
+							 @RequestParam("prenom") String prenom,
+							 @RequestParam("type") String type,
+							 @RequestParam("number") String number,
+							 @RequestParam("mail") String mail,
 
 							 HttpServletRequest request) {
 		HttpSession session= request.getSession();
