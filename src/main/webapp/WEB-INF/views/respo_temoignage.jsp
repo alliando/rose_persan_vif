@@ -119,8 +119,30 @@
 				</td>
 			</tr>
 		</tbody>
-		<tbody>
-		</tbody>
+	<!--  		<c:forEach var="temoignage" items="${temoignageFound}">
+				<c:forEach var="eleve" items="${eleveFound}">
+					<c:if test="${temoignage.getUserId().equals(eleve.getId())}">
+						<tr class="accordion-toggle" data-toggle="collapse"
+							data-target="#collapse1">
+							<td>${temoignage.getNomparcours()}</td>
+							<td>${eleve.getNom()}</td>
+							<td>2017</td>
+							<td>${temoignage.getStatut()}</td>
+							<td><a href="#" class="glyphicon glyphicon-ok"></a><a
+								href="#" class="glyphicon glyphicon-remove"
+								style="margin-left: 30px"></a></td>
+						</tr>
+						<tr id="collapse1" class="collapse out">
+							<td></td>
+							<td colspan="4">
+								<div>
+									<p>${temoignage.getDescriptem()}</p>
+								</div>
+							</td>
+						</tr>
+					</c:if>
+				</c:forEach>
+			</c:forEach>-->
 	</table>
 </div>
 <!-- /.row -->

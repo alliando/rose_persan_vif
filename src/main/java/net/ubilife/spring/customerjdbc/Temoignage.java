@@ -3,7 +3,6 @@ package net.ubilife.spring.customerjdbc;
 public class Temoignage {
 
 	private long id;
-	private String nomtem;
 	private String descriptem;
 	private long userId;//eleve
 	private String nomparcours;
@@ -36,19 +35,17 @@ public class Temoignage {
 	public Temoignage(){	
 	}
 
-	public Temoignage(int id, String nomtem, String descriptem, int userId, String nomparcours, String statut){
+	public Temoignage(int id, String descriptem, long userId, String nomparcours, String statut){
 		super();
 		this.id=id;
-		this.nomtem=nomtem;
 		this.descriptem=descriptem;
 		this.userId=userId;
 		this.nomparcours=nomparcours;
 		this.statut=statut;
 	}
 
-	public Temoignage(String nomtem, String descriptem, int userId, String nomparcours, String statut){
+	public Temoignage(String descriptem, long userId, String nomparcours, String statut){
 		super();
-		this.nomtem=nomtem;
 		this.descriptem=descriptem;
 		this.userId=userId;
 		this.nomparcours=nomparcours;
@@ -63,14 +60,6 @@ public class Temoignage {
 		this.id = id;
 	}
 
-	public String getNomtem() {
-		return nomtem;
-	}
-
-	public void setNomtem(String nomtem) {
-		this.nomtem = nomtem;
-	}
-
 	public String getDescriptem() {
 		return descriptem;
 	}
@@ -81,7 +70,7 @@ public class Temoignage {
 
 	public String toString()
 	{
-		return "id = " + id + " nomTem = " + nomtem + " descriptem = " + descriptem + " userId = " + userId + " nomParcours = " + nomparcours +" statut = " + statut;
+		return "id = " + id + " descriptem = " + descriptem + " userId = " + userId + " nomparcours = " + nomparcours +" statut = " + statut;
 	}
 
 }

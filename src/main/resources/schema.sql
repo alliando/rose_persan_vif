@@ -9,7 +9,6 @@ CREATE TABLE IF NOT EXISTS `parcours` (
 
 CREATE TABLE IF NOT EXISTS  `temoignage` (
   `IDTEM` int(20) NOT NULL AUTO_INCREMENT,
-  `NOMTEM` varchar(255) NOT NULL,
   `DESCRIPTEM` varchar(255) NOT NULL,
   `userId` int(20) NOT NULL,
   `NOMPARCOURS` varchar(255) NOT NULL DEFAULT '',

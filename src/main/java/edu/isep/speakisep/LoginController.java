@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import net.ubilife.spring.customerjdbc.Config;
+import net.ubilife.spring.customerjdbc.Fiche;
+import net.ubilife.spring.customerjdbc.FicheRepository;
 import net.ubilife.spring.customerjdbc.User;
 import net.ubilife.spring.customerjdbc.UserManager;
 import net.ubilife.spring.customerjdbc.UserRepository;
@@ -47,73 +49,91 @@ public class LoginController extends HttpServlet {
 
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String submitForm(Model model, @RequestParam("userId") String userId, @RequestParam("password") String password, @Validated User form, BindingResult result, HttpServletRequest request) {
+	public String submitForm(Model model, 
+			@RequestParam("userId") String userId, 
+			@RequestParam("password") String password, 
+			@Validated User form, 
+			BindingResult result, 
+			HttpServletRequest request) {
+		
 		model.addAttribute("form", form);
 
-		/*User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-	      String name = user.getNom(); //get logged in username
-	      model.addAttribute("username", name);*/
-
-
-		//System.out.println( "login : " + userId + " password : " + password );
 		LDAPObject ldap = ISEPAuth( userId , password );
 		String returnVal = "eleve_home";
-
+		HttpSession session= request.getSession();
 		User user = new User(ldap.login, ldap.password, ldap.nom, ldap.nomFamille, ldap.prenom, ldap.getType(), ldap.getNumber(), ldap.mail);
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		UserRepository repo = ctx.getBean(UserRepository.class);
-		repo.save(user);
-
-		//model.addAttribute("username", user.getPrenom());
+		FicheRepository repoF=ctx.getBean(FicheRepository.class);
 
 		if(ldap == null) {
 			returnVal = "form";
 		}
 		else{
 			model.addAttribute("form", form);
-			//returnVal= "eleve_home";
+
 			String type = ldap.getType(); 
 
-			HttpSession session = request.getSession();
 			request.getSession().setAttribute("loggedInUser", session);
 			request.getSession().setAttribute("username", user.getPrenom());
-			request.getSession().setAttribute("user", user);
 
-			//model.addAttribute("loggedInUser", user);
-
-			/*if(session.isNew()){
-				if (type.equals("eleve")){
-					returnVal= "eleve_profil_modify";
-					//model.addAttribute("eleve", user);
-					request.getSession().setAttribute("eleveLoggedIn", ldap.getType());
-				} else if ( type.equals("admin") ){
-					returnVal= "admin_home";
-					//model.addAttribute("admin", user);
-					request.getSession().setAttribute("adminLoggedIn", ldap.getType());
-				} else if ( type.equals("respo") ){
-					returnVal= "respo_profil_modify";
-					//model.addAttribute("respo", user);
-					request.getSession().setAttribute("respoLoggedIn", ldap.getType());
+			System.out.println("repoFind : " +user.getId());
+			System.out.println("repolog : " +user.getLogin());
+			
+			//regarde si l'utilisateur est déjà inscrit dans la DB speakIsep
+			int register=0;
+			for (User t : repo.findAll()){
+				if(t.getLogin().equals(user.getLogin())){
+					user=t;
+					register=1;
+					if (type.equals("eleve")){
+						returnVal= "eleve_home";
+						request.getSession().setAttribute("eleveLoggedIn", type);
+						request.getSession().setAttribute("user", user);
+					} else if ( type.equals("admin") ){
+						returnVal= "admin_home";
+						request.getSession().setAttribute("adminLoggedIn", type);
+						request.getSession().setAttribute("user", user);
+					} else if ( type.equals("respo") ){
+						returnVal= "respo_home";
+						request.getSession().setAttribute("respoLoggedIn", type);
+						request.getSession().setAttribute("user", user);
+					}
+					break;
 				}
 			}
-			else {*/
+			request.getSession().setAttribute("user", user);
+
+			System.out.println(register);
+			
+			//Si l'utilisateur n'est pas inscrit, on l'enregistre lui+sa fiche
+			if (register!=1){
+			repo.save(user);
+			Fiche fiche=new Fiche("","", "","", "", "", "", "","",user.getId());
+			repoF.save(fiche);
 			if (type.equals("eleve")){
-				returnVal= "eleve_home";
-				//model.addAttribute("eleve", user);
+				returnVal= "eleve_profil_modify";
 				request.getSession().setAttribute("eleveLoggedIn", type);
+				request.getSession().setAttribute("user", user);
 			} else if ( type.equals("admin") ){
 				returnVal= "admin_home";
-				//model.addAttribute("admin", user);
 				request.getSession().setAttribute("adminLoggedIn", type);
+				request.getSession().setAttribute("user", user);
 			} else if ( type.equals("respo") ){
-				returnVal= "respo_home";
-				//model.addAttribute("respo", user);
+				returnVal= "respo_profil_modify";
 				request.getSession().setAttribute("respoLoggedIn", type);
+				request.getSession().setAttribute("user", user);
 			}
+
+			}
+			session.setAttribute("fiche",repoF.findOne(user));
+
+			repo.findOne(user.getId());
+			session= request.getSession();
+			System.out.println("username : " +session.getId());
+			session.getAttribute("numero");
 		}
 
-
-		//}
 		return returnVal;
 
 	}

@@ -16,22 +16,22 @@
 	<!-- /.row -->
 
 	<div class="row">
-		<form action="">
+		<form action='eleve_ajouttemoignage' method="POST">
 			<div class="col-sm-7 col-md-7">
 				<div class="form-group">
-					<select class="col-sm-12 col-md-12" name="parcours"
-						style="margin-bottom: 10px">
-						<option value="Parcours">Parcours</option>
-						<option value="Génie Logiciel">Génie Logiciel</option>
-						<option value="Systèmes Embarqués">Systèmes Embarqués</option>
-						<option value="Business Intelligence">Business
-							Intelligence</option>
-						<option value="Numerique et Santé">Numerique et Santé</option>
+				<label for="parcours">Choisissez le parcours : </label> <br>
+					<select class="col-sm-12 col-md-12" name="parcours" id="parcours">
+						<option value="parcours">Tous les parcours</option>
+						<c:forEach var="parcours" items="${parcours}">
+							<option value="${parcours.getNomparcours()}">${parcours.getNomparcours()}</option>
+						</c:forEach>
 					</select>
 				</div>
+				<br></br>
 				<div class="form-group">
+				<label for="Commentaire">Votre témoignage : </label>
 					<textarea style="height: 120px" class="form-control"
-						id="Commentaire" placeholder="Témoignage" cols="" rows=""></TEXTAREA>
+						id="Commentaire" name="Commentaire" placeholder="Témoignage" cols="" rows=""></textarea>
 				</div>
 			</div>
 			<div class="col-sm-5 col-md-5">
