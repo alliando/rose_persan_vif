@@ -16,16 +16,20 @@
 			</button>
 			<c:if test="${empty loggedInUser}">
 				<a class="navbar-brand" href="http://localhost:8080/phonebook/">Speakisep</a>
+				<a href="#" class="pull-left"><img src="http://img11.hostingpics.net/thumbs/mini_965304ISEP.png" style="max-width: 82px;"></a>
 			</c:if>
 			<c:if test="${not empty loggedInUser}">
 				<c:if test="${not empty eleveLoggedIn}">
 					<a class="navbar-brand" href="eleve">Speakisep</a>
+					<a href="#" class="pull-left"><img src="http://img11.hostingpics.net/thumbs/mini_965304ISEP.png" style="max-width: 82px;"></a>
 				</c:if>
 				<c:if test="${not empty respoLoggedIn}">
 					<a class="navbar-brand" href="respo">Speakisep</a>
+				<a href="#" class="pull-left"><img src="http://img11.hostingpics.net/thumbs/mini_965304ISEP.png" style="max-width: 82px;"></a>
 				</c:if>
 				<c:if test="${not empty adminLoggedIn}">
 					<a class="navbar-brand" href="admin">Speakisep Admin</a>
+				<a href="#" class="pull-left"><img src="http://img11.hostingpics.net/thumbs/mini_965304ISEP.png" style="max-width: 82px;"></a>
 				</c:if>
 			</c:if>
 		</div>
