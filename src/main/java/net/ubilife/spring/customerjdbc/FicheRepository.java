@@ -18,5 +18,6 @@ public interface FicheRepository {
 
 
 	int delete (Fiche fiche);
-	
+
+	List<Fiche> findAllBySql(String sql);
 }

@@ -21,7 +21,7 @@ public class Fiche {
 	public Fiche(){	
 	}
 	
-	public Fiche(int id, String numsalle,String photo, String CV, String lettremotiv, String adresse, String actextra, String competences, String notes,String cursus, String apprenti,String etape,String promotion,String statut, long userId){
+	public Fiche(int id, String numsalle, String photo, String CV, String lettremotiv, String adresse, String actextra, String competences, String notes,String cursus, String apprenti,String etape,String promotion,String statut, long userId){
 		super();
 		this.id=id;
 		this.numsalle=numsalle;
