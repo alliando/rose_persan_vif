@@ -32,6 +32,13 @@ public class FicheRepositoryImpl implements FicheRepository {
 	public Fiche findOne(long id) {
 		return jdbc.queryForObject(SQL_FIND_ONE, new FicheRowMapper(), id);
 	}
+	
+
+	@Override
+	public List<Fiche> findAllBySql(String sql) {
+		return jdbc.query(sql, new FicheRowMapper());
+	}
+
 
 	public Fiche findOne(User user) {
 		return jdbc.queryForObject(SQL_FIND_ONE_BY_USERID, new FicheRowMapper(), user.getId());

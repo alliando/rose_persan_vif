@@ -20,7 +20,7 @@
 			<div class="col-sm-4 col-md-4">
 				<div class="form-group">
 					<label class="control-label">Choisissez votre photo</label> <input
-						id="inputPhoto" type="file" class="file">
+						name="photo" id="photo" type="file" class="file">
 				</div>
 			</div>
 			<div class="col-sm-4 col-md-4">

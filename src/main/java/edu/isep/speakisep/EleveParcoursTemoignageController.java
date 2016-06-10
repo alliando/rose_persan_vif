@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.ubilife.spring.customerjdbc.Config;
+import net.ubilife.spring.customerjdbc.FicheRepository;
 import net.ubilife.spring.customerjdbc.ParcoursRepository;
 import net.ubilife.spring.customerjdbc.TemoignageRepository;
 import net.ubilife.spring.customerjdbc.UserRepository;
@@ -24,6 +25,7 @@ public class EleveParcoursTemoignageController {
 		ParcoursRepository repoParcours = ctx.getBean(ParcoursRepository.class);
 		UserRepository repoUser = ctx.getBean(UserRepository.class);
 		TemoignageRepository repoTem = ctx.getBean(TemoignageRepository.class);
+		FicheRepository repoF = ctx.getBean(FicheRepository.class);
 
 		//Données envoyées à la view
 		request.setAttribute("parcours", repoParcours.findAll());

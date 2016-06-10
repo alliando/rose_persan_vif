@@ -35,7 +35,7 @@
 					<button id="loginButton" class="form-control">Se connecter</button>
 				</form>
 			</div>
-			<!-- Gaut form test -->
+			<!-- Gaut form test
 			${loginError}
 			<div class="form-group form">
 				<form action='loginn' method="post" commandName="formm">

@@ -41,7 +41,12 @@ public class RespoProfilModifyController {
 		if(!numSalle.equals("")){
 			fiche.setNumsalle(numSalle);
 			repoF.updateOne(fiche);}
-
+		
+		  /*if (!photo.equals("No file Uploaded")){
+			  fiche.setPhoto(photo);
+			  repoF.updateOne(fiche);
+		  }
+*/
 
 
 		return "redirect:respo_profil";
