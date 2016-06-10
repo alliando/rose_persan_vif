@@ -16,7 +16,7 @@ import java.io.UnsupportedEncodingException;
 @Controller
 public class EleveProfilModifyController {
 	@RequestMapping(value = "/eleve_modifierProfil", method = RequestMethod.POST)
-	public String form(HttpServletRequest request, @RequestParam("photo") byte[] photo,
+	public String form(HttpServletRequest request,
 				//@RequestParam("lmotiv") String lmotiv,
 				//@RequestParam("cv") String cv,
 				@RequestParam("actextra") String actextra,
@@ -41,9 +41,10 @@ public class EleveProfilModifyController {
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();
 			}
-			if (!photo.equals("No file Uploaded")){
+			/*if (!photo.equals("No file Uploaded")){
 	        	fiche.setPhoto(photo);
 	        	repoF.updateOne(fiche);
+	        	}*/
 
 			if(!apprenti.equals("")){
 				fiche.setApprenti(apprenti);

@@ -13,7 +13,7 @@ import java.io.UnsupportedEncodingException;
 
 @Controller
 public class RespoProfilModifyController {
-<<<<<<< HEAD
+
 	@RequestMapping(value = "/form_modifierProfil", method = RequestMethod.POST)
 	public String form(	HttpServletRequest request,
 			@RequestParam("nomParcours") String nomParcours,
