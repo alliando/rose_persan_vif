@@ -109,7 +109,7 @@ public class LoginController extends HttpServlet {
 			//Si l'utilisateur n'est pas inscrit, on l'enregistre lui+sa fiche
 			if (register!=1){
 			repo.save(user);
-			Fiche fiche=new Fiche(""," ","","","","", "","", "", "", "", "","",user.getId());
+			Fiche fiche=new Fiche("",null,"","","","", "","", "", "", "", "","",user.getId());
 			repoF.save(fiche);
 			if (type.equals("eleve")){
 				returnVal= "eleve_profil_modify";

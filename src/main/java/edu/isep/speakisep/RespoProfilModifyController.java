@@ -13,6 +13,7 @@ import java.io.UnsupportedEncodingException;
 
 @Controller
 public class RespoProfilModifyController {
+
 	@RequestMapping(value = "/form_modifierProfil", method = RequestMethod.POST)
 	public String form(	HttpServletRequest request,
 			@RequestParam("nomParcours") String nomParcours,
@@ -41,11 +42,17 @@ public class RespoProfilModifyController {
 		if(!numSalle.equals("")){
 			fiche.setNumsalle(numSalle);
 			repoF.updateOne(fiche);}
-
+		
+		  /*if (!photo.equals("No file Uploaded")){
+			  fiche.setPhoto(photo);
+			  repoF.updateOne(fiche);
+		  }
+*/
 
 
 		return "redirect:respo_profil";
 	}
+
 
 
 	@RequestMapping("/respo_profil_modify")

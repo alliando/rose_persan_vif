@@ -35,7 +35,7 @@
 							<div class="bigblock">
 								<h3 class="parcours">Parcours
 									"${temoignage.getNomparcours()}"</h3>
-								<h3 class="etpromo">${user.getNom()},promo2017</h3>
+								<h3 class="etpromo">${user.getNom()},promo 2017</h3>
 							</div>
 							<p class="info">${temoignage.getDescriptem()}</p>
 						</div>
