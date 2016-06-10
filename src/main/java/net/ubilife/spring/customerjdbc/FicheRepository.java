@@ -9,9 +9,9 @@ public interface FicheRepository {
 	Fiche findOne(User user);
 
 	Fiche save(Fiche fiche);
-
+	
 	List< Fiche> findAll();
-
+	
 	int update(Fiche  fiche);
 
 	int updateOne(Fiche fiche);
@@ -20,5 +20,4 @@ public interface FicheRepository {
 	int delete (Fiche fiche);
 
 	List<Fiche> findAllBySql(String sql);
-
 }
