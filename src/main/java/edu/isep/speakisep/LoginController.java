@@ -87,15 +87,15 @@ public class LoginController extends HttpServlet {
 					user=t;
 					register=1;
 					if (type.equals("eleve")){
-						returnVal= "eleve_home";
+						returnVal= "eleve";
 						request.getSession().setAttribute("eleveLoggedIn", type);
 						request.getSession().setAttribute("user", user);
 					} else if ( type.equals("admin") ){
-						returnVal= "admin_home";
+						returnVal= "admin";
 						request.getSession().setAttribute("adminLoggedIn", type);
 						request.getSession().setAttribute("user", user);
 					} else if ( type.equals("respo") ){
-						returnVal= "respo_home";
+						returnVal= "respo";
 						request.getSession().setAttribute("respoLoggedIn", type);
 						request.getSession().setAttribute("user", user);
 					}
@@ -116,7 +116,7 @@ public class LoginController extends HttpServlet {
 				request.getSession().setAttribute("eleveLoggedIn", type);
 				request.getSession().setAttribute("user", user);
 			} else if ( type.equals("admin") ){
-				returnVal= "admin_home";
+				returnVal= "admin";
 				request.getSession().setAttribute("adminLoggedIn", type);
 				request.getSession().setAttribute("user", user);
 			} else if ( type.equals("respo") ){
@@ -134,7 +134,7 @@ public class LoginController extends HttpServlet {
 			session.getAttribute("numero");
 		}
 
-		return returnVal;
+		return "redirect:"+returnVal;
 
 	}
 
