@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
@@ -25,6 +26,7 @@ private static final String SQL_UPDATE_ONE = "update fiche set NUMSALLE=?, PHOTO
 private static final String SQL_FIND_ONE = "select * from fiche where IDFICHE= ?";
 private static final String SQL_FIND_ONE_BY_USERID = "select * from fiche where userId= ?";
 private static final String SQL_FIND_ALL = "select * from fiche order by userId";
+private static final String SQL_FIND_ALL_BY_PROMO = "select DISTINCT fiche.PROMOTION from fiche";
 private static final String SQL_DELETE_ONE = "delete from fiche where IDFICHE=?";
 @Override
 public Fiche findOne(long id) {
@@ -76,6 +78,10 @@ return null;
 public List<Fiche> findAll() {
 return jdbc.query(SQL_FIND_ALL, new FicheRowMapper());
 }
+@Override
+public List findAllPromo() {
+return jdbc.queryForList(SQL_FIND_ALL_BY_PROMO, String.class);
+}
 
 @Override
 public int update(Fiche fiche) {
@@ -97,6 +103,11 @@ private class FicheRowMapper implements RowMapper<Fiche> {
 @Override
 public Fiche mapRow(ResultSet rs, int row) throws SQLException {
 return new Fiche(rs.getInt("IDFICHE"), rs.getString("NUMSALLE"), rs.getString("PHOTO"),rs.getString("CV"), rs.getString("LMOTIV"), rs.getString("ADRESSE"), rs.getString("ACTEXTRA"), rs.getString("COMPETENCES"), rs.getString("NOTES"),rs.getString("CURSUS"), rs.getString("APPRENTI"),rs.getString("ETAPE"), rs.getString("PROMOTION"),rs.getString("STATUT"),  rs.getInt("userId"));
-}
+}}
+
+private class FicheRowMapperr implements RowMapper<Fiche> {
+    @Override
+public Fiche mapRow(ResultSet rs, int row) throws SQLException {
+return new Fiche(0,"","","","","","","","","","","",rs.getString("PROMOTION"),"",0);}
 }
 }

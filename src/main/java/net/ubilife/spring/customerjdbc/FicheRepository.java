@@ -7,6 +7,7 @@ public interface FicheRepository {
 	Fiche findOne(long id);
 
 	Fiche findOne(User user);
+	 List findAllPromo();
 
 	Fiche save(Fiche fiche);
 	

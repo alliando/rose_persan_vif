@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 
 public class RespoEleveProfilController {
+	private static final String SQL_INNER = "SELECT * from parcours INNER JOIN user WHERE parcours.IDPARCOURS=user.IDPARCOURS AND user.type='respo'";
+
 	@RequestMapping(value="/respo_eleve_profil" )
 	public String Profil_respo(HttpServletRequest request,
 			@RequestParam(value="id", required=false) long id){

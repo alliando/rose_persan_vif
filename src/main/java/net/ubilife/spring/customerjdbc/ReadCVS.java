@@ -25,6 +25,7 @@ public class ReadCVS {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
         ParcoursRepository repoP=ctx.getBean(ParcoursRepository.class);
         FicheRepository repoF=ctx.getBean(FicheRepository.class);
+        UserRepository repoUser=ctx.getBean(UserRepository.class);
 
         try {
             ClassLoader loader=myClass.getClassLoader();
@@ -56,11 +57,14 @@ public class ReadCVS {
                     apprentissage=data[5].trim();
                         if(numero.equals(user.getNumber())) {
                             Fiche fiche = repoF.findOne(user);
+                            Parcours parc=repoP.findOne(nomParcours);
                             fiche.setApprenti(apprentissage);
                             fiche.setStatut(statut);
                             fiche.setEtape(etape);
                             fiche.setPromotion(promotion);
                             repoF.updateOne(fiche);
+                            user.setIdParcours(parc.getId());
+                            repoUser.updateOne(user);
                         }
                 }
 
