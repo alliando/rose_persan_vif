@@ -16,7 +16,7 @@
 	<!-- /.row -->
 
 	<div class="row">
-		<form action="form_modifierProfil" method="POST">
+		<form action="form_modifierProfil" method="POST" enctype="multipart/form-data">
 			<div class="col-sm-4 col-md-4">
 				<div class="form-group">
 					<label class="control-label">Choisissez votre photo</label> <input
