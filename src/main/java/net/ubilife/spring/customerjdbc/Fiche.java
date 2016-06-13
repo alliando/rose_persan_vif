@@ -1,5 +1,7 @@
 package net.ubilife.spring.customerjdbc;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Fiche {	
 
 	private long id;
@@ -41,7 +43,7 @@ public class Fiche {
 		
 	}
 
-	public Fiche( String numsalle,String photo, String CV, String lettremotiv, String adresse, String actextra, String competences, String notes,String cursus, String apprenti,String etape,String promotion,String statut, long userId){
+	public Fiche( String numsalle, String photo, String CV, String lettremotiv, String adresse, String actextra, String competences, String notes,String cursus, String apprenti,String etape,String promotion,String statut, long userId){
 		super();
 		this.numsalle=numsalle;
 		this.photo=photo;
