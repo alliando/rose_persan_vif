@@ -20,8 +20,9 @@ public class UniversiteRepositoryImpl implements UniversiteRepository {
 	@Autowired
 	private JdbcOperations jdbc;
 
-	private static final String SQL_INSERT = "insert into universite (NOMUNIV, DESCRIPUNIV, LIENUNIV) values (?,?,?)";
-	private static final String SQL_UPDATE = "update universite set NOMUNIV=?, DESCRIPUNIV=?, LIENUNIV=?";
+	private static final String SQL_INSERT = "insert into universite (NOMUNIV, LIENUNIV) values (?,?)";
+	private static final String SQL_UPDATE = "update universite set NOMUNIV=?, LIENUNIV=?";
+	private static final String SQL_UPDATE_ONE = "update universite set NOMUNIV=?, LIENUNIV=? where IDUNIV=?";
 	private static final String SQL_FIND_ONE = "select * from universite where IDUNIV= ?";
 	private static final String SQL_FIND_ALL = "select * from universite order by NOMUNIV";
 	private static final String SQL_DELETE_ONE = "delete from universite where IDUNIV=?";
@@ -43,8 +44,7 @@ public class UniversiteRepositoryImpl implements UniversiteRepository {
 				PreparedStatement ps = conn.prepareStatement(SQL_INSERT, new String[]{"IDUNIV"});
 
 				ps.setString(1, universite.getNomuniv());
-				ps.setString(2, universite.getDescripuniv());
-				ps.setString(3, universite.getLienuniv());
+				ps.setString(2, universite.getLienuniv());
 
 
 				return ps;
@@ -67,7 +67,12 @@ public class UniversiteRepositoryImpl implements UniversiteRepository {
 
 	@Override
 	public int update(Universite universite) {
-		return jdbc.update(SQL_UPDATE, universite.getNomuniv(), universite.getDescripuniv(), universite.getLienuniv());
+		return jdbc.update(SQL_UPDATE, universite.getNomuniv(), universite.getLienuniv());
+	}
+	
+	@Override
+	public int updateOne(Universite universite) {
+		return jdbc.update(SQL_UPDATE_ONE, universite.getNomuniv(), universite.getLienuniv(), universite.getId());
 	}
 
 	@Override
@@ -80,7 +85,7 @@ public class UniversiteRepositoryImpl implements UniversiteRepository {
 		@Override
 		public Universite mapRow(ResultSet rs, int row) throws SQLException {
 
-			return new Universite(rs.getInt("IDUNIV"), rs.getString("NOMUNIV"), rs.getString("DESCRIPUNIV"), rs.getString("LIENUNIV")); 
+			return new Universite(rs.getInt("IDUNIV"), rs.getString("NOMUNIV"), rs.getString("LIENUNIV")); 
 
 		}
 

@@ -15,16 +15,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import net.ubilife.spring.customerjdbc.Config;
 import net.ubilife.spring.customerjdbc.Universite;
 import net.ubilife.spring.customerjdbc.UniversiteRepository;
+import net.ubilife.spring.customerjdbc.User;
+import net.ubilife.spring.customerjdbc.UserRepository;
 
 /**
  * Handles requests for the application home page.
  */
 @Controller
-public class AdminUniversityEditController {
+public class RespoUniversityEditController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(AdminUniversityEditController.class);
+	private static final Logger logger = LoggerFactory.getLogger(RespoUniversityEditController.class);
 	
-	@RequestMapping(value = "/admin_university_edit", method = RequestMethod.GET)
+	/**
+	 * Simply selects the home view to render by returning its name.
+	 */
+	@RequestMapping(value = "/respo_university_edit", method = RequestMethod.GET)
 	public String home(HttpServletRequest request,
 			@RequestParam(value="id", required=false) long id) {
 		
@@ -35,12 +40,11 @@ public class AdminUniversityEditController {
 		
 		request.setAttribute("universite",universite);
 		
-		return "admin_university_edit";
+		return "respo_university_edit";
 	}
 	
-	@RequestMapping(value = "/admin_modifieruniv", method = RequestMethod.POST)
+	@RequestMapping(value = "/respo_modifieruniv", method = RequestMethod.POST)
 	public String modifier(HttpServletRequest request,
-			@RequestParam("nom") String nom,
 			@RequestParam("lien") String lien,
 			@RequestParam("id") long id) {
 		
@@ -51,7 +55,6 @@ public class AdminUniversityEditController {
 		
 		try {
 			lien = new String(lien.getBytes("iso-8859-1"), "utf8");
-			nom = new String(nom.getBytes("iso-8859-1"), "utf8");
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
@@ -59,12 +62,9 @@ public class AdminUniversityEditController {
 		if(!lien.equals("")){
 			universite.setLienuniv(lien);
 			repoUni.updateOne(universite);}
-		
-		if(!nom.equals("")){
-			universite.setNomuniv(nom);
-			repoUni.updateOne(universite);}
-		
-				return "redirect:admin_universities";
+				return "redirect:respo_international_universite";
 		
 	}
+	
+	
 }

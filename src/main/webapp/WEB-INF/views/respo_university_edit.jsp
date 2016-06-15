@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 
-<title>Admin - Editer Université</title>
+<title>Responsable - Editer Université</title>
 <!-- Page Content -->
 <div class="container">
 
@@ -18,12 +18,12 @@
 
 	<!-- Projects Row -->
 	<div class="row">
-		<form action="admin_modifieruniv" method="POST">
+		<form action="respo_modifieruniv" method="POST">
 			<div class="col-sm-4 col-md-4">
 				<div class="form-group">
 					<label for="nom">Nom de l'université: </label> <input
-						type="text" class="form-control" id="nom" name="nom"
-						placeholder="Université">
+						type="text" class="form-control" id="nom"
+						placeholder="Université" value="${universite.getNomuniv()}">
 				</div>
 				<div class="form-group">
 					<label for="lien">Lien vers les cours proposés par
@@ -32,7 +32,7 @@
 				</div>
 				<input type="hidden" class="form-control"
 						id="id" name="id" value="${universite.getId()}">
-						
+				
 				<button type="submit"
 					class="btn btn-default btn-lg btn-block active">Sauvegarder
 					l'université</button>

@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 
 <title>Responsable - Témoignages</title>
 
@@ -21,128 +21,16 @@
 	<p>Cliquez sur une ligne pour afficher le témoignage</p>
 	<table class="table">
 		<thead>
-			<tr>
-				<th>Parcours</th>
-				<th>Eleve</th>
-				<th>Promotion</th>
-				<th>Etat</th>
-				<th>Actions</th>
-			</tr>
-		</thead>
+		<tr><th>Parcours<th>Eleve<th>Promotion<th>Etat<th>Actions
+			<c:forEach var="temoignage" items="${temoignages}" varStatus="status">
 		<tbody>
-			<tr class="accordion-toggle" data-toggle="collapse"
-				data-target="#collapse1">
-				<td>Génie Logiciel</td>
-				<td>Tintin Haddock</td>
-				<td>2017</td>
-				<td>Validé</td>
-				<td><a href="#" class="glyphicon glyphicon-ok"></a><a href="#"
-					class="glyphicon glyphicon-remove" style="margin-left: 30px"></a></td>
-			</tr>
-			<tr id="collapse1" class="collapse out">
-				<td></td>
-				<td colspan="4">
-					<div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Sed non risus. Suspendisse lectus tortor, dignissim sit amet,
-							adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
-							diam. Maecenas ligula massa, varius a, semper congue, euismod
-							non, mi. Proin porttitor, orci nec nonummy molestie, enim est
-							eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.</p>
-					</div>
-				</td>
-			</tr>
-			<tr class="accordion-toggle" data-toggle="collapse"
-				data-target="#collapse2">
-				<td>Génie Logiciel</td>
-				<td>Johny John</td>
-				<td>2015</td>
-				<td>Valid�</td>
-				<td><a href="#" class="glyphicon glyphicon-ok"></a><a href="#"
-					class="glyphicon glyphicon-remove" style="margin-left: 30px"></a></td>
-			</tr>
-			<tr id="collapse2" class="collapse out">
-				<td></td>
-				<td colspan="4">
-					<div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Sed non risus. Suspendisse lectus tortor, dignissim sit amet,
-							adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
-							diam. Maecenas ligula massa, varius a, semper congue, euismod
-							non, mi. Proin porttitor, orci nec nonummy molestie, enim est
-							eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.</p>
-					</div>
-				</td>
-			</tr>
-			<tr class="accordion-toggle" data-toggle="collapse"
-				data-target="#collapse3">
-				<td>Génie Logiciel</td>
-				<td>Franky Vincent</td>
-				<td>2017</td>
-				<td>Valid�</td>
-				<td><a href="#" class="glyphicon glyphicon-ok"></a><a href="#"
-					class="glyphicon glyphicon-remove" style="margin-left: 30px"></a></td>
-			</tr>
-			<tr id="collapse3" class="collapse out">
-				<td></td>
-				<td colspan="4">
-					<div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Sed non risus. Suspendisse lectus tortor, dignissim sit amet,
-							adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
-							diam. Maecenas ligula massa, varius a, semper congue, euismod
-							non, mi. Proin porttitor, orci nec nonummy molestie, enim est
-							eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.</p>
-					</div>
-				</td>
-			</tr>
-			<tr class="accordion-toggle" data-toggle="collapse"
-				data-target="#collapse4">
-				<td>Génie Logiciel</td>
-				<td>Marvin Gaye</td>
-				<td>2017</td>
-				<td>Non Valid�</td>
-				<td><a href="#" class="glyphicon glyphicon-ok"></a><a href="#"
-					class="glyphicon glyphicon-remove" style="margin-left: 30px"></a></td>
-			</tr>
-			<tr id="collapse4" class="collapse out">
-				<td></td>
-				<td colspan="4">
-					<div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							Sed non risus. Suspendisse lectus tortor, dignissim sit amet,
-							adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
-							diam. Maecenas ligula massa, varius a, semper congue, euismod
-							non, mi. Proin porttitor, orci nec nonummy molestie, enim est
-							eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.</p>
-					</div>
-				</td>
-			</tr>
-		</tbody>
-	<!--  		<c:forEach var="temoignage" items="${temoignageFound}">
-				<c:forEach var="eleve" items="${eleveFound}">
-					<c:if test="${temoignage.getUserId().equals(eleve.getId())}">
-						<tr class="accordion-toggle" data-toggle="collapse"
-							data-target="#collapse1">
-							<td>${temoignage.getNomparcours()}</td>
-							<td>${eleve.getNom()}</td>
-							<td>2017</td>
-							<td>${temoignage.getStatut()}</td>
-							<td><a href="#" class="glyphicon glyphicon-ok"></a><a
-								href="#" class="glyphicon glyphicon-remove"
-								style="margin-left: 30px"></a></td>
-						</tr>
-						<tr id="collapse1" class="collapse out">
-							<td></td>
-							<td colspan="4">
-								<div>
-									<p>${temoignage.getDescriptem()}</p>
-								</div>
-							</td>
-						</tr>
-					</c:if>
+		<tr class="accordion-toggle" data-toggle="collapse" data-target="#collapse${status.count}">
+			<td>${temoignage[0]}<td>${temoignage[1]}<td>${temoignage[2]}<td>${temoignage[3]}
+			<td><a onclick="self.location.href='respo_temoignage_confirm?c=y&id=${temoignagesId[status.count-1]}'" class="glyphicon glyphicon-ok"></a><a onclick="self.location.href='respo_temoignage_confirm?c=n&id=${temoignagesId[status.count-1]}'" class="glyphicon glyphicon-remove" style="margin-left: 30px"></a>
+		<tr id="collapse${status.count}" class="collapse out">
+			<td></td>
+			<td colspan="4"><div><p>${temoignage[4]}</p></div>
 				</c:forEach>
-			</c:forEach>-->
 	</table>
 </div>
 <!-- /.row -->
@@ -154,7 +42,3 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="resources/js/bootstrap.min.js" type="text/javascript"></script>
-
-<body></body>
-
-<html></html>
