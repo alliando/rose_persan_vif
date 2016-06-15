@@ -22,8 +22,10 @@ public class TemoignageRepositoryImpl implements TemoignageRepository {
 
 	private static final String SQL_INSERT = "insert into temoignage (DESCRIPTEM, userId, NOMPARCOURS, STATUT) values (?,?,?,?)";
 	private static final String SQL_UPDATE = "update temoignage set DESCRIPTEM=?, userId=?, NOMPARCOURS=?, STATUT=?";
+	private static final String SQL_UPDATE_ONE = "update temoignage set DESCRIPTEM=?, userId=?, NOMPARCOURS=?, STATUT=? where IDTEM=?";
 	private static final String SQL_FIND_ONE = "select * from temoignage where IDTEM= ?";
 	private static final String SQL_FIND_ALL = "select * from temoignage order by DESCRIPTEM";
+	private static final String SQL_FIND_ALL_BY_PARCOURSNAME = "select * from temoignage where NOMPARCOURS=?";
 	private static final String SQL_DELETE_ONE = "delete from temoignage where IDTEM=?";
 
 	@Override
@@ -71,11 +73,18 @@ public class TemoignageRepositoryImpl implements TemoignageRepository {
 		return jdbc.query(SQL_FIND_ALL, new TemoignageRowMapper());
 	}
 
+	public List<Temoignage> findAll(String parcoursName) {
+		return jdbc.query(SQL_FIND_ALL_BY_PARCOURSNAME, new TemoignageRowMapper(),parcoursName);
+	}
+
 	@Override
 	public int update(Temoignage temoignage) {
 		return jdbc.update(SQL_UPDATE, temoignage.getDescriptem(), temoignage.getUserId(),temoignage.getNomparcours(), temoignage.getStatut());
 	}
-
+	@Override
+	public int updateOne(Temoignage temoignage) {
+		return jdbc.update(SQL_UPDATE_ONE,temoignage.getDescriptem(), temoignage.getUserId(),temoignage.getNomparcours(), temoignage.getStatut(),temoignage.getId());
+	}
 	@Override
 	public int delete(Temoignage temoignage) {
 		return jdbc.update(SQL_DELETE_ONE, temoignage.getId());
