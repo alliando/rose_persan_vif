@@ -16,11 +16,11 @@
 	<!-- /.row -->
 
 	<div class="row">
-		<form action="eleve_modifierProfil" method="POST">
+		<form action="eleve_modifierProfil" method="POST" enctype="multipart/form-data">
 			<div class="col-sm-4 col-md-4">
 				<div class="form-group">
 					<label class="control-label">Choisissez votre photo</label> <input
-						id="inputPhoto" type="file" class="file">
+						id="photo" name="photo" type="file" class="file">
 				</div>
 				<div class="form-group">
 					<label for="inputName"> Prénom et Nom :</label> <input type="text"
