@@ -25,9 +25,11 @@ public class ReadCVS {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
         ParcoursRepository repoP=ctx.getBean(ParcoursRepository.class);
         FicheRepository repoF=ctx.getBean(FicheRepository.class);
+        UserRepository repoUser=ctx.getBean(UserRepository.class);
 
         try {
             ClassLoader loader=myClass.getClassLoader();
+            System.out.println(loader.getResource(csvFile).getPath());
             br = new BufferedReader(new FileReader(loader.getResource(csvFile).getPath()));
             String nomParcours=br.readLine().split(";")[1];
                 nomParcours=nomParcours.split("Promo")[0];
@@ -46,7 +48,6 @@ public class ReadCVS {
             br.readLine();
             while (((line = br.readLine()) != null)) {
                 String[] data = line.split(cvsSplitBy);
-                String[] b;
                 if (!data[0].trim().equals("Total")){
                     numero=data[0].trim();
                     nom=data[1].trim();
@@ -61,6 +62,8 @@ public class ReadCVS {
                             fiche.setEtape(etape);
                             fiche.setPromotion(promotion);
                             repoF.updateOne(fiche);
+                            user.setIdParcours(repoP.findOne(nomParcours).getId());
+                            repoUser.updateOne(user);
                         }
                 }
 

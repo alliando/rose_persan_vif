@@ -34,4 +34,14 @@ var a=$("#checkByParc").click(function(){
 })
 
 
+//liste déroulante pour filtrer les étudiants selon les promotions
+var a=$("#promo").click(function(){
+    console.log(this.value)
+    var $rows = $("tr").has("td");
+    $rows.hide()
+    var parcours=this.value;//On récupère le parcours du respo
+    var etudiants =$("tr").has(".hide:contains("+parcours+")");//Etudiants qui ne font pas partis du parcours
+    etudiants.show();//On les cache
+
+})
 

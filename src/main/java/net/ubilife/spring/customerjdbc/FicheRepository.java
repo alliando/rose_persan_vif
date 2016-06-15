@@ -7,11 +7,12 @@ public interface FicheRepository {
 	Fiche findOne(long id);
 
 	Fiche findOne(User user);
+	List findAllPromo();
 
 	Fiche save(Fiche fiche);
-	
+
 	List< Fiche> findAll();
-	
+
 	int update(Fiche  fiche);
 
 	int updateOne(Fiche fiche);
