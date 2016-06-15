@@ -22,6 +22,7 @@ public class UniversiteRepositoryImpl implements UniversiteRepository {
 
 	private static final String SQL_INSERT = "insert into universite (NOMUNIV, DESCRIPUNIV, LIENUNIV) values (?,?,?)";
 	private static final String SQL_UPDATE = "update universite set NOMUNIV=?, DESCRIPUNIV=?, LIENUNIV=?";
+	private static final String SQL_UPDATE_ONE = "update universite set NOMUNIV=?, DESCRIPUNIV=?, LIENUNIV=? where IDUNIV=?";
 	private static final String SQL_FIND_ONE = "select * from universite where IDUNIV= ?";
 	private static final String SQL_FIND_ALL = "select * from universite order by NOMUNIV";
 	private static final String SQL_DELETE_ONE = "delete from universite where IDUNIV=?";
@@ -68,6 +69,11 @@ public class UniversiteRepositoryImpl implements UniversiteRepository {
 	@Override
 	public int update(Universite universite) {
 		return jdbc.update(SQL_UPDATE, universite.getNomuniv(), universite.getDescripuniv(), universite.getLienuniv());
+	}
+	
+	@Override
+	public int updateOne(Universite universite) {
+		return jdbc.update(SQL_UPDATE_ONE, universite.getNomuniv(), universite.getDescripuniv(), universite.getLienuniv(), universite.getId());
 	}
 
 	@Override

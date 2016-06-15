@@ -26,39 +26,11 @@
 						<td><blockquote>
 								<h3 id="parcours">${universite.getNomuniv()}</h3>
 								<a href="${universite.getLienuniv()}">Lien vers les cours</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-									href="#" class="btn btn-default active modif" role="button">Modifier
+									href="respo_university_edit?id=${universite.getId()}" class="btn btn-default active modif" role="button">Modifier
 									le lien</a>
 							</blockquote></td>
 					</tr>
-				</c:forEach>
-				<!-- <tr>
-                    <td>
-                        <blockquote>
-                            <h3 id="parcours">École polytechnique de Montréal</h3>
-                            <button type="button" class="btn btn-link">Liens vers les cours</button>
-                            <a href="#" class="btn btn-primary btn-lg active modif" role="button">Modifier le lien</a>
-                        </blockquote>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <blockquote>
-                            <h3 id="parcours">Université Catholique de Louvain</h3>
-                            <button type="button" class="btn btn-link">Liens vers les cours</button>
-                            <a href="#" class="btn btn-primary btn-lg active modif" role="button">Modifier le lien</a>
-                        </blockquote>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <blockquote>
-                            <h3 id="parcours">Institut</h3>
-                            <button type="button" class="btn btn-link">Liens vers les cours</button>
-                            <a href="#" class="btn btn-primary btn-lg active modif" role="button">Modifier le lien</a>
-                        </blockquote>
-                    </td>
-                </tr>
-  -->
+				</c:forEach>		
 			</table>
 		</div>
 	</div>

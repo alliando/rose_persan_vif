@@ -14,4 +14,6 @@ public interface UniversiteRepository {
 
 	int delete (Universite universite);
 
+	int updateOne(Universite universite);
+
 }
