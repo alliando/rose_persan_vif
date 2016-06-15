@@ -20,7 +20,7 @@
 	<!-- Projects Row -->
 	<div class="row">
 		<div class="col-md-6 portfolio-item">
-			<a href="admin_university_edit"><button type="button"
+			<a href="admin_university_add"><button type="button"
 					class="btn btn-default">Ajouter une université</button></a>
 		</div>
 	</div>
@@ -42,31 +42,11 @@
 						<td>${universite.getNomuniv()}</td>
 						<td><a href="${universite.getLienuniv()}">Lien vers les
 								cours</a></td>&nbsp;&nbsp;&nbsp;&nbsp;
-						<td><a href="admin_university_edit"
+						<td><a href="admin_university_edit?id=${universite.getId()}"
 							class="btn btn-default active modif" role="button">Modifier
 								l'université</a></td>
 					</tr>
 				</c:forEach>
-				<!-- <tr>
-        				<td>Université Lambda</td>
-		                <td><a href="#">Site de l'université</a></td>
-		                <td><a href="#"><button type="button" class="btn btn-default">Modifier l'université</button></a></td>
-		            </tr>
-		            <tr>
-        				<td>Université Beta</td>
-		                <td><a href="#">Site de l'université</a></td>
-		                <td><a href="#"><button type="button" class="btn btn-default">Modifier l'université</button></a></td>
-		            </tr>
-		            <tr>
-        				<td>Université Gamma</td>
-		                <td><a href="#">Site de l'université</a></td>
-		                <td><a href="#"><button type="button" class="btn btn-default">Modifier l'université</button></a></td>
-		            </tr>
-		            <tr>
-        				<td>Université Alpha</td>
-		                <td><a href="#">Site de l'université</a></td>
-		                <td><a href="#"><button type="button" class="btn btn-default">Modifier l'université</button></a></td>
-		            </tr>-->
 			</tbody>
 			<tbody>
 			</tbody>

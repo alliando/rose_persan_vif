@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 
-<title>Admin - Editer Université</title>
+<title>Admin - Ajouter Université</title>
 <!-- Page Content -->
 <div class="container">
 
@@ -10,7 +10,7 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<h1 class="page-header">
-				Editer une université <small></small>
+				Ajouter une université <small></small>
 			</h1>
 		</div>
 	</div>
@@ -18,7 +18,7 @@
 
 	<!-- Projects Row -->
 	<div class="row">
-		<form action="admin_modifieruniv" method="POST">
+		<form action="admin_ajouteruniv" method="POST">
 			<div class="col-sm-4 col-md-4">
 				<div class="form-group">
 					<label for="nom">Nom de l'université: </label> <input
@@ -30,8 +30,6 @@
 						l'université: </label> <input type="text" class="form-control"
 						id="lien" name="lien" placeholder="Lien">
 				</div>
-				<input type="hidden" class="form-control"
-						id="id" name="id" value="${universite.getId()}">
 						
 				<button type="submit"
 					class="btn btn-default btn-lg btn-block active">Sauvegarder

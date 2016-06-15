@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import net.ubilife.spring.customerjdbc.Config;
+import net.ubilife.spring.customerjdbc.Temoignage;
 import net.ubilife.spring.customerjdbc.Universite;
 import net.ubilife.spring.customerjdbc.UniversiteRepository;
 
@@ -20,34 +21,22 @@ import net.ubilife.spring.customerjdbc.UniversiteRepository;
  * Handles requests for the application home page.
  */
 @Controller
-public class AdminUniversityEditController {
+public class AdminUniversityAddController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(AdminUniversityEditController.class);
-	
-	@RequestMapping(value = "/admin_university_edit", method = RequestMethod.GET)
-	public String home(HttpServletRequest request,
-			@RequestParam(value="id", required=false) long id) {
+	private static final Logger logger = LoggerFactory.getLogger(AdminUniversityAddController.class);
+	@RequestMapping(value = "/admin_university_add", method = RequestMethod.GET)
+	public String home(HttpServletRequest request) {
 		
-		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
-		UniversiteRepository repoUni= ctx.getBean(UniversiteRepository.class);
 		
-		Universite universite=repoUni.findOne(id);
-		
-		request.setAttribute("universite",universite);
-		
-		return "admin_university_edit";
+		return "admin_university_add";
 	}
-	
-	@RequestMapping(value = "/admin_modifieruniv", method = RequestMethod.POST)
+	@RequestMapping(value = "/admin_ajouteruniv", method = RequestMethod.POST)
 	public String modifier(HttpServletRequest request,
 			@RequestParam("nom") String nom,
-			@RequestParam("lien") String lien,
-			@RequestParam("id") long id) {
+			@RequestParam("lien") String lien) {
 		
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		UniversiteRepository repoUni= ctx.getBean(UniversiteRepository.class);
-		
-		Universite universite=repoUni.findOne(id);
 		
 		try {
 			lien = new String(lien.getBytes("iso-8859-1"), "utf8");
@@ -56,13 +45,11 @@ public class AdminUniversityEditController {
 			e.printStackTrace();
 		}
 
-		if(!lien.equals("")){
-			universite.setLienuniv(lien);
-			repoUni.updateOne(universite);}
-		
-		if(!nom.equals("")){
-			universite.setNomuniv(nom);
-			repoUni.updateOne(universite);}
+		if(!lien.equals("")&&(!nom.equals(""))){
+			Universite universite = new Universite(nom,lien);
+			repoUni.save(universite);
+			}
+
 		
 				return "redirect:admin_universities";
 		
