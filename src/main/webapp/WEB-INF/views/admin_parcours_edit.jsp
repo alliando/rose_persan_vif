@@ -18,13 +18,15 @@
 
 	<!-- Projects Row -->
 	<div class="row">
-		<form action="">
+		<form action="admin_modifierparcours" method="POST">
 			<div class="col-sm-4 col-md-4">
 				<div class="form-group">
-					<label for="inputParcours">Nom du parcours: </label> <input
-						type="text" class="form-control" id="inputUniversity"
+					<label for="nom">Nom du parcours: </label> <input
+						type="text" class="form-control" id="nom" name="nom"
 						placeholder="Parcours">
 				</div>
+				<input type="hidden" class="form-control"
+						id="id" name="id" value="${parcours.getId()}">
 				<button type="submit"
 					class="btn btn-default btn-lg btn-block active">Sauvegarder
 					le parcours</button>
