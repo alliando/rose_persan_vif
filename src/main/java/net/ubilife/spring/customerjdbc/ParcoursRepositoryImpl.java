@@ -21,7 +21,8 @@ public class ParcoursRepositoryImpl implements ParcoursRepository {
 	private JdbcOperations jdbc;
 
 	private static final String SQL_INSERT = "insert into parcours (NOMPARCOURS, DESCRIPTION) values (?,?)";
-	private static final String SQL_UPDATE = "update parcours set NOMPARCOURS=?, DESCRIPTION=?,";
+	private static final String SQL_UPDATE = "update parcours set NOMPARCOURS=?, DESCRIPTION=?";
+	private static final String SQL_UPDATE_ONE = "update parcours set NOMPARCOURS=?, DESCRIPTION=? where IDPARCOURS=?";
 	private static final String SQL_FIND_NAME = "select * from parcours where NOMPARCOURS= ?";
 	private static final String SQL_FIND_ONE = "select * from parcours where IDPARCOURS= ?";
 	private static final String SQL_FIND_ALL = "select * from parcours order by NOMPARCOURS";
@@ -75,6 +76,11 @@ public class ParcoursRepositoryImpl implements ParcoursRepository {
 	@Override
 	public int update(Parcours parcours) {
 		return jdbc.update(SQL_UPDATE, parcours.getNomparcours(), parcours.getDescription());
+	}
+	
+	@Override
+	public int updateOne(Parcours parcours) {
+		return jdbc.update(SQL_UPDATE_ONE, parcours.getNomparcours(), parcours.getDescription(), parcours.getId());
 	}
 
 	@Override

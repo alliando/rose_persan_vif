@@ -18,4 +18,6 @@ public interface ParcoursRepository {
 
 	int delete (Parcours parcours);
 
+	int updateOne(Parcours parcours);
+
 }
