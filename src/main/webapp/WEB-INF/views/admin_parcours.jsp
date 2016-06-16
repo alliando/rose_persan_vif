@@ -36,30 +36,14 @@
 				</tr>
 			</thead>
 			<tbody>
+					<c:forEach var="parc" items="${parcoursFound}">
 				<tr>
-					<td><a href="#">G�nie Logiciel</a></td>
-					<td><a href="#" class="glyphicon glyphicon-edit"></a><a
-						href="#" class="glyphicon glyphicon-remove"
+					<td>${parc.getNomparcours()}</td>
+					<td><a href="admin_parcours_edit?id=${parc.getId()}" class="glyphicon glyphicon-edit"></a><a
+						href="admin_parcoursRemove?id=${parc.getId()}" class="glyphicon glyphicon-remove"
 						style="margin-left: 30px"></a></td>
 				</tr>
-				<tr>
-					<td><a href="#">Syst�mes Embarqu�s</a></td>
-					<td><a href="#" class="glyphicon glyphicon-edit"></a><a
-						href="#" class="glyphicon glyphicon-remove"
-						style="margin-left: 30px"></a></td>
-				</tr>
-				<tr>
-					<td><a href="#">Business Intelligence</a></td>
-					<td><a href="#" class="glyphicon glyphicon-edit"></a><a
-						href="#" class="glyphicon glyphicon-remove"
-						style="margin-left: 30px"></a></td>
-				</tr>
-				<tr>
-					<td><a href="#">Num�rique et Sant�</a></td>
-					<td><a href="#" class="glyphicon glyphicon-edit"></a><a
-						href="#" class="glyphicon glyphicon-remove"
-						style="margin-left: 30px"></a></td>
-				</tr>
+				</c:forEach>
 			</tbody>
 			<tbody>
 			</tbody>
