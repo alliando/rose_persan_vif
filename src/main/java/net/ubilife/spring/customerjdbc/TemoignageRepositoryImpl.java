@@ -24,7 +24,7 @@ public class TemoignageRepositoryImpl implements TemoignageRepository {
 	private static final String SQL_UPDATE = "update temoignage set DESCRIPTEM=?, userId=?, NOMPARCOURS=?, STATUT=?";
 	private static final String SQL_UPDATE_ONE = "update temoignage set DESCRIPTEM=?, userId=?, NOMPARCOURS=?, STATUT=? where IDTEM=?";
 	private static final String SQL_FIND_ONE = "select * from temoignage where IDTEM= ?";
-	private static final String SQL_FIND_ALL = "select * from temoignage order by DESCRIPTEM";
+	private static final String SQL_FIND_ALL = "select * from temoignage order by IDTEM";
 	private static final String SQL_FIND_ALL_BY_PARCOURSNAME = "select * from temoignage where NOMPARCOURS=?";
 	private static final String SQL_DELETE_ONE = "delete from temoignage where IDTEM=?";
 

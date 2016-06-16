@@ -17,10 +17,10 @@
 	</div>
 	<!-- /.row -->
 
-	<!-- Projects Row -->
+	<!-- Projects Row
 	<div class="row">
 		<div class="col-md-6 portfolio-item">
-			<a href="admin_respoEdit"><button type="button"
+			<a href="admin_respo_add"><button type="button"
 					class="btn btn-default">Ajouter un responsable</button></a>
 		</div>
 	</div>
@@ -37,34 +37,22 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>Mr. Busy</td>
-					<td>BI</td>
-					<td><a href="#" class="glyphicon glyphicon-edit"></a><a
-						href="#" class="glyphicon glyphicon-remove"
-						style="margin-left: 30px"></a></td>
-				</tr>
-				<tr>
-					<td>Mr. Logi</td>
-					<td>G�nie Logiciel</td>
-					<td><a href="#" class="glyphicon glyphicon-edit"></a><a
-						href="#" class="glyphicon glyphicon-remove"
-						style="margin-left: 30px"></a></td>
-				</tr>
-				<tr>
-					<td>Mr. Sysem</td>
-					<td>Syst�mes embarqu�s</td>
-					<td><a href="#" class="glyphicon glyphicon-edit"></a><a
-						href="#" class="glyphicon glyphicon-remove"
-						style="margin-left: 30px"></a></td>
-				</tr>
-				<tr>
-					<td>Mr. Medic</td>
-					<td>Num�rique et Sant�</td>
-					<td><a href="#" class="glyphicon glyphicon-edit"></a><a
-						href="#" class="glyphicon glyphicon-remove"
-						style="margin-left: 30px"></a></td>
-				</tr>
+				<c:forEach var="parc" items="${parcoursFound}">
+					<c:forEach var="respo" items="${respoFound}">
+						<c:if test="${parc.getId().equals(respo.getIdParcours())}">
+							<tr>
+								<td><a
+									onclick="self.location.href='eleve_profilRespo?id=${respo.getId()}'">${respo.getNom()}</a>
+								</td>
+								<td>${parc.getNomparcours()}</td>
+								<td><a href="admin_respoEdit?id=${respo.getId()}"
+									class="glyphicon glyphicon-edit"></a><a href="admin_respo_delete?id=${respo.getId()}"
+									class="glyphicon glyphicon-remove" style="margin-left: 30px"></a>
+								</td>
+							</tr>
+						</c:if>
+					</c:forEach>
+				</c:forEach>
 			</tbody>
 			<tbody>
 			</tbody>
