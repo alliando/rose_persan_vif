@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"
 	pageEncoding="UTF-8"%>
 
-<title>Admin - Editer Responsables</title>
+<title>Admin - Ajouter Responsable</title>
 
 <!-- Page Content -->
 <div class="container">
@@ -11,7 +11,7 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<h1 class="page-header">
-				Editer un responsable <small></small>
+				Ajouter un responsable <small></small>
 			</h1>
 		</div>
 	</div>
@@ -19,12 +19,12 @@
 
 	<!-- Projects Row -->
 	<div class="row">
-		<form action="admin_respoEdit" method="POST">
+		<form action="admin_ajouterrespo" method="POST">
 			<div class="col-sm-4 col-md-4">
 				<div class="form-group">
 					<label for="nom">Nom du responsable: </label> <input
 						type="text" class="form-control" id="nom" name="nom"
-						placeholder="Responsable" value="${user.getNom()}">
+						placeholder="Responsable">
 				</div>
 				<div class="form-group">
 				<label for="parcours">Choisissez le parcours : </label> <br>
@@ -35,8 +35,6 @@
 						</c:forEach>
 					</select>
 				</div>
-				<input type="hidden" class="form-control"
-						id="id" name="id" value="${user.getId()}">
 				<br/>
 				<button type="submit"
 					class="btn btn-default btn-lg btn-block active">Sauvegarder

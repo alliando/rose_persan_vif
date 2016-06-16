@@ -17,7 +17,7 @@
 	</div>
 	<!-- /.row -->
 
-	<!-- Projects Row -->
+	<!-- Projects Row 
 	<div class="row">
 		<div class="col-md-6 portfolio-item">
 			<a href="admin_parcours_edit"><button type="button"
