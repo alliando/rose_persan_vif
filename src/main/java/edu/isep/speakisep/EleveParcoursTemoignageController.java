@@ -15,7 +15,7 @@ import net.ubilife.spring.customerjdbc.UserRepository;
 @Controller
 
 public class EleveParcoursTemoignageController {
-	private static final String SQL_INNER = "SELECT * from temoignage NATURAL JOIN user WHERE STATUT='valide' AND temoignage.userId=user.userId";
+	private static final String SQL_INNER = "SELECT * from temoignage NATURAL JOIN user WHERE STATUT='Validé' AND temoignage.userId=user.userId";
 	@RequestMapping("/eleve_parcours_temoignage")
 
 	public String eleve_temoignage(HttpServletRequest request){
