@@ -38,11 +38,12 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
-			<c:if test="${not empty loggedInUser}">
-				<c:if test="${not empty eleveLoggedIn}">
+			
+			<c:if test="${ empty loggedInUser}">
+				<c:if test="${ empty eleveLoggedIn}">
 				<c:choose>
 
-					<c:when test="${fn:endsWith(pageContext.request.requestURI, 'eleve_profil.jsp')||fn:endsWith(pageContext.request.requestURI, 'eleve_modifierProfil.jsp')}">
+					<c:when test="${fn:contains('pageContext.request.requestURI', 'eleve_profil.jsp')||fn:contains('pageContext.request.requestURI', 'eleve_modifierProfil.jsp')}">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="eleve_profil">Ma fiche</a></li>
 						<li><a href="eleve_parcours">Parcours</a></li>
@@ -50,7 +51,7 @@
 					</ul>
 					</c:when>
 					
-					<c:when test="${fn:endsWith(pageContext.request.requestURI, 'eleve_parcours.jsp')||fn:endsWith(pageContext.request.requestURI, 'eleve_parcours_responsable.jsp')||fn:endsWith(pageContext.request.requestURI, 'eleve_parcours_temoignage.jsp')||fn:endsWith(pageContext.request.requestURI, 'eleve_profilRespo.jsp')}">
+					<c:when test="${fn:contains(pageContext.request.requestURI, 'eleve_parcours.jsp')||fn:contains(pageContext.request.requestURI, 'eleve_parcours_responsable.jsp')||fn:contains(pageContext.request.requestURI, 'eleve_parcours_temoignage.jsp')||fn:contains(pageContext.request.requestURI, 'eleve_profilRespo.jsp')}">
 					<ul class="nav navbar-nav">
 						<li><a href="eleve_profil">Ma fiche</a></li>
 						<li class="active"><a href="eleve_parcours">Parcours</a></li>
@@ -58,7 +59,7 @@
 					</ul>
 					</c:when>
 					
-					<c:when test="${fn:endsWith(pageContext.request.requestURI, 'eleve_international.jsp')||fn:endsWith(pageContext.request.requestURI, 'eleve_international_module.jsp')||fn:endsWith(pageContext.request.requestURI, 'eleve_international_universite.jsp')}">
+					<c:when test="${fn:contains(pageContext.request.requestURI, 'eleve_international.jsp')||fn:contains(pageContext.request.requestURI, 'eleve_international_module.jsp')||fn:endsWith(pageContext.request.requestURI, 'eleve_international_universite.jsp')}">
 					<ul class="nav navbar-nav">
 						<li><a href="eleve_profil">Ma fiche</a></li>
 						<li><a href="eleve_parcours">Parcours</a></li>
@@ -78,7 +79,7 @@
 				<c:if test="${not empty respoLoggedIn}">
 				<c:choose>
 				
-				<c:when test="${fn:endsWith(pageContext.request.requestURI, 'respo_profilEleve.jsp')||${fn:endsWith(pageContext.request.requestURI, 'respo_eleve.jsp')}">
+				<c:when test="${fn:contains(pageContext.request.requestURI, 'respo_profilEleve.jsp')||fn:contains(pageContext.request.requestURI, 'respo_eleve.jsp')}">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="respo_eleve">Eleves</a></li>
 						<li><a href="respo_profil">Ma fiche</a></li>
@@ -87,7 +88,7 @@
 					</ul>
 				</c:when >	
 				
-				<c:when test="${fn:endsWith(pageContext.request.requestURI, 'respo_profil.jsp')||${fn:endsWith(pageContext.request.requestURI, 'respo_profil_modify.jsp')}">
+				<c:when test="${fn:contains(pageContext.request.requestURI, 'respo_profil.jsp')||fn:contains(pageContext.request.requestURI, 'respo_profil_modify.jsp')}">
 					<ul class="nav navbar-nav">
 						<li><a href="respo_eleve">Eleves</a></li>
 						<li class="active"><a href="respo_profil">Ma fiche</a></li>
@@ -96,7 +97,7 @@
 					</ul>
 				</c:when >	
 				
-				<c:when test="${fn:endsWith(pageContext.request.requestURI, 'respo_international_module.jsp')||${fn:endsWith(pageContext.request.requestURI, 'eleve_validationmodules.jsp')||${fn:endsWith(pageContext.request.requestURI, 'respo_international_universite.jsp')}">
+				<c:when test="${fn:contains(pageContext.request.requestURI, 'respo_international_module.jsp')||fn:contains(pageContext.request.requestURI, 'eleve_validationmodules.jsp')||fn:contains(pageContext.request.requestURI, 'respo_international_universite.jsp')}">
 					<ul class="nav navbar-nav">
 						<li><a href="respo_eleve">Eleves</a></li>
 						<li><a href="respo_profil">Ma fiche</a></li>
@@ -105,7 +106,7 @@
 					</ul>
 				</c:when >
 				
-				<c:when test="${fn:endsWith(pageContext.request.requestURI, 'respo_temoignage_confirm.jsp')||${fn:endsWith(pageContext.request.requestURI, 'respo_temoignage.jsp')}">
+				<c:when test="${fn:contains(pageContext.request.requestURI, 'respo_temoignage_confirm.jsp')||fn:contains(pageContext.request.requestURI, 'respo_temoignage.jsp')}">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="respo_eleve">Eleves</a></li>
 						<li><a href="respo_profil">Ma fiche</a></li>
