@@ -1,4 +1,4 @@
-package net.ubilife.spring.customerjdbc;
+package edu.isep.JDBC;
 
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;

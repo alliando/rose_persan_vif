@@ -9,9 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.Universite;
-import net.ubilife.spring.customerjdbc.UniversiteRepository;
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.Universite;
+import edu.isep.JDBC.UniversiteRepository;
 
 /**
  * Handles requests for the application home page.
@@ -30,7 +30,7 @@ public class AdminUniversitiesController {
 		for (Universite t : repo.findAll()){
 			System.out.println(t.getNomuniv()+","+t.getLienuniv()+",");
 		}
-		return "admin_universities";
+		return "admin/admin_universities";
 	}
 
 

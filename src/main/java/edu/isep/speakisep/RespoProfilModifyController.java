@@ -1,6 +1,5 @@
 package edu.isep.speakisep;
 
-import net.ubilife.spring.customerjdbc.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -8,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
+import edu.isep.JDBC.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -85,7 +86,7 @@ public class RespoProfilModifyController {
 		}
 
 
-		return "redirect:respo_profil_validation";
+		return "redirect:respo/respo_profil_validation";
 	}
 
 
@@ -93,6 +94,6 @@ public class RespoProfilModifyController {
 	@RequestMapping("/respo_profil_modify")
 
 	public String Profil_respo(){
-		return "respo_profil_modify";
+		return "respo/respo_profil_modify";
 	}
 }

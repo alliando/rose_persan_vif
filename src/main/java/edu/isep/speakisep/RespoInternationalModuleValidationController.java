@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.Fiche;
-import net.ubilife.spring.customerjdbc.Module;
-import net.ubilife.spring.customerjdbc.ModuleRepository;
-import net.ubilife.spring.customerjdbc.User;
-import net.ubilife.spring.customerjdbc.UserRepository;
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.Fiche;
+import edu.isep.JDBC.Module;
+import edu.isep.JDBC.ModuleRepository;
+import edu.isep.JDBC.User;
+import edu.isep.JDBC.UserRepository;
 
 @Controller
 public class RespoInternationalModuleValidationController {
@@ -46,7 +46,7 @@ public class RespoInternationalModuleValidationController {
 		/*String mailrespo = repoU.findOneParcours(user.getIdParcours()).getMail();
 		mailto(Arrays.asList(mailrespo), "Speakisep - Nouveaux modules à valider!",
 				"De nouveaux modules d'élèves sont à valider. Connectez-vous vite sur la plateforme Speakisep.");*/
-		return "redirect:respo_international_module";
+		return "redirect:respo/respo_international_module";
 	}
 
 	@RequestMapping(value = "/eleve_refusmodules", method = RequestMethod.POST)
@@ -75,7 +75,7 @@ public class RespoInternationalModuleValidationController {
 		module.setStatut("refus");
 		repoM.updateOne(module);
 
-		return "redirect:respo_international_module";
+		return "redirect:respo/respo_international_module";
 	}
 
 	@RequestMapping("/respo_validation_module")
@@ -96,6 +96,6 @@ public class RespoInternationalModuleValidationController {
 		request.setAttribute("eleve",eleve);
 		request.setAttribute("module",module);
 
-		return "respo_validation_module";
+		return "respo/respo_validation_module";
 	}
 }

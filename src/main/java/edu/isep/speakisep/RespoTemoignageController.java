@@ -1,6 +1,5 @@
 package edu.isep.speakisep;
 
-import net.ubilife.spring.customerjdbc.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -8,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import edu.isep.JDBC.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -40,7 +41,7 @@ public class RespoTemoignageController {
 		}
 		;
 
-		return "redirect:respo_temoignage";
+		return "redirect:respo/respo_temoignage";
 	}
 
 	@RequestMapping(value = "/respo_temoignage", method = RequestMethod.GET)
@@ -85,7 +86,7 @@ public class RespoTemoignageController {
 		request.setAttribute("temoignages", data);
 		request.setAttribute("temoignagesId", temoignagesId);
 
-		return "respo_temoignage";
+		return "respo/respo_temoignage";
 	}
 
 }

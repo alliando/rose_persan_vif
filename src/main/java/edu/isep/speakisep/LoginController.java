@@ -19,13 +19,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.Fiche;
-import net.ubilife.spring.customerjdbc.FicheRepository;
-import net.ubilife.spring.customerjdbc.User;
-import net.ubilife.spring.customerjdbc.UserManager;
-import net.ubilife.spring.customerjdbc.UserRepository;
-import net.ubilife.spring.customerjdbc.UserRepositoryImpl;
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.Fiche;
+import edu.isep.JDBC.FicheRepository;
+import edu.isep.JDBC.User;
+import edu.isep.JDBC.UserManager;
+import edu.isep.JDBC.UserRepository;
+import edu.isep.JDBC.UserRepositoryImpl;
 import edu.isep.speakisep.LDAPObject;
 
 @Controller
@@ -59,7 +59,7 @@ public class LoginController extends HttpServlet {
 		model.addAttribute("form", form);
 
 		LDAPObject ldap = ISEPAuth( userId , password );
-		String returnVal = "eleve_home";
+		String returnVal = "home";
 		HttpSession session= request.getSession();
 		User user = new User(ldap.login, ldap.password, ldap.nom, ldap.nomFamille, ldap.prenom, ldap.getType(), ldap.getNumber(), ldap.mail);
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);

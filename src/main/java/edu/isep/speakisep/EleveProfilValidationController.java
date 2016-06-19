@@ -12,7 +12,7 @@ public class EleveProfilValidationController {
 	public String RespoProfilValidation() {
 
 		
-		return "eleve_profil_validation";
+		return "eleve/eleve_profil_validation";
 	}
 	
 }

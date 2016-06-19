@@ -1,4 +1,4 @@
-package net.ubilife.spring.customerjdbc;
+package edu.isep.JDBC;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

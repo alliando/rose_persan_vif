@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.ParcoursRepository;
-import net.ubilife.spring.customerjdbc.Universite;
-import net.ubilife.spring.customerjdbc.UniversiteRepository;
-import net.ubilife.spring.customerjdbc.User;
-import net.ubilife.spring.customerjdbc.UserRepository;
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.ParcoursRepository;
+import edu.isep.JDBC.Universite;
+import edu.isep.JDBC.UniversiteRepository;
+import edu.isep.JDBC.User;
+import edu.isep.JDBC.UserRepository;
 
 @Controller
 public class AdminRespoEditController {
@@ -38,7 +38,7 @@ public class AdminRespoEditController {
 		request.setAttribute("user",user);
 		
 		
-		return "admin_respoEdit";
+		return "admin/admin_respoEdit";
 	}
 	
 	@RequestMapping(value = "/admin_respoEdit", method = RequestMethod.POST)
@@ -66,7 +66,7 @@ public class AdminRespoEditController {
 			user.setIdParcours(idParcours);
 			repoU.updateOne(user);
 		
-		return "redirect:admin_respo";
+		return "redirect:admin/admin_respo";
 		
 	}
 	

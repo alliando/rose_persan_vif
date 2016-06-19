@@ -26,7 +26,7 @@ public class RespoHomeController {
 	public String home() {
 
 
-		return "respo_home";
+		return "respo/home";
 	}
 
 }
