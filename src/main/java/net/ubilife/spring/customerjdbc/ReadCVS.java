@@ -14,7 +14,6 @@ public class ReadCVS {
 
 
     public void run(User user) {
-
         String csvFile = "Parcours_Ingenieur_Architecte_des_Systemes_d_Informationn.csv";
         String folder = "img";
         BufferedReader br = null;

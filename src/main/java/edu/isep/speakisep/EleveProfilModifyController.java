@@ -80,13 +80,14 @@ public class EleveProfilModifyController {
 			
 				String filename = null;
 				String full_file_name = null;
-				String imageFolder="src/main/resources/img";
+				String imageFolder="src/main/webapp/img/";
 				String imagePath=cst_path.addRoot(imageFolder);
 				filename = file.getOriginalFilename();
 				String[] tmpFile = filename.split("\\.");
 				String extension = tmpFile[tmpFile.length-1].toLowerCase();
-
 					try {
+						System.out.print(imagePath);
+
 						full_file_name = user.getLogin() + "." + extension;
 						BufferedOutputStream stream = new BufferedOutputStream(
 								new FileOutputStream(new File( imagePath+ full_file_name)));
