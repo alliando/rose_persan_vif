@@ -50,12 +50,10 @@ public class ReadCVS {
                 br = new BufferedReader(new FileReader(loader.getResource(csvFile).getPath()));
                 String nomParcours=br.readLine().split(";")[1];
                 nomParcours=nomParcours.split("Promo")[0];
-                //nomParcours = new String(nomParcours.getBytes("iso-8859-1"), "utf8");
 
                 int register=0;
                 for(Parcours parcours:repoP.findAll()){
-                    String getNomParcours=new String(parcours.getNomparcours().getBytes("iso-8859-1"), "utf8");
-                    if (getNomParcours.equals(nomParcours)){
+                    if (parcours.getNomparcours().equals(nomParcours)){
                         register=1;
                         break;
                     }
