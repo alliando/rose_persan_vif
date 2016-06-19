@@ -77,9 +77,6 @@ public class LoginController extends HttpServlet {
 			request.getSession().setAttribute("loggedInUser", session);
 			request.getSession().setAttribute("username", user.getPrenom());
 
-			System.out.println("repoFind : " +user.getId());
-			System.out.println("repolog : " +user.getLogin());
-			
 			//regarde si l'utilisateur est déjà inscrit dans la DB speakIsep
 			int register=0;
 			for (User t : repo.findAll()){
@@ -130,7 +127,6 @@ public class LoginController extends HttpServlet {
 
 			repo.findOne(user.getId());
 			session= request.getSession();
-			System.out.println("username : " +session.getId());
 			session.getAttribute("numero");
 		}
 

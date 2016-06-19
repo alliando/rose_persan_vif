@@ -16,6 +16,7 @@ public class ReadCVS {
     public void run(User user) {
 
         String csvFile = "Parcours_Ingenieur_Architecte_des_Systemes_d_Informationn.csv";
+        String folder = "img";
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ";";
@@ -30,6 +31,7 @@ public class ReadCVS {
         try {
             ClassLoader loader=myClass.getClassLoader();
             System.out.println(loader.getResource(csvFile).getPath());
+            System.out.println((loader.getResource("img")));
             br = new BufferedReader(new FileReader(loader.getResource(csvFile).getPath()));
             String nomParcours=br.readLine().split(";")[1];
                 nomParcours=nomParcours.split("Promo")[0];

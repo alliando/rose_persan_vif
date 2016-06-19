@@ -33,6 +33,7 @@ public class EleveProfilModifyController {
 
 		{
 			HttpSession session= request.getSession();
+			Relative_ROOT cst_path=new Relative_ROOT();
 			//Récupération des données user/fiche
 			User user =(User)session.getAttribute("user");
 			Fiche fiche =(Fiche)session.getAttribute("fiche");
@@ -79,7 +80,8 @@ public class EleveProfilModifyController {
 			
 				String filename = null;
 				String full_file_name = null;
-				String imagePath = "/Users/SophieTonnoir/GitHub/rose_persan_vif5/src/main/webapp/img/";
+				String imageFolder="src/main/resources/img";
+				String imagePath=cst_path.addRoot(imageFolder);
 				filename = file.getOriginalFilename();
 				String[] tmpFile = filename.split("\\.");
 				String extension = tmpFile[tmpFile.length-1].toLowerCase();
@@ -92,7 +94,6 @@ public class EleveProfilModifyController {
 						stream.close();
 
 						 fiche.setPhoto(full_file_name);
-						 //System.out.println("a  :"+full_file_name);
 						 repoF.updateOne(fiche);
 						
 					}
@@ -157,8 +158,6 @@ public class EleveProfilModifyController {
 					}
 			}
 			
-
-
 
 			return "redirect:eleve_profil_validation";
 		}
