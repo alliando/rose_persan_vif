@@ -46,30 +46,24 @@ public class AdminAddNew {
 
 	@RequestMapping(value = "/form_AddNew", method = RequestMethod.POST)
 	public String form(HttpServletRequest request,
-					   @RequestParam(value = "addParcours", required = false) MultipartFile photo)
+					   @RequestParam(value = "addParcours", required = false) MultipartFile csvFile)
 
 	{
 		Relative_ROOT cst_path=new Relative_ROOT();
 		MultipartFile file = null;
 
-		if(!photo.isEmpty()){
-			file = photo;
+		if(!csvFile.isEmpty()){
+			file = csvFile;
 
 			String filename = null;
-			String full_file_name = null;
-			String imageFolder="src/main/java/resources/";
+			String imageFolder="src/main/resources/parcours/";
 			String imagePath=cst_path.addRoot(imageFolder);
 			filename = file.getOriginalFilename();
-			//String[] tmpFile = filename.split("\\.");
-			//String extension = tmpFile[tmpFile.length-1].toLowerCase();
 			try {
-				System.out.print("");
-
 				System.out.print(imagePath);
 
-				full_file_name = filename;
 				BufferedOutputStream stream = new BufferedOutputStream(
-						new FileOutputStream(new File( imagePath+ full_file_name)));
+						new FileOutputStream(new File( imagePath+ filename)));
 				FileCopyUtils.copy(file.getInputStream(), stream);
 				stream.close();
 

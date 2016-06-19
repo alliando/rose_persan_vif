@@ -22,7 +22,7 @@
 		<form method="POST" action='form_AddNew' enctype="multipart/form-data">
 			<span class="form-group col-sm-12 col-md-12"> <select
 				class="col-sm-4 col-md-4" name="tsearch">
-					<option value="Parcours">Choisir un parcours</option>
+					<option value="Parcours">Parcours actuellement disponibles</option>
 					<c:forEach var="parcours" items="${parcours}">
 						<option value="${parcours.getNomparcours()}">${parcours.getNomparcours()}</option>
 					</c:forEach>
@@ -47,17 +47,4 @@
 	<span class="form-group col-sm-12 col-md-12"> </span>
 </div>
 <!-- /.row -->
-
-
-<div></div>
-<!-- /.container -->
-
-<!-- jQuery -->
-<script src="resources/js/jquery.js" type="text/javascript"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="resources/js/bootstrap.min.js" type="text/javascript"></script>
-
-<body></body>
-
-<html></html>
+<script src="resources/js/admin_addNew.js" type="text/javascript"></script>
