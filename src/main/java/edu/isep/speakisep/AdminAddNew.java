@@ -10,12 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.Parcours;
-import net.ubilife.spring.customerjdbc.ParcoursRepository;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.Parcours;
+import edu.isep.JDBC.ParcoursRepository;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -41,7 +41,7 @@ public class AdminAddNew {
 		for (Parcours t : repo1.findAll()){
 			System.out.println(t.getNomparcours()+","+t.getDescription()+",");
 		}
-		return "admin_AddNew";
+		return "admin/admin_AddNew";
 	}
 
 	@RequestMapping(value = "/form_AddNew", method = RequestMethod.POST)
@@ -72,6 +72,6 @@ public class AdminAddNew {
 
 			}
 		}
-		return "admin_AddNew";}
+		return "admin/admin_AddNew";}
 	
 }

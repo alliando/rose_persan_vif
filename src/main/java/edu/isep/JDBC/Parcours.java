@@ -1,4 +1,4 @@
-package net.ubilife.spring.customerjdbc;
+package edu.isep.JDBC;
 
 public class Parcours {
 

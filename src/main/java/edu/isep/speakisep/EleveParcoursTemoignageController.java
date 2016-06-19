@@ -6,11 +6,11 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.FicheRepository;
-import net.ubilife.spring.customerjdbc.ParcoursRepository;
-import net.ubilife.spring.customerjdbc.TemoignageRepository;
-import net.ubilife.spring.customerjdbc.UserRepository;
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.FicheRepository;
+import edu.isep.JDBC.ParcoursRepository;
+import edu.isep.JDBC.TemoignageRepository;
+import edu.isep.JDBC.UserRepository;
 
 @Controller
 
@@ -35,6 +35,6 @@ public class EleveParcoursTemoignageController {
 		System.out.println("a  :"+repoTem.findAllBySql(SQL_INNER));
 
 
-		return "eleve_parcours_temoignage";
+		return "eleve/eleve_parcours_temoignage";
 	}
 }

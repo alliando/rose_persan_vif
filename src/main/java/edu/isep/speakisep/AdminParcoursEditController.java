@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.Parcours;
-import net.ubilife.spring.customerjdbc.ParcoursRepository;
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.Parcours;
+import edu.isep.JDBC.ParcoursRepository;
 
 
 @Controller
@@ -30,7 +30,7 @@ public class AdminParcoursEditController {
 		
 		request.setAttribute("parcours",parcours);
 		
-		return "admin_parcours_edit";
+		return "admin/admin_parcours_edit";
 	}
 	
 	@RequestMapping(value = "/admin_modifierparcours", method = RequestMethod.POST)
@@ -54,7 +54,7 @@ public class AdminParcoursEditController {
 			repoP.updateOne(parcours);}
 	
 		
-				return "redirect:admin_parcours";
+				return "redirect:admin/admin_parcours";
 	
 }
 }

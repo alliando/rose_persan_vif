@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.ParcoursRepository;
-import net.ubilife.spring.customerjdbc.Temoignage;
-import net.ubilife.spring.customerjdbc.TemoignageRepository;
-import net.ubilife.spring.customerjdbc.User;
-import net.ubilife.spring.customerjdbc.UserRepository;
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.ParcoursRepository;
+import edu.isep.JDBC.Temoignage;
+import edu.isep.JDBC.TemoignageRepository;
+import edu.isep.JDBC.User;
+import edu.isep.JDBC.UserRepository;
 
 /**
  * Handles requests for the application home page.
@@ -36,7 +36,7 @@ public class AdminRespoController {
 			//Données envoyées à la view
 			request.setAttribute("parcoursFound", repoParcours.findAllBySql(SQL_INNER));
 			request.setAttribute("respoFound", repoUser.findAllBySql(SQL_INNER));
-		return "admin_respo";
+		return "admin/admin_respo";
 	}
 		
 		@RequestMapping(value = "/admin_respo_delete")
@@ -47,7 +47,7 @@ public class AdminRespoController {
 			User user = repoUser.findOne(id);
 			
 			repoUser.delete(user);
-			return "redirect:admin_respo";
+			return "redirect:admin/admin_respo";
 			
 		}
 				

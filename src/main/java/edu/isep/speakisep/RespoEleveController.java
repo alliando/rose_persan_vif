@@ -1,8 +1,9 @@
 package edu.isep.speakisep;
-import net.ubilife.spring.customerjdbc.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import edu.isep.JDBC.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -34,7 +35,7 @@ public class RespoEleveController {
 		System.out.println(repoUser.findAllBySql(SQL_INNER));
 		System.out.println(repoFiche.findAllBySql(SQL_INNER));
 
-		return "respo_eleve";
+		return "respo/respo_eleve";
 
 	}
 }

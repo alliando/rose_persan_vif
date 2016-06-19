@@ -1,12 +1,13 @@
 package edu.isep.speakisep;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.FicheRepository;
-import net.ubilife.spring.customerjdbc.ParcoursRepository;
-import net.ubilife.spring.customerjdbc.User;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.FicheRepository;
+import edu.isep.JDBC.ParcoursRepository;
+import edu.isep.JDBC.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -32,6 +33,6 @@ public class RespoProfilController {
 		}
 		session.setAttribute("Allparcours", repo.findAll());
 		session.setAttribute("fiche",repoF.findOne(user));
-		return "respo_profil";
+		return "respo/respo_profil";
 	}
 }

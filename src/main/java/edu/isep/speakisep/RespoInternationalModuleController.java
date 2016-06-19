@@ -7,10 +7,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.ModuleRepository;
-import net.ubilife.spring.customerjdbc.User;
-import net.ubilife.spring.customerjdbc.UserRepository;
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.ModuleRepository;
+import edu.isep.JDBC.User;
+import edu.isep.JDBC.UserRepository;
 
 @Controller
 public class RespoInternationalModuleController {
@@ -32,7 +32,7 @@ public class RespoInternationalModuleController {
 		request.setAttribute("eleveFound", repoU.findAllBySql(SQL_INNER));
 
 		//System.out.println("a  :"+repoU.findAllBySql(SQL_INNER));
-		return "respo_international_module";
+		return "respo/respo_international_module";
 	}
 
 }

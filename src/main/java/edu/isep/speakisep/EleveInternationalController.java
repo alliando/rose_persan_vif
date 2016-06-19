@@ -21,7 +21,7 @@ public class EleveInternationalController {
 	public String home() {
 
 		
-		return "eleve_international";
+		return "eleve/eleve_international";
 	}
 	
 }

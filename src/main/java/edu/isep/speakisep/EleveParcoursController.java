@@ -19,7 +19,7 @@ public class EleveParcoursController {
 	 */
 	@RequestMapping(value = "/eleve_parcours", method = RequestMethod.GET)
 	public String home() {
-		return "eleve_parcours";
+		return "eleve/eleve_parcours";
 	}
 	
 }

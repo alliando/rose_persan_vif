@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.Universite;
-import net.ubilife.spring.customerjdbc.UniversiteRepository;
-import net.ubilife.spring.customerjdbc.User;
-import net.ubilife.spring.customerjdbc.UserRepository;
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.Universite;
+import edu.isep.JDBC.UniversiteRepository;
+import edu.isep.JDBC.User;
+import edu.isep.JDBC.UserRepository;
 
 /**
  * Handles requests for the application home page.
@@ -40,7 +40,7 @@ public class RespoUniversityEditController {
 		
 		request.setAttribute("universite",universite);
 		
-		return "respo_university_edit";
+		return "respo/respo_university_edit";
 	}
 	
 	@RequestMapping(value = "/respo_modifieruniv", method = RequestMethod.POST)
@@ -62,7 +62,7 @@ public class RespoUniversityEditController {
 		if(!lien.equals("")){
 			universite.setLienuniv(lien);
 			repoUni.updateOne(universite);}
-				return "redirect:respo_international_universite";
+				return "redirect:respo/respo_international_universite";
 		
 	}
 	

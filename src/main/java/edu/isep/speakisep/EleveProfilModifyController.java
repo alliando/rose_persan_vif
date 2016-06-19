@@ -1,6 +1,5 @@
 package edu.isep.speakisep;
 
-import net.ubilife.spring.customerjdbc.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -9,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
+import edu.isep.JDBC.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -22,14 +23,14 @@ import java.io.UnsupportedEncodingException;
 public class EleveProfilModifyController {
 	@RequestMapping(value = "/eleve_modifierProfil", method = RequestMethod.POST)
 	public String form(HttpServletRequest request,
-					   @RequestParam(value = "lmotiv", required = false) MultipartFile lmotiv,
-					   @RequestParam(value = "cv", required = false) MultipartFile cv,
-					   @RequestParam("actextra") String actextra,
-					   @RequestParam("competences") String competences,
-					   @RequestParam("notes") String notes,
-					   @RequestParam("apprenti") String apprenti,
-					   @RequestParam("adresse") String adresse,
-					   @RequestParam(value = "photo", required = false) MultipartFile photo)
+			@RequestParam(value = "lmotiv", required = false) MultipartFile lmotiv,
+			@RequestParam(value = "cv", required = false) MultipartFile cv,
+			@RequestParam("actextra") String actextra,
+			@RequestParam("competences") String competences,
+			@RequestParam("notes") String notes,
+			@RequestParam("apprenti") String apprenti,
+			@RequestParam("adresse") String adresse,
+			@RequestParam(value = "photo", required = false) MultipartFile photo)
 
 	{
 		HttpSession session= request.getSession();
@@ -151,13 +152,13 @@ public class EleveProfilModifyController {
 		}
 
 
-		return "redirect:eleve_profil_validation";
+		return "redirect:eleve/eleve_profil_validation";
 	}
 	@RequestMapping("/eleve_profil_modify")
 
 	public String Profil_respo(
-	){
+			){
 
-		return "eleve_profil_modify";
+		return "eleve/eleve_profil_modify";
 	}
 }

@@ -11,6 +11,6 @@ public class EleveProfilController {
 	@RequestMapping("/eleve_profil")
 	
 	public String Profil_respo(){
-		return "eleve_profil";
+		return "eleve/eleve_profil";
 	}
 }
