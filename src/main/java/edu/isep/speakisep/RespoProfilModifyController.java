@@ -60,6 +60,7 @@ public class RespoProfilModifyController {
 			String filename = null;
 			String full_file_name = null;
 			String imagePath = "/Users/SophieTonnoir/GitHub/rose_persan_vif5/src/main/webapp/img/";
+
 			filename = file.getOriginalFilename();
 			String[] tmpFile = filename.split("\\.");
 			String extension = tmpFile[tmpFile.length-1].toLowerCase();

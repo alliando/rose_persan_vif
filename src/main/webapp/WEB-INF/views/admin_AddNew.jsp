@@ -19,7 +19,7 @@
 
 	<!-- Projects Row -->
 	<div class="row">
-		<form method="POST" action='form_AddNew'>
+		<form method="POST" action='form_AddNew' enctype="multipart/form-data">
 			<span class="form-group col-sm-12 col-md-12"> <select
 				class="col-sm-4 col-md-4" name="tsearch">
 					<option value="Parcours">Choisir un parcours</option>
@@ -30,13 +30,14 @@
 			</span> <span class="form-group col-sm-12 col-md-12">
 				<div class="col-sm-12 col-md-12 btn btn-default btn-file">
 					<label class="control-label">Uploader le fichier excel
-						contenant la liste des nouveaux élèves ici</label> <input type="file"
-						name="ADD" accept=".xls,.xlsx" />
+						contenant la liste des nouveaux élèves ici</label>
+					<input id="addParcours" name="addParcours" type="file" class="file"
+						   name="addParcours" accept=".xls,.xlsx,.csv" />
 				</div>
 			</span> <span class="form-group col-sm-12 col-md-12">
 				<div>
 
-					<button type="submit" name="AddUser"
+					<button type="submit"
 						class="btn btn-default btn-lg btn-block active">Ajouter
 						la liste</button>
 				</div>

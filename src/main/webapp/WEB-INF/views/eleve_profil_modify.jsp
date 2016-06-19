@@ -20,31 +20,31 @@
 			<div class="col-sm-4 col-md-4">
 				<div class="form-group">
 					<label class="control-label">Choisissez votre photo</label> <input
-						id="photo" name="photo" type="file" class="file">
+						id="photo" name="photo" type="file" class="file" required="required">
 				</div>
 				<div class="form-group">
 					<label for="inputName"> Prénom et Nom :</label> <input type="text"
 						class="form-control" id="inputName" placeholder="Nom, prénom"
-						value="${user.nom}">
+						value="${user.nom}" required="required">
 				</div>
 				<div class="form-group">
 					<label for="inputNumero"> Numéro ISEP :</label> <input type="text"
 						class="form-control" id="inputNumero" placeholder="Numéro ISEP"
-						value="${user.getNumber()}">
+						value="${user.getNumber()}" required="required">
 				</div>
 				<div class="form-group">
 					<label for="inputEmail">Adresse mail ISEP :</label> <input
 						type="email" class="form-control" id="inputEmail"
-						placeholder="Email" value="${user.mail}">
+						placeholder="Email" value="${user.mail}" required="required">
 				</div>
 				<div class="form-group">
-					<label class="control-label">CV</label> <input id="inputCV"
-						type="file" class="file" multiple class="file-loading">
+					<label class="control-label">CV</label> <input id="inputCV" name="cv"
+						type="file" class="file" class="file-loading">
 
 				</div>
 				<div class="form-group">
 					<label class="control-label">Lettres de motivation</label> <input
-						id="lmotiv" type="file" name="lmotiv" class="file" multiple
+						id="lmotiv" type="file" name="lmotiv" class="file"
 						class="file-loading">
 				</div>
 			</div>
@@ -52,12 +52,12 @@
 				<div class="form-group">
 					<label for="apprenti">Cursus actuel :</label> <input type="text"
 						name="apprenti" class="form-control" id="apprenti"
-						placeholder="Année, spécialité ...">
+						placeholder="Année, spécialité ..." required="required">
 				</div>
 				<div class="form-group">
 					<label for="adresse">Adresse :</label> <input type="text"
 						class="form-control" name="adresse" id="adresse"
-						placeholder="Adresse postale">
+						placeholder="Adresse postale" required="required">
 				</div>
 				<div class="form-group">
 					<label for="actextra">Activités extrascolaires :</label>
