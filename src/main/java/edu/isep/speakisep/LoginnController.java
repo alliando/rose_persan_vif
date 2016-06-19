@@ -41,6 +41,7 @@ public class LoginnController extends HttpServlet {
 
 							 HttpServletRequest request) {
 		HttpSession session= request.getSession();
+		String returnVal = "eleve_home";
 		//System.out.println( "login : " + userId + " password : " + password );
 		User user = new User(login, password, nom, nomFamille, prenom, type, number, mail,0);
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
@@ -56,8 +57,21 @@ public class LoginnController extends HttpServlet {
 		int register=0;
 		for (User t : repo.findAll()){
 			if(t.getLogin().equals(user.getLogin())){
-			user=t;
+				user=t;
 				register=1;
+				if (type.equals("eleve")){
+					returnVal= "eleve";
+					request.getSession().setAttribute("eleveLoggedIn", type);
+					request.getSession().setAttribute("user", user);
+				} else if ( type.equals("admin") ){
+					returnVal= "admin";
+					request.getSession().setAttribute("adminLoggedIn", type);
+					request.getSession().setAttribute("user", user);
+				} else if ( type.equals("respo") ){
+					returnVal= "respo";
+					request.getSession().setAttribute("respoLoggedIn", type);
+					request.getSession().setAttribute("user", user);
+				}
 				break;
 			}
 		}
@@ -65,9 +79,23 @@ public class LoginnController extends HttpServlet {
 
 		System.out.println(register);
 		//Si l'utilisateur n'est pas inscrit, on l'enregistre lui+sa fiche
-		if (register!=1){repo.save(user);
-			Fiche fiche=new Fiche("",null, "","", "", "", "","", "","","","","",user.getId());
+		if (register!=1){
+			repo.save(user);
+			Fiche fiche=new Fiche("",null,"","","","", "","", "", "", "", "","",user.getId());
 			repoF.save(fiche);
+			if (type.equals("eleve")){
+				returnVal= "eleve_profil_modify";
+				request.getSession().setAttribute("eleveLoggedIn", type);
+				request.getSession().setAttribute("user", user);
+			} else if ( type.equals("admin") ){
+				returnVal= "admin";
+				request.getSession().setAttribute("adminLoggedIn", type);
+				request.getSession().setAttribute("user", user);
+			} else if ( type.equals("respo") ){
+				returnVal= "respo_profil_modify";
+				request.getSession().setAttribute("respoLoggedIn", type);
+				request.getSession().setAttribute("user", user);
+			}
 
 		}
 		session.setAttribute("fiche",repoF.findOne(user));
@@ -76,13 +104,11 @@ public class LoginnController extends HttpServlet {
         obj.run(user);
 		repo.findOne(user.getId());
 		session= request.getSession();
-		System.out.println("username : " +session.getId());
 		session.getAttribute("numero");
-		String returnVal = "eleve_home";
 
 		//model.addAttribute("username", u1.getPrenom());
 
-		return returnVal;
+		return "redirect:"+returnVal;
 
 	}
 
