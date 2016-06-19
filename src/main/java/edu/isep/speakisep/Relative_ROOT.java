@@ -24,7 +24,6 @@ public  class Relative_ROOT {
 
         }else {
             path = "/Users/SophieTonnoir/GitHub/rose_persan_vif5/";
-
         }
         return path;
 

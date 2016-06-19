@@ -22,13 +22,15 @@ public class RespoProfilModifyController {
 
 	@RequestMapping(value = "/form_modifierProfil", method = RequestMethod.POST)
 	public String form(	HttpServletRequest request,
-			@RequestParam(value ="nomParcours", required = false) String nomParcours,
-			@RequestParam(value ="numSalle",required = false) String numSalle,
-			@RequestParam(value = "photo", required = false) MultipartFile photo)
+						   @RequestParam(value ="nomParcours", required = false) String nomParcours,
+						   @RequestParam(value ="numSalle",required = false) String numSalle,
+						   @RequestParam(value = "photo", required = false) MultipartFile photo)
 
 	{
-		
+
 		HttpSession session= request.getSession();
+		Relative_ROOT cst_path=new Relative_ROOT();
+
 		//Récupération des données user/fiche
 		User user =(User)session.getAttribute("user");
 		Fiche fiche =(Fiche)session.getAttribute("fiche");
@@ -51,35 +53,36 @@ public class RespoProfilModifyController {
 		if(!numSalle.equals("")){
 			fiche.setNumsalle(numSalle);
 			repoF.updateOne(fiche);}
-		
+
 		MultipartFile file = null;
 		if(photo != null)
 			file = photo;
-		
 
-			String filename = null;
-			String full_file_name = null;
-			String imagePath = "/Users/SophieTonnoir/GitHub/rose_persan_vif5/src/main/webapp/img/";
 
-			filename = file.getOriginalFilename();
-			String[] tmpFile = filename.split("\\.");
-			String extension = tmpFile[tmpFile.length-1].toLowerCase();
+		String filename = null;
+		String full_file_name = null;
+		String imageFolder="src/main/webapp/img/";
+		String imagePath=cst_path.addRoot(imageFolder);
 
-				try {
-					full_file_name = user.getLogin() + "." + extension;
-					BufferedOutputStream stream = new BufferedOutputStream(
-							new FileOutputStream(new File( imagePath+ full_file_name)));
-	                FileCopyUtils.copy(file.getInputStream(), stream);
-					stream.close();
 
-					 fiche.setPhoto(full_file_name);
-					 //System.out.println("a  :"+full_file_name);
-					 repoF.updateOne(fiche);
-					
-				}
-				catch (Exception e) {
-					
-				}
+		filename = file.getOriginalFilename();
+		String[] tmpFile = filename.split("\\.");
+		String extension = tmpFile[tmpFile.length-1].toLowerCase();
+
+		try {
+			full_file_name = user.getLogin() + "." + extension;
+			BufferedOutputStream stream = new BufferedOutputStream(
+					new FileOutputStream(new File( imagePath+ full_file_name)));
+			FileCopyUtils.copy(file.getInputStream(), stream);
+			stream.close();
+
+			fiche.setPhoto(full_file_name);
+			repoF.updateOne(fiche);
+
+		}
+		catch (Exception e) {
+
+		}
 
 
 		return "redirect:respo_profil_validation";
