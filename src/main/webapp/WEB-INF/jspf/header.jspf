@@ -39,8 +39,8 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			
-			<c:if test="${ empty loggedInUser}">
-				<c:if test="${ empty eleveLoggedIn}">
+			<c:if test="${not empty loggedInUser}">
+				<c:if test="${not empty eleveLoggedIn}">
 				<c:choose>
 
 					<c:when test="${fn:contains('pageContext.request.requestURI', 'eleve_profil.jsp')||fn:contains('pageContext.request.requestURI', 'eleve_modifierProfil.jsp')}">

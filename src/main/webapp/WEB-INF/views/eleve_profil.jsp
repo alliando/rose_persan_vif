@@ -42,18 +42,22 @@
 
 			<fieldset>
 				<legend>CV</legend>
+				<a href="doc/${fiche.getCV()}">${fiche.getCV()}</a>
 			</fieldset>
 			<fieldset>
 				<legend>Lettre de motivation</legend>
+				<a href="doc/${fiche.getLettremotiv()}">${fiche.getLettremotiv()}</a>
 			</fieldset>
 		</div>
 		<div class="col-sm-4 col-md-4">
 			<fieldset>
 				<legend>Compétences de stage</legend>
+				<p>${fiche.getCompetences()}</p>
 			</fieldset>
 
 			<fieldset>
 				<legend>Notes</legend>
+				<p>${fiche.getNotes()}</p>
 			</fieldset>
 		</div>
 		<div class="col-sm-2 col-md-2">

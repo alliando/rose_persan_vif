@@ -22,8 +22,8 @@ import java.io.UnsupportedEncodingException;
 public class EleveProfilModifyController {
 	@RequestMapping(value = "/eleve_modifierProfil", method = RequestMethod.POST)
 	public String form(HttpServletRequest request,
-				//@RequestParam("lmotiv") String lmotiv,
-				//@RequestParam("cv") String cv,
+				@RequestParam(value = "lmotiv", required = false) MultipartFile lmotiv,
+				@RequestParam(value = "cv", required = false) MultipartFile cv,
 				@RequestParam("actextra") String actextra,
 				@RequestParam("competences") String competences,
 				@RequestParam("notes") String notes,
@@ -48,10 +48,6 @@ public class EleveProfilModifyController {
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();
 			}
-			/*if (!photo.equals("No file Uploaded")){
-	        	fiche.setPhoto(photo);
-	        	repoF.updateOne(fiche);
-	        	}*/
 
 			if(!apprenti.equals("")){
 				fiche.setApprenti(apprenti);
@@ -77,10 +73,10 @@ public class EleveProfilModifyController {
 				repoF.updateOne(fiche);}
 			
 			MultipartFile file = null;
-			if(photo != null)
+			
+			if(!photo.isEmpty()){
 				file = photo;
 			
-
 				String filename = null;
 				String full_file_name = null;
 				String imagePath = "/Users/SophieTonnoir/GitHub/rose_persan_vif5/src/main/webapp/img/";
@@ -103,6 +99,64 @@ public class EleveProfilModifyController {
 					catch (Exception e) {
 						
 					}
+			}
+			MultipartFile file1 = null;
+			
+			if(!lmotiv.isEmpty()){
+				file1 = lmotiv;
+			
+				String filename1 = null;
+				String full_file_name1 = null;
+				String imagePath1 = "/Users/SophieTonnoir/GitHub/rose_persan_vif5/src/main/webapp/doc/";
+				filename1 = file1.getOriginalFilename();
+				String[] tmpFile1 = filename1.split("\\.");
+				String extension1 = tmpFile1[tmpFile1.length-1].toLowerCase();
+
+					try {
+						full_file_name1 = user.getLogin() + "Lmotiv." + extension1;
+						BufferedOutputStream stream1 = new BufferedOutputStream(
+								new FileOutputStream(new File( imagePath1+ full_file_name1)));
+		                FileCopyUtils.copy(file1.getInputStream(), stream1);
+						stream1.close();
+
+						 fiche.setLettremotiv(full_file_name1);
+						 //System.out.println("a  :"+full_file_name);
+						 repoF.updateOne(fiche);
+						
+					}
+					catch (Exception e) {
+						
+					}
+			}
+			MultipartFile file2 = null;
+			
+			if(!cv.isEmpty()){
+				file2 = cv;
+			
+				String filename2 = null;
+				String full_file_name2 = null;
+				String imagePath2 = "/Users/SophieTonnoir/GitHub/rose_persan_vif5/src/main/webapp/doc/";
+				filename2 = file2.getOriginalFilename();
+				String[] tmpFile2 = filename2.split("\\.");
+				String extension2 = tmpFile2[tmpFile2.length-1].toLowerCase();
+
+					try {
+						full_file_name2 = user.getLogin() + "CV." + extension2;
+						BufferedOutputStream stream2 = new BufferedOutputStream(
+								new FileOutputStream(new File( imagePath2+ full_file_name2)));
+		                FileCopyUtils.copy(file2.getInputStream(), stream2);
+						stream2.close();
+
+						 fiche.setCV(full_file_name2);
+						 //System.out.println("a  :"+full_file_name);
+						 repoF.updateOne(fiche);
+						
+					}
+					catch (Exception e) {
+						
+					}
+			}
+			
 
 
 
