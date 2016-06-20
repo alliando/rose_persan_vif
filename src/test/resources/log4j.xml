@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="edu.isep.phonebook">
+	<logger name="edu.isep.speakisep">
 		<level value="info" />
 	</logger>
 	

@@ -16,7 +16,7 @@
 					class="icon-bar"></span>
 			</button>
 			<c:if test="${empty loggedInUser}">
-				<a class="navbar-brand" href="http://localhost:8080/phonebook/">Speakisep</a>
+				<a class="navbar-brand" href="http://localhost:8080/speakisep/">Speakisep</a>
 				<a href="#" class="pull-left"><img src="http://img11.hostingpics.net/thumbs/mini_965304ISEP.png" style="max-width: 82px;"></a>
 			</c:if>
 			<c:if test="${not empty loggedInUser}">
