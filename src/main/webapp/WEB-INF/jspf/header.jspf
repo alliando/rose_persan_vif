@@ -84,7 +84,7 @@
 						<li class="active"><a href="respo_eleve">Eleves</a></li>
 						<li><a href="respo_profil">Ma fiche</a></li>
 						<li><a href="respo_international_module">International</a></li>
-						<li><a href="admin_temoignage">Témoignages</a></li>
+						<li><a href="respo_temoignage">Témoignages</a></li>
 					</ul>
 				</c:when >	
 				
@@ -93,7 +93,7 @@
 						<li><a href="respo_eleve">Eleves</a></li>
 						<li class="active"><a href="respo_profil">Ma fiche</a></li>
 						<li><a href="respo_international_module">International</a></li>
-						<li><a href="admin_temoignage">Témoignages</a></li>
+						<li><a href="respo_temoignage">Témoignages</a></li>
 					</ul>
 				</c:when >	
 				
@@ -102,7 +102,7 @@
 						<li><a href="respo_eleve">Eleves</a></li>
 						<li><a href="respo_profil">Ma fiche</a></li>
 						<li class="active"><a href="respo_international_module">International</a></li>
-						<li><a href="admin_temoignage">Témoignages</a></li>
+						<li><a href="respo_temoignage">Témoignages</a></li>
 					</ul>
 				</c:when >
 				
@@ -111,7 +111,7 @@
 						<li class="active"><a href="respo_eleve">Eleves</a></li>
 						<li><a href="respo_profil">Ma fiche</a></li>
 						<li><a href="respo_international_module">International</a></li>
-						<li class="active"><a href="admin_temoignage">Témoignages</a></li>
+						<li class="active"><a href="respo_temoignage">Témoignages</a></li>
 					</ul>
 				</c:when >	
 				
@@ -120,7 +120,7 @@
 						<li><a href="respo_eleve">Eleves</a></li>
 						<li><a href="respo_profil">Ma fiche</a></li>
 						<li><a href="respo_international_module">International</a></li>
-						<li><a href="admin_temoignage">Témoignages</a></li>
+						<li><a href="respo_temoignage">Témoignages</a></li>
 					</ul>
 				</c:otherwise>	
 				</c:choose>
