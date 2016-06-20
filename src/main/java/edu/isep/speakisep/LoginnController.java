@@ -15,6 +15,9 @@ import javax.naming.AuthenticationException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.security.Principal;
 
 @Controller
@@ -43,8 +46,8 @@ public class LoginnController extends HttpServlet {
 							 HttpServletRequest request) {
 		HttpSession session= request.getSession();
 		String returnVal = "eleve_home";
-		//System.out.println( "login : " + userId + " password : " + password );
-		User user = new User(login, password, nom, nomFamille, prenom, type, number, mail,0);
+		Md5 pwd = new Md5(password);
+		User user = new User(login, pwd.codeGet(), nom, nomFamille, prenom, type, number, mail,0);
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		UserRepository repo = ctx.getBean(UserRepository.class);
 		FicheRepository repoF=ctx.getBean(FicheRepository.class);
@@ -110,6 +113,34 @@ public class LoginnController extends HttpServlet {
 		//model.addAttribute("username", u1.getPrenom());
 
 		return "redirect:"+returnVal;
+
+	}
+	public class Md5 {
+		private String code;
+
+		public Md5(String md5) {
+			Passe(md5);
+			// TODO Auto-generated constructor stub
+		}
+
+		public void Passe(String pass){
+			byte[] passBytes = pass.getBytes();
+			try {
+				MessageDigest algorithm = MessageDigest.getInstance("MD5");
+				algorithm.reset();
+				algorithm.update(passBytes);
+				MessageDigest md = MessageDigest.getInstance("MD5");
+				byte[] messageDigest = md.digest(passBytes);
+				BigInteger number = new BigInteger(1, messageDigest);
+				this.code= number.toString(16);
+			} catch (NoSuchAlgorithmException e) {
+				throw new Error("invalid JRE: have not 'MD5' impl.", e);
+			}
+		}
+		public String codeGet(){
+			return code;
+		}
+
 
 	}
 

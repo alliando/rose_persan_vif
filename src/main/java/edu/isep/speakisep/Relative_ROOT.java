@@ -23,7 +23,7 @@ public  class Relative_ROOT {
         if (len!=-1){
             path = path.substring(0, len)+"rose_persan_vif/";
 
-        } else if(path.lastIndexOf("ROOT")!=-1){
+        } else if(path.lastIndexOf("apache-tomcat")!=-1){
             path = "/Users/Frost_000/code/isep/speakIsep/rose_persan_vif/";
         }else {
             path = "/Users/SophieTonnoir/GitHub/rose_persan_vif5/";

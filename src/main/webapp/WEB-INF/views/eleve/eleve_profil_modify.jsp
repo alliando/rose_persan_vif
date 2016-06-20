@@ -1,26 +1,26 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"
 	pageEncoding="UTF-8"%>
+<c:if test="${not empty eleveLoggedIn}">
+	<title>Elève - Modifier profil</title>
+	<!-- Page Content -->
+	<div class="container">
 
-<title>Elève - Modifier profil</title>
-<!-- Page Content -->
-<div class="container">
-
-	<!-- Page Header -->
-	<div class="row">
-		<div class="col-lg-12">
-			<h1 class="page-header">
-				Modifier ma fiche <small></small>
-			</h1>
+		<!-- Page Header -->
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">
+					Modifier ma fiche <small></small>
+				</h1>
+			</div>
 		</div>
-	</div>
-	<!-- /.row -->
+		<!-- /.row -->
 
 	<div class="row">
 		<form action="eleve_modifierProfil" method="POST" enctype="multipart/form-data">
 			<div class="col-sm-4 col-md-4">
 				<div class="form-group">
 					<label class="control-label">Choisissez votre photo</label> <input
-						id="photo" name="photo" type="file" class="file" required="required">
+						value="${fiche.getPhoto()}" id="photo" name="photo" type="file" class="file" >
 				</div>
 				<div class="form-group">
 					<label for="inputName"> Prénom et Nom :</label> <input type="text"
@@ -52,29 +52,29 @@
 				<div class="form-group">
 					<label for="apprenti">Cursus :</label> <input type="text"
 						name="apprenti" class="form-control" id="apprenti"
-						placeholder="Prépa intégrée ..." required="required">
+						value="${fiche.getApprenti()}" placeholder="Prépa intégrée ..." required="required">
 				</div>
 				<div class="form-group">
 					<label for="adresse">Adresse :</label> <input type="text"
 						class="form-control" name="adresse" id="adresse"
-						placeholder="Adresse postale" required="required">
+						value="${fiche.getAdresse()}" placeholder="Adresse postale" required="required">
 				</div>
 				<div class="form-group">
 					<label for="actextra">Activités extrascolaires :</label>
 					<textarea class="form-control" id="actextra" name="actextra"
-						placeholder="Activités extrascolaires" rows="3" cols=""></textarea>
+					placeholder="Activités extrascolaires" rows="3" cols="">${fiche.getActextra()}</textarea>
 				</div>
 				<div class="form-group">
 					<label for="competences">Compétences de stage :</label>
 					<textarea class="form-control" id="competences" name="competences"
-						placeholder="Compétences de stage" rows="4" cols=""></textarea>
+							  placeholder="Compétences de stage" rows="4" cols="">${fiche.getCompetences()}</textarea>
 				</div>
 			</div>
 			<div class="col-sm-4 col-md-4">
 				<div class="form-group">
 					<label for="notes">Notes :</label>
 					<textarea class="form-control" id="notes" name="notes"
-						placeholder="Notes" rows="6" cols=""></textarea>
+						placeholder="Notes" rows="6" cols="">${fiche.getNotes()}</textarea>
 				</div>
 				<button type="submit"
 					class="btn btn-primary btn-lg btn-block active">Sauvegarder
@@ -84,5 +84,10 @@
 	</div>
 	<!-- /.row -->
 
-</div>
-<!-- /.container -->
+	</div>
+	<!-- /.container -->
+
+</c:if>
+<c:if test="${empty eleveLoggedIn}">
+	<jsp:forward page="../error.jsp" />
+</c:if>

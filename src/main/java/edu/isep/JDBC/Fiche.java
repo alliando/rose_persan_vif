@@ -167,6 +167,7 @@ public class Fiche {
 	public void setPromotion(String promotion) {
 		this.promotion = promotion;
 	}
+
 	public String getPromotion() {
 		return promotion;
 	}

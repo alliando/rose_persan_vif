@@ -39,7 +39,6 @@ public class EleveProfilModifyController {
 		String docFolder="src/main/webapp/doc/";
 		String imagePath=cst_path.addRoot(imageFolder);
 		String docPath=cst_path.addRoot(docFolder);
-
 		//Récupération des données user/fiche
 		User user =(User)session.getAttribute("user");
 		Fiche fiche =(Fiche)session.getAttribute("fiche");

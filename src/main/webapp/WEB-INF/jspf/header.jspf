@@ -16,7 +16,7 @@
 					class="icon-bar"></span>
 			</button>
 			<c:if test="${empty loggedInUser}">
-				<a class="navbar-brand" href="http://localhost:8080/phonebook/">Speakisep</a>
+				<a class="navbar-brand" href="http://localhost:8080/speakisep/">Speakisep</a>
 				<a href="#" class="pull-left"><img src="http://img11.hostingpics.net/thumbs/mini_965304ISEP.png" style="max-width: 82px;"></a>
 			</c:if>
 			<c:if test="${not empty loggedInUser}">
@@ -34,11 +34,11 @@
 				</c:if>
 			</c:if>
 		</div>
-		
+
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
-			
+
 			<c:if test="${not empty loggedInUser}">
 				<c:if test="${not empty eleveLoggedIn}">
 				<c:choose>
@@ -50,7 +50,7 @@
 						<li><a href="eleve_international">International</a></li>
 					</ul>
 					</c:when>
-					
+
 					<c:when test="${fn:contains(pageContext.request.requestURI, 'eleve_parcours.jsp')||fn:contains(pageContext.request.requestURI, 'eleve_parcours_responsable.jsp')||fn:contains(pageContext.request.requestURI, 'eleve_parcours_temoignage.jsp')||fn:contains(pageContext.request.requestURI, 'eleve_profilRespo.jsp')}">
 					<ul class="nav navbar-nav">
 						<li><a href="eleve_profil">Ma fiche</a></li>
@@ -58,7 +58,7 @@
 						<li><a href="eleve_international">International</a></li>
 					</ul>
 					</c:when>
-					
+
 					<c:when test="${fn:contains(pageContext.request.requestURI, 'eleve_international.jsp')||fn:contains(pageContext.request.requestURI, 'eleve_international_module.jsp')||fn:endsWith(pageContext.request.requestURI, 'eleve_international_universite.jsp')}">
 					<ul class="nav navbar-nav">
 						<li><a href="eleve_profil">Ma fiche</a></li>
@@ -66,7 +66,7 @@
 						<li class="active"><a href="eleve_international">International</a></li>
 					</ul>
 					</c:when>
-					
+
 					<c:otherwise>
 					<ul class="nav navbar-nav">
 						<li><a href="eleve_profil">Ma fiche</a></li>
@@ -78,51 +78,51 @@
 				</c:if>
 				<c:if test="${not empty respoLoggedIn}">
 				<c:choose>
-				
+
 				<c:when test="${fn:contains(pageContext.request.requestURI, 'respo_profilEleve.jsp')||fn:contains(pageContext.request.requestURI, 'respo_eleve.jsp')}">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="respo_eleve">Eleves</a></li>
 						<li><a href="respo_profil">Ma fiche</a></li>
 						<li><a href="respo_international_module">International</a></li>
-						<li><a href="admin_temoignage">Témoignages</a></li>
+						<li><a href="respo_temoignage">Témoignages</a></li>
 					</ul>
-				</c:when >	
-				
+				</c:when >
+
 				<c:when test="${fn:contains(pageContext.request.requestURI, 'respo_profil.jsp')||fn:contains(pageContext.request.requestURI, 'respo_profil_modify.jsp')}">
 					<ul class="nav navbar-nav">
 						<li><a href="respo_eleve">Eleves</a></li>
 						<li class="active"><a href="respo_profil">Ma fiche</a></li>
 						<li><a href="respo_international_module">International</a></li>
-						<li><a href="admin_temoignage">Témoignages</a></li>
+						<li><a href="respo_temoignage">Témoignages</a></li>
 					</ul>
-				</c:when >	
-				
+				</c:when >
+
 				<c:when test="${fn:contains(pageContext.request.requestURI, 'respo_international_module.jsp')||fn:contains(pageContext.request.requestURI, 'eleve_validationmodules.jsp')||fn:contains(pageContext.request.requestURI, 'respo_international_universite.jsp')}">
 					<ul class="nav navbar-nav">
 						<li><a href="respo_eleve">Eleves</a></li>
 						<li><a href="respo_profil">Ma fiche</a></li>
 						<li class="active"><a href="respo_international_module">International</a></li>
-						<li><a href="admin_temoignage">Témoignages</a></li>
+						<li><a href="respo_temoignage">Témoignages</a></li>
 					</ul>
 				</c:when >
-				
+
 				<c:when test="${fn:contains(pageContext.request.requestURI, 'respo_temoignage_confirm.jsp')||fn:contains(pageContext.request.requestURI, 'respo_temoignage.jsp')}">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="respo_eleve">Eleves</a></li>
 						<li><a href="respo_profil">Ma fiche</a></li>
 						<li><a href="respo_international_module">International</a></li>
-						<li class="active"><a href="admin_temoignage">Témoignages</a></li>
+						<li class="active"><a href="respo_temoignage">Témoignages</a></li>
 					</ul>
-				</c:when >	
-				
+				</c:when >
+
 				<c:otherwise>
 					<ul class="nav navbar-nav">
 						<li><a href="respo_eleve">Eleves</a></li>
 						<li><a href="respo_profil">Ma fiche</a></li>
 						<li><a href="respo_international_module">International</a></li>
-						<li><a href="admin_temoignage">Témoignages</a></li>
+						<li><a href="respo_temoignage">Témoignages</a></li>
 					</ul>
-				</c:otherwise>	
+				</c:otherwise>
 				</c:choose>
 				</c:if>
 				<c:if test="${not empty adminLoggedIn}">
@@ -172,7 +172,7 @@
 						<li class="active"><a href="admin_respo">Responsable de parcours</a></li>
 					</ul>
 					</c:when>
-					<c:otherwise>	
+					<c:otherwise>
 					<ul class="nav navbar-nav">
 						<li><a href="admin_universities">Universités</a></li>
 						<li><a href="admin_temoignage">Témoignages</a></li>
