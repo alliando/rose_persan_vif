@@ -19,9 +19,7 @@ public class AdminHomeController {
 	 */
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String home() {
-
-		
-		return "admin_home";
+		return "admin/home";
 	}
 	
 }

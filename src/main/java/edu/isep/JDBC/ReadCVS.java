@@ -1,4 +1,4 @@
-package net.ubilife.spring.customerjdbc;
+package edu.isep.JDBC;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -50,6 +50,7 @@ public class ReadCVS {
                 br = new BufferedReader(new FileReader(loader.getResource(csvFile).getPath()));
                 String nomParcours=br.readLine().split(";")[1];
                 nomParcours=nomParcours.split("Promo")[0];
+
                 int register=0;
                 for(Parcours parcours:repoP.findAll()){
                     if (parcours.getNomparcours().equals(nomParcours)){

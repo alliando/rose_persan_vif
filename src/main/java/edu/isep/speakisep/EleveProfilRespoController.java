@@ -1,10 +1,11 @@
 package edu.isep.speakisep;
 
-import net.ubilife.spring.customerjdbc.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import edu.isep.JDBC.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -30,7 +31,7 @@ public class EleveProfilRespoController {
 		request.setAttribute("respoFiche",respoFiche);
 		request.setAttribute("respoParcours",respoParcours);
 
-		return "eleve_profilRespo";
+		return "eleve/eleve_profilRespo";
 	}
 
 }

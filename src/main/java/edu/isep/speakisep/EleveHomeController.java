@@ -21,7 +21,7 @@ public class EleveHomeController {
 	public String home() {
 
 		
-		return "eleve_home";
+		return "eleve/home";
 	}
 	
 }

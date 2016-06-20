@@ -12,7 +12,7 @@ public class RespoProfilValidationController {
 	public String RespoProfilValidation() {
 
 		
-		return "respo_profil_validation";
+		return "respo/respo_profil_validation";
 	}
 	
 }

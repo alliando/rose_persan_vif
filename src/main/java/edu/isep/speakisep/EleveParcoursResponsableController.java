@@ -1,12 +1,13 @@
 package edu.isep.speakisep;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.Parcours;
-import net.ubilife.spring.customerjdbc.ParcoursRepository;
-import net.ubilife.spring.customerjdbc.UserRepository;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.Parcours;
+import edu.isep.JDBC.ParcoursRepository;
+import edu.isep.JDBC.UserRepository;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -27,6 +28,6 @@ public class EleveParcoursResponsableController {
 		request.setAttribute("parcoursFound", repoParcours.findAllBySql(SQL_INNER));
 		request.setAttribute("respoFound", repoUser.findAllBySql(SQL_INNER));
 
-		return "eleve_parcours_responsable";
+		return "eleve/eleve_parcours_responsable";
 	}
 }

@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.Fiche;
-import net.ubilife.spring.customerjdbc.FicheRepository;
-import net.ubilife.spring.customerjdbc.ParcoursRepository;
-import net.ubilife.spring.customerjdbc.Temoignage;
-import net.ubilife.spring.customerjdbc.TemoignageRepository;
-import net.ubilife.spring.customerjdbc.User;
-import net.ubilife.spring.customerjdbc.UserRepository;
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.Fiche;
+import edu.isep.JDBC.FicheRepository;
+import edu.isep.JDBC.ParcoursRepository;
+import edu.isep.JDBC.Temoignage;
+import edu.isep.JDBC.TemoignageRepository;
+import edu.isep.JDBC.User;
+import edu.isep.JDBC.UserRepository;
 
 /**
  * Handles requests for the application home page.
@@ -49,7 +49,7 @@ public class AdminTemoignageController {
 		}
 		;
 
-		return "redirect:admin_temoignage";
+		return "redirect:admin/admin_temoignage";
 	}
 	
 	@RequestMapping(value = "/admin_temoignage", method = RequestMethod.GET)
@@ -86,7 +86,7 @@ public class AdminTemoignageController {
 				request.setAttribute("temoignages", data);
 				request.setAttribute("temoignagesId", temoignagesId);
 
-		return "admin_temoignage";
+		return "admin/admin_temoignage";
 	}
 	
 }

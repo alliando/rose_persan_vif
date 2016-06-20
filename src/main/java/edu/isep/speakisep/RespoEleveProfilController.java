@@ -1,6 +1,5 @@
 package edu.isep.speakisep;
 
-import net.ubilife.spring.customerjdbc.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -9,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import edu.isep.JDBC.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -35,6 +36,6 @@ public class RespoEleveProfilController {
 			System.out.println("id  :" + eleve);
 
 		}
-		return "respo_eleve_profil";
+		return "respo/respo_eleve_profil";
 	}
 }

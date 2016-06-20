@@ -6,9 +6,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.Universite;
-import net.ubilife.spring.customerjdbc.UniversiteRepository;
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.Universite;
+import edu.isep.JDBC.UniversiteRepository;
 
 @Controller
 
@@ -23,6 +23,6 @@ public class RespoInternationalUniversiteController {
 		for (Universite t : repo.findAll()){
 			System.out.println(t.getNomuniv()+","+t.getLienuniv()+",");
 		}
-		return "respo_international_universite";
+		return "respo/respo_international_universite";
 	}
 }

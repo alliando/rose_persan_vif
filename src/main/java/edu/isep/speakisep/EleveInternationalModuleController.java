@@ -22,12 +22,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.Module;
-import net.ubilife.spring.customerjdbc.ModuleRepository;
-import net.ubilife.spring.customerjdbc.UniversiteRepository;
-import net.ubilife.spring.customerjdbc.User;
-import net.ubilife.spring.customerjdbc.UserRepository;
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.Module;
+import edu.isep.JDBC.ModuleRepository;
+import edu.isep.JDBC.UniversiteRepository;
+import edu.isep.JDBC.User;
+import edu.isep.JDBC.UserRepository;
 
 @Controller
 
@@ -72,7 +72,7 @@ public class EleveInternationalModuleController {
 
 		}
 
-		return "redirect:eleve_international";
+		return "redirect:eleve/eleve_international";
 	}
 
 	public static void mailto(List<String> recipients, String subject,
@@ -138,6 +138,6 @@ public class EleveInternationalModuleController {
 		 request.setAttribute("date", dat);
 		//System.out.println("b  :"+dat);
 
-		return "eleve_international_module";
+		return "eleve/eleve_international_module";
 	}
 }

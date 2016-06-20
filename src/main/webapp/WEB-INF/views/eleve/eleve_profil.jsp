@@ -44,6 +44,7 @@
 				<legend>CV</legend>
 				<a href="doc/${fiche.getCV()}">${fiche.getCV()}</a>
 			</fieldset>
+			<br/>
 			<fieldset>
 				<legend>Lettre de motivation</legend>
 				<a href="doc/${fiche.getLettremotiv()}">${fiche.getLettremotiv()}</a>

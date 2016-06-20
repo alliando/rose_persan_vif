@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.Universite;
-import net.ubilife.spring.customerjdbc.UniversiteRepository;
-import net.ubilife.spring.customerjdbc.User;
-import net.ubilife.spring.customerjdbc.UserRepository;
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.Universite;
+import edu.isep.JDBC.UniversiteRepository;
+import edu.isep.JDBC.User;
+import edu.isep.JDBC.UserRepository;
 
 /**
  * Handles requests for the application home page.
@@ -24,7 +24,7 @@ public class AdminRespoAddController {
 	
 	@RequestMapping(value = "/admin_respo_add", method = RequestMethod.GET)
 	public String home() {
-		return "admin_respo_add";
+		return "admin/admin_respo_add";
 	}
 	
 	@RequestMapping(value = "/admin_ajouterrespo", method = RequestMethod.POST)
@@ -47,7 +47,7 @@ public class AdminRespoAddController {
 			}
 
 		
-				return "redirect:admin_universities";
+				return "redirect:admin/admin_universities";
 		
 	}
 	

@@ -10,7 +10,7 @@ public class RespoInternationalController {
 	@RequestMapping("/respo_international")
 
 	public String showInternational() {
-		return "respo_international";
+		return "respo/respo_international";
 	}
 
 }

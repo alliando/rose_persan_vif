@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import net.ubilife.spring.customerjdbc.Config;
-import net.ubilife.spring.customerjdbc.ModuleRepository;
-import net.ubilife.spring.customerjdbc.ParcoursRepository;
-import net.ubilife.spring.customerjdbc.Temoignage;
-import net.ubilife.spring.customerjdbc.TemoignageRepository;
-import net.ubilife.spring.customerjdbc.User;
-import net.ubilife.spring.customerjdbc.UserRepository;
+import edu.isep.JDBC.Config;
+import edu.isep.JDBC.ModuleRepository;
+import edu.isep.JDBC.ParcoursRepository;
+import edu.isep.JDBC.Temoignage;
+import edu.isep.JDBC.TemoignageRepository;
+import edu.isep.JDBC.User;
+import edu.isep.JDBC.UserRepository;
 
 @Controller
 
@@ -32,7 +32,7 @@ public class EleveParcoursTemoignageNewController {
 				request.setAttribute("parcours", repoParcours.findAll());
 				
 
-		return "eleve_parcours_temoignage_new";
+		return "eleve/eleve_parcours_temoignage_new";
 	}
 	
 	@RequestMapping(value = "/eleve_ajouttemoignage", method = RequestMethod.POST)
@@ -64,6 +64,6 @@ public class EleveParcoursTemoignageNewController {
 				System.out.println("b  :"+parcours);
 		
 
-		return "eleve_parcours";
+		return "eleve/eleve_parcours";
 	}
 }
