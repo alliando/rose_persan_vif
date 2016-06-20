@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import edu.isep.JDBC.*;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -19,14 +20,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import edu.isep.JDBC.Config;
-import edu.isep.JDBC.Fiche;
-import edu.isep.JDBC.FicheRepository;
-import edu.isep.JDBC.User;
-import edu.isep.JDBC.UserManager;
-import edu.isep.JDBC.UserRepository;
-import edu.isep.JDBC.UserRepositoryImpl;
 import edu.isep.speakisep.LDAPObject;
+
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 @Controller
 public class LoginController extends HttpServlet {
@@ -57,11 +55,11 @@ public class LoginController extends HttpServlet {
 			HttpServletRequest request) {
 		
 		model.addAttribute("form", form);
-
 		LDAPObject ldap = ISEPAuth( userId , password );
+		Md5 pwd = new Md5(ldap.password);
 		String returnVal = "home";
 		HttpSession session= request.getSession();
-		User user = new User(ldap.login, ldap.password, ldap.nom, ldap.nomFamille, ldap.prenom, ldap.getType(), ldap.getNumber(), ldap.mail);
+		User user = new User(ldap.login, pwd.codeGet(), ldap.nom, ldap.nomFamille, ldap.prenom, ldap.getType(), ldap.getNumber(), ldap.mail);
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		UserRepository repo = ctx.getBean(UserRepository.class);
 		FicheRepository repoF=ctx.getBean(FicheRepository.class);
@@ -101,8 +99,7 @@ public class LoginController extends HttpServlet {
 			}
 			request.getSession().setAttribute("user", user);
 
-			System.out.println(register);
-			
+
 			//Si l'utilisateur n'est pas inscrit, on l'enregistre lui+sa fiche
 			if (register!=1){
 			repo.save(user);
@@ -125,6 +122,8 @@ public class LoginController extends HttpServlet {
 			}
 			session.setAttribute("fiche",repoF.findOne(user));
 
+			ReadCVS obj = new ReadCVS();
+			obj.run(user);
 			repo.findOne(user.getId());
 			session= request.getSession();
 			session.getAttribute("numero");
@@ -180,6 +179,34 @@ public class LoginController extends HttpServlet {
 
 	private User warpUserModel (LDAPObject isepUser){
 		return new User(isepUser.getLogin(), isepUser.getPassword(), isepUser.getNom(), isepUser.getNomFamille(), isepUser.getPrenom(), isepUser.getType(), isepUser.getNumber(), isepUser.getMail());
+	}
+	public class Md5 {
+		private String code;
+
+		public Md5(String md5) {
+			Passe(md5);
+			// TODO Auto-generated constructor stub
+		}
+
+		public void Passe(String pass){
+			byte[] passBytes = pass.getBytes();
+			try {
+				MessageDigest algorithm = MessageDigest.getInstance("MD5");
+				algorithm.reset();
+				algorithm.update(passBytes);
+				MessageDigest md = MessageDigest.getInstance("MD5");
+				byte[] messageDigest = md.digest(passBytes);
+				BigInteger number = new BigInteger(1, messageDigest);
+				this.code= number.toString(16);
+			} catch (NoSuchAlgorithmException e) {
+				throw new Error("invalid JRE: have not 'MD5' impl.", e);
+			}
+		}
+		public String codeGet(){
+			return code;
+		}
+
+
 	}
 
 }
