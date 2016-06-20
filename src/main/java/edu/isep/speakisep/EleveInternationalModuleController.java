@@ -72,7 +72,7 @@ public class EleveInternationalModuleController {
 
 		}
 
-		return "redirect:eleve/eleve_international";
+		return "redirect:eleve_international";
 	}
 
 	public static void mailto(List<String> recipients, String subject,

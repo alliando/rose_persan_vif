@@ -62,7 +62,7 @@ public class RespoUniversityEditController {
 		if(!lien.equals("")){
 			universite.setLienuniv(lien);
 			repoUni.updateOne(universite);}
-				return "redirect:respo/respo_international_universite";
+				return "redirect:respo_international_universite";
 		
 	}
 	

@@ -72,6 +72,6 @@ public class AdminAddNew {
 
 			}
 		}
-		return "admin/admin_AddNew";}
+		return "admin/home";}
 	
 }

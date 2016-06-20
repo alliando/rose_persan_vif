@@ -41,7 +41,7 @@ public class RespoTemoignageController {
 		}
 		;
 
-		return "redirect:respo/respo_temoignage";
+		return "redirect:respo_temoignage";
 	}
 
 	@RequestMapping(value = "/respo_temoignage", method = RequestMethod.GET)

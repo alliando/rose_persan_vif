@@ -54,7 +54,7 @@ public class AdminParcoursEditController {
 			repoP.updateOne(parcours);}
 	
 		
-				return "redirect:admin/admin_parcours";
+				return "redirect:admin_parcours";
 	
 }
 }

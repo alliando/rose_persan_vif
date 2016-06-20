@@ -18,7 +18,7 @@
 	<div class="row">
 		<div class="col-sm-2 col-md-2">
 			<img
-				src="resources/image/${eleveFiche.getPhoto()}"
+				src="img/${eleveFiche.getPhoto()}"
 				alt="" class="img-rounded img-responsive" />
 		</div>
 		<div class="col-sm-4 col-md-4">
@@ -29,8 +29,8 @@
 				<i class="glyphicon glyphicon-info-sign"></i> N° étudiant :
 				${eleve.getNumber()} <br />
 				<i class="glyphicon glyphicon-envelope"></i> ${eleve.getMail()} <br />
-				<i class="glyphicon glyphicon-briefcase"></i> 2ème année spécialité
-				Génie Logiciel <br /> <i class="glyphicon glyphicon-globe"></i>
+				<i class="glyphicon glyphicon-briefcase"></i> ${eleveFiche.getApprenti()} -- ${eleveFiche.getEtape()} -- Promo ${eleveFiche.getPromotion()} -- ${eleveFiche.getCursus()}
+				<br/> <i class="glyphicon glyphicon-globe"></i>
 				${eleveFiche.getAdresse()}
 			</p>
 			<br />
@@ -41,19 +41,23 @@
 
 			<fieldset>
 				<legend>CV</legend>
+				<a href="doc/${eleveFiche.getCV()}">${eleveFiche.getCV()}</a>
 			</fieldset>
 
 			<fieldset>
 				<legend>Lettre de motivation</legend>
+				<a href="doc/${eleveFiche.getLettremotiv()}">${eleveFiche.getLettremotiv()}</a>
 			</fieldset>
 		</div>
 		<div class="col-sm-4 col-md-4">
 			<fieldset>
 				<legend>Compétences de stage</legend>
+				<p>${eleveFiche.getCompetences()}</p>
 			</fieldset>
 
 			<fieldset>
 				<legend>Notes</legend>
+				<p>${fiche.getNotes()}</p>
 			</fieldset>
 		</div>
 		<div class="col-sm-2 col-md-2">

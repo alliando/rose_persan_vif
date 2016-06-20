@@ -47,7 +47,7 @@ public class AdminRespoAddController {
 			}
 
 		
-				return "redirect:admin/admin_universities";
+				return "redirect:admin_universities";
 		
 	}
 	
