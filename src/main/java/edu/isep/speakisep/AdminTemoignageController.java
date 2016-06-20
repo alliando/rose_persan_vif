@@ -49,7 +49,7 @@ public class AdminTemoignageController {
 		}
 		;
 
-		return "redirect:admin/admin_temoignage";
+		return "redirect:admin_temoignage";
 	}
 	
 	@RequestMapping(value = "/admin_temoignage", method = RequestMethod.GET)

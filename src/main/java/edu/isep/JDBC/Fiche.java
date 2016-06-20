@@ -1,7 +1,5 @@
 package edu.isep.JDBC;
 
-import org.springframework.web.multipart.MultipartFile;
-
 public class Fiche {	
 
 	private long id;

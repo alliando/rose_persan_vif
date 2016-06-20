@@ -86,7 +86,7 @@ public class RespoProfilModifyController {
 		}
 
 
-		return "redirect:respo/respo_profil_validation";
+		return "redirect:respo_profil_validation";
 	}
 
 
