@@ -137,6 +137,9 @@ public class LoginController extends HttpServlet {
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.removeAttribute("loggedInUser");
+		session.removeAttribute("eleveLoggedIn");
+		session.removeAttribute("adminLoggedIn");
+		session.removeAttribute("respoLoggedIn");
 		return "home";
 	}
 
