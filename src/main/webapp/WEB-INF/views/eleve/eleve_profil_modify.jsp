@@ -50,9 +50,9 @@
 			</div>
 			<div class="col-sm-4 col-md-4">
 				<div class="form-group">
-					<label for="apprenti">Cursus actuel :</label> <input type="text"
+					<label for="apprenti">Cursus :</label> <input type="text"
 						name="apprenti" class="form-control" id="apprenti"
-						placeholder="Année, spécialité ..." required="required">
+						placeholder="Prépa intégrée ..." required="required">
 				</div>
 				<div class="form-group">
 					<label for="adresse">Adresse :</label> <input type="text"

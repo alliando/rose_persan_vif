@@ -46,7 +46,7 @@ public class RespoInternationalModuleValidationController {
 		/*String mailrespo = repoU.findOneParcours(user.getIdParcours()).getMail();
 		mailto(Arrays.asList(mailrespo), "Speakisep - Nouveaux modules à valider!",
 				"De nouveaux modules d'élèves sont à valider. Connectez-vous vite sur la plateforme Speakisep.");*/
-		return "redirect:respo/respo_international_module";
+		return "redirect:respo_international_module";
 	}
 
 	@RequestMapping(value = "/eleve_refusmodules", method = RequestMethod.POST)
@@ -75,7 +75,7 @@ public class RespoInternationalModuleValidationController {
 		module.setStatut("refus");
 		repoM.updateOne(module);
 
-		return "redirect:respo/respo_international_module";
+		return "redirect:respo_international_module";
 	}
 
 	@RequestMapping("/respo_validation_module")

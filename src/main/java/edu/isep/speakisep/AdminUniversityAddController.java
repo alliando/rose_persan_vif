@@ -51,7 +51,7 @@ public class AdminUniversityAddController {
 			}
 
 		
-				return "redirect:admin/admin_universities";
+				return "redirect:admin_universities";
 		
 	}
 }

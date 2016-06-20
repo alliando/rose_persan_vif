@@ -66,7 +66,7 @@ public class AdminRespoEditController {
 			user.setIdParcours(idParcours);
 			repoU.updateOne(user);
 		
-		return "redirect:admin/admin_respo";
+		return "redirect:admin_respo";
 		
 	}
 	

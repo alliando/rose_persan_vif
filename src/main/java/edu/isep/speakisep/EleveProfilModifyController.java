@@ -57,7 +57,7 @@ public class EleveProfilModifyController {
 		}
 
 		if(!apprenti.equals("")){
-			fiche.setApprenti(apprenti);
+			fiche.setCursus(apprenti);
 			repoF.updateOne(fiche);}
 
 
@@ -152,7 +152,7 @@ public class EleveProfilModifyController {
 		}
 
 
-		return "redirect:eleve/eleve_profil_validation";
+		return "redirect:eleve_profil_validation";
 	}
 	@RequestMapping("/eleve_profil_modify")
 

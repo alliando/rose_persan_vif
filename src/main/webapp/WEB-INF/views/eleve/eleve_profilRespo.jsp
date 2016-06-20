@@ -19,7 +19,7 @@
 	<div class="row">
 		<div class="col-sm-2 col-md-2">
 			<img
-				src="resources/image/${respoFiche.getPhoto()}"
+				src="img/${respoFiche.getPhoto()}"
 				alt="" class="img-rounded img-responsive" />
 		</div>
 		<div class="col-sm-4 col-md-4">

@@ -37,7 +37,7 @@ public class AdminParcoursController {
 		Parcours parcours = repoParcours.findOne(id);
 		
 		repoParcours.delete(parcours);
-		return "redirect:admin/parcours";
+		return "redirect:admin_parcours";
 		
 	}
 	

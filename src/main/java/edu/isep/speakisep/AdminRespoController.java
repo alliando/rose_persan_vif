@@ -47,7 +47,7 @@ public class AdminRespoController {
 			User user = repoUser.findOne(id);
 			
 			repoUser.delete(user);
-			return "redirect:admin/admin_respo";
+			return "redirect:admin_respo";
 			
 		}
 				
