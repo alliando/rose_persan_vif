@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"
 	pageEncoding="UTF-8"%>
-<c:if test=""${not empty adminLoggedIn}">
+<c:if test="${not empty adminLoggedIn}">
 	<title>Admin - Témoignages</title>
 
 	<!-- Page Content -->
