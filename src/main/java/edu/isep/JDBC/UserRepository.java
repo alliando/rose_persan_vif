@@ -9,6 +9,7 @@ public interface UserRepository {
 	User save(User user);
 
 	List<User> findAll();
+	List<User> findAllRespoAdmin();
 	List<User> findAll(long id);
 	List<User> findAllBySql(String sql);
 
