@@ -29,7 +29,7 @@
 					<i class="glyphicon glyphicon-info-sign"></i> N° étudiant :
 					${user.getNumber()} <br /> <i class="glyphicon glyphicon-envelope"></i>
 					${user.getMail()} <br /> <i class="glyphicon glyphicon-briefcase"></i>
-					${fiche.getApprenti()} -- ${fiche.getEtape()} -- Promo
+					<c:out value="${fiche.getApprenti()}"></c:out> -- ${fiche.getEtape()} -- Promo
 					${fiche.getPromotion()} -- ${fiche.getCursus()} <br /> <i
 						class="glyphicon glyphicon-globe"></i> ${fiche.getAdresse()}
 				</p>

@@ -41,7 +41,9 @@ public class EleveProfilModifyController {
 		String docPath=cst_path.addRoot(docFolder);
 		//Récupération des données user/fiche
 		User user =(User)session.getAttribute("user");
+		System.out.println("ok :"+session.getAttribute("user"));
 		Fiche fiche =(Fiche)session.getAttribute("fiche");
+
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		FicheRepository repoF = ctx.getBean(FicheRepository.class);
 		//Conversion en UTF-8
@@ -155,8 +157,15 @@ public class EleveProfilModifyController {
 	}
 	@RequestMapping("/eleve_profil_modify")
 
-	public String Profil_respo(
+	public String Profil_respo(HttpServletRequest request
 			){
+
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
+		FicheRepository repoF = ctx.getBean(FicheRepository.class);
+		HttpSession session= request.getSession();
+		User user =(User)session.getAttribute("user");
+		session.setAttribute("fiche",repoF.findOne(user));
+
 
 		return "eleve/eleve_profil_modify";
 	}
