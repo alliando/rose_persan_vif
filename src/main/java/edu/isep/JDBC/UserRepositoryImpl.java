@@ -27,6 +27,7 @@ public class UserRepositoryImpl implements UserRepository {
 	private static final String SQL_FIND_PARCOURS = "select * from user where IDPARCOURS= ?";
 	private static final String SQL_FIND_PARCOURS_RESPO = "select * from user where type='respo' AND IDPARCOURS= ?";
 	private static final String SQL_FIND_QUERY = "select * from user where ?=?";
+	private static final String SQL_FIND_RESPOADMIN = "select * from user where type='respo' OR type='admin'";
 	private static final String SQL_FIND_ALL = "select * from user order by nomFamille";
 	//private static final String SQL_FIND_ALL_DATA = "select * from user order by nomFamille where IDPARCOURS=?";
 	private static final String SQL_DELETE_ONE = "delete from user where userId=?";
@@ -80,6 +81,9 @@ public class UserRepositoryImpl implements UserRepository {
 	@Override
 	public List<User> findAll() {
 		return jdbc.query(SQL_FIND_ALL, new UserRowMapper());
+	}
+	public List<User> findAllRespoAdmin() {
+		return jdbc.query(SQL_FIND_RESPOADMIN, new UserRowMapper());
 	}
 	@Override
 	public List<User> findParcours(long id) {

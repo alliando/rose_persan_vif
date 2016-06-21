@@ -47,31 +47,60 @@ public class LoginController extends HttpServlet {
 
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String submitForm(Model model, 
-			@RequestParam("userId") String userId, 
-			@RequestParam("password") String password, 
-			@Validated User form, 
-			BindingResult result, 
-			HttpServletRequest request) {
-		
-		model.addAttribute("form", form);
-		LDAPObject ldap = ISEPAuth( userId , password );
-		Md5 pwd = new Md5(ldap.password);
-		String returnVal = "home";
-		HttpSession session= request.getSession();
-		User user = new User(ldap.login, pwd.codeGet(), ldap.nom, ldap.nomFamille, ldap.prenom, ldap.getType(), ldap.getNumber(), ldap.mail);
+	public String submitForm(Model model,
+							 @RequestParam("userId") String userId,
+							 @RequestParam("password") String password,
+							 @Validated User form,
+							 BindingResult result,
+							 HttpServletRequest request) {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 		UserRepository repo = ctx.getBean(UserRepository.class);
 		FicheRepository repoF=ctx.getBean(FicheRepository.class);
+		LDAPObject ldap;
+		String returnVal = "";
+		String type;
+		HttpSession session = request.getSession();
+		User user;
+		boolean youAreAdminOrRespo=false;
+		for (User t : repo.findAllRespoAdmin()) {
+			Md5 pwd = new Md5(password);
 
-		if(ldap == null) {
-			returnVal = "form";
+			if (t.getLogin().equals(userId)) {
+				youAreAdminOrRespo = true;
+				if (t.getPassword().equals(pwd.codeGet())) {
+					model.addAttribute("form", form);
+					user = new User(t.getLogin(), t.getPassword(), t.getNom(), t.getNomFamille(), t.getPrenom(), t.getType(), t.getNumber(), t.getMail());
+					System.out.println(t.getLogin() + t.getPassword() + t.getNom() + t.getMail());
+					if (t.getType().equals("admin")) {
+						returnVal = "admin";
+						request.getSession().setAttribute("adminLoggedIn", user.getType());
+
+					} else {
+						returnVal = "respo";
+						request.getSession().setAttribute("respoLoggedIn", user.getType());
+
+					}
+					request.getSession().setAttribute("loggedInUser", session);
+					request.getSession().setAttribute("username", user.getPrenom());
+					request.getSession().setAttribute("user", user);
+					session.setAttribute("fiche", repoF.findOne(t));
+					repo.findOne(t.getId());
+					session = request.getSession();
+					session.getAttribute("numero");
+					break;
+				}
+			}
 		}
-		else{
+
+		if (!youAreAdminOrRespo) {
+
 			model.addAttribute("form", form);
+			ldap = ISEPAuth(userId, password);
+			Md5 pwd = new Md5(ldap.password);
 
-			String type = ldap.getType(); 
-
+			user = new User(ldap.login, pwd.codeGet(), ldap.nom, ldap.nomFamille, ldap.prenom, ldap.getType(), ldap.getNumber(), ldap.mail);
+			model.addAttribute("form", form);
+			type = ldap.getType();
 			request.getSession().setAttribute("loggedInUser", session);
 			request.getSession().setAttribute("username", user.getPrenom());
 
@@ -102,22 +131,22 @@ public class LoginController extends HttpServlet {
 
 			//Si l'utilisateur n'est pas inscrit, on l'enregistre lui+sa fiche
 			if (register!=1){
-			repo.save(user);
-			Fiche fiche=new Fiche("",null,"","","","", "","", "", "", "", "","",user.getId());
-			repoF.save(fiche);
-			if (type.equals("eleve")){
-				returnVal= "eleve_profil_modify";
-				request.getSession().setAttribute("eleveLoggedIn", type);
-				request.getSession().setAttribute("user", user);
-			} else if ( type.equals("admin") ){
-				returnVal= "admin";
-				request.getSession().setAttribute("adminLoggedIn", type);
-				request.getSession().setAttribute("user", user);
-			} else if ( type.equals("respo") ){
-				returnVal= "respo_profil_modify";
-				request.getSession().setAttribute("respoLoggedIn", type);
-				request.getSession().setAttribute("user", user);
-			}
+				repo.save(user);
+				Fiche fiche=new Fiche("",null,"","","","", "","", "", "", "", "","",user.getId());
+				repoF.save(fiche);
+				if (type.equals("eleve")){
+					returnVal= "eleve_profil_modify";
+					request.getSession().setAttribute("eleveLoggedIn", type);
+					request.getSession().setAttribute("user", user);
+				} else if ( type.equals("admin") ){
+					returnVal= "admin";
+					request.getSession().setAttribute("adminLoggedIn", type);
+					request.getSession().setAttribute("user", user);
+				} else if ( type.equals("respo") ){
+					returnVal= "respo_profil_modify";
+					request.getSession().setAttribute("respoLoggedIn", type);
+					request.getSession().setAttribute("user", user);
+				}
 
 			}
 			session.setAttribute("fiche",repoF.findOne(user));
@@ -127,7 +156,17 @@ public class LoginController extends HttpServlet {
 			repo.findOne(user.getId());
 			session= request.getSession();
 			session.getAttribute("numero");
+
 		}
+
+		//if(ldap == null) {
+		//	returnVal = "form";
+		//}
+		//else{
+
+
+
+		//}
 
 		return "redirect:"+returnVal;
 
@@ -145,19 +184,19 @@ public class LoginController extends HttpServlet {
 
 	/**
 	 * This method is used to detect if the user is in isep's db
-	 * 
+	 *
 	 * @param login
 	 * @param password
-	 * @return 
+	 * @return
 	 */
 	private LDAPObject ISEPAuth( String login, String password ){
 
 		LDAPaccess access = new LDAPaccess();
 		try {
-			LDAPObject isepUser = access.LDAPget( login , password ); 
+			LDAPObject isepUser = access.LDAPget( login , password );
 
 			if (isepUser == null)
-			{	
+			{
 				System.err.println("user doesn't exist");
 				return null;
 			}
